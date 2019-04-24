@@ -22,19 +22,18 @@ export const profiles = [
   },
 ];
 
-
 export function lookupProfile(firstName, prop) {
-  let message = '';
-  for (let profile of profiles) {
-    if (profile.firstName === firstName) {
-      if (profile.hasOwnProperty(prop)) {
-        message = profile[prop];
-        break;
-      } message = 'No such property';
-      break;
-    }
-    message = 'No such contact';
+  let message = 'No such contact';
+  const person = profiles.find((person) => {
+    return person.firstName === firstName;
+  });
+
+  if (person && !person.hasOwnProperty(prop)) {
+    message = 'No such property';
+  } else if (person) {
+    message = person[prop];
   }
   return message;
 }
+
 
