@@ -1,6 +1,6 @@
 export function checkLetters(arr) {
   for (let letter of arr[1].toLowerCase()) {
-    if (arr[0].toLowerCase().indexOf(letter) === -1) {
+    if (!arr[0].toLowerCase().includes(letter)) {
       return false;
     }
   }

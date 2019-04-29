@@ -6,19 +6,19 @@ export class Human {
 }
 
 export class Man extends Human {
-  constructor(name, sex) {
-    super(name, sex);
+  constructor(name) {
+    super(name, 'male');
   }
 }
 
 export class Woman extends Human {
-  constructor(name, sex) {
-    super(name, sex);
+  constructor(name) {
+    super(name, 'female');
   }
 }
 
 export class God {
   static create() {
-    return [new Man('Adam', 'male'), new Woman('Eve', 'female')];
+    return [new Man('Adam'), new Woman('Eve')];
   }
 }

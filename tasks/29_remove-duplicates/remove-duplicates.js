@@ -1,9 +1,10 @@
 export function removeDuplicates(arr) {
-  let unique = [];
-  for (let item of arr) {
-    if (unique.indexOf(item) === -1 ) {
-      unique.push(item);
-    }
-  }
-  return unique;
+  // let unique = [];
+  // for (let item of arr) {
+  //   if (!unique.includes(item)) {
+  //     unique.push(item);
+  //   }
+  // }
+  // return unique;
+  return [...new Set(arr)];
 }
