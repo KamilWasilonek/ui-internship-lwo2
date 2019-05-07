@@ -9,10 +9,8 @@ export function humanYearsCatYearsDogYears(humanYears) {
       dogYears += 9;
     }
     if (humanYears > 2) {
-      for (let i = 0; i < humanYears - 2; i++) {
-        catYears += 4;
-        dogYears += 5;
-      }
+      catYears += 4 * (humanYears - 2);
+      dogYears += 5 * (humanYears - 2);
     }
   }
   return [humanYears, catYears, dogYears];

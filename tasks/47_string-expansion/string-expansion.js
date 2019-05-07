@@ -2,7 +2,7 @@ export function stringExpansion(str) {
   if (!str.length) {
     return '';
   }
-  if (!str.match(/[0-9]/g)) {
+  if (!(/[0-9]/g).test(str)) {
     return str;
   }
   let result = '';
@@ -11,10 +11,9 @@ export function stringExpansion(str) {
     if (!isNaN(str[i])) {
       howManyRepeats = str[i];
     }
-    if (str[i + 1].match(/[a-z]/i)) {
+    if ((/[a-z]/i).test(str[i + 1])) {
       result = result.concat(str[i + 1].repeat(howManyRepeats));
     }
   }
   return result;
 }
-

@@ -2,16 +2,16 @@ export function findCloseIndex(str, index) {
   if (str[index] !== '(') {
     return -1;
   } else {
-    let bracketsCounter = 0;
-    for (let i = index + 1; i < str.length; i++) {
+    let stack = [];
+    for (let i = index; i < str.length; i++) {
       if (str[i] === '(') {
-        bracketsCounter++;
-      }
-      if (str[i] === ')' && bracketsCounter === 0) {
-        return i;
+        stack.push(str[i]);
       }
       if (str[i] === ')') {
-        bracketsCounter--;
+        stack.pop(str[i]);
+      }
+      if (str[i] === ')' && stack.length === 0) {
+        return i;
       }
     }
   }
