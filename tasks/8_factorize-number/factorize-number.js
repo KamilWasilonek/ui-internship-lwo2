@@ -1,7 +1,7 @@
 export function factorialize(number) {
-  if (number === 0) {
-    return 1;
-  } else {
-    return number * factorialize(number - 1);
+  let sum = 1;
+  for (let i = 1; i <= number; i++) {
+    sum *= i;
   }
+  return sum;
 }
