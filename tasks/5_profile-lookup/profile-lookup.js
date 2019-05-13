@@ -21,7 +21,6 @@ export const profiles = [
     firstName: 'Akira',
   },
 ];
-
 export function lookupProfile(firstName, prop) {
   let message = 'No such contact';
   const person = profiles.find((person) => {
@@ -35,5 +34,3 @@ export function lookupProfile(firstName, prop) {
   }
   return message;
 }
-
-
