@@ -1,13 +1,11 @@
 export function sumPrimeIndexedElements(arr) {
-  let primeIndexes = [];
+  let elementsSum = 0;
   for (let i = 2; i < arr.length; i++) {
     if (isPrime([i])) {
-      primeIndexes.push(i);
+      elementsSum += arr[i];
     }
   }
-  return primeIndexes.reduce((sum, item) => {
-    return sum + arr[item];
-  }, 0);
+  return elementsSum;
 }
 
 function isPrime(num) {

@@ -1,15 +1,14 @@
 export function numPrimorial(num) {
   let i = 2;
-  let result = [];
-  while (result.length != num) {
+  let result = 1;
+  while (num) {
     if (isPrime(i)) {
-      result.push(i);
+      result *= i;
+      num--;
     }
     i++;
   }
-  return result.reduce((multiple, item) => {
-    return multiple * item;
-  });
+  return result;
 }
 
 function isPrime(num) {

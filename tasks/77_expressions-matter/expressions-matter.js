@@ -1,13 +1,14 @@
-export function expressionMatter(...arr) {
+export function expressionMatter(a, b, c) {
   let result = [];
-  arr = arr.sort((a, b) => a - b);
-  result.push(arr[0] * (arr[1] + arr[2]));
+  [a, b, c] = [a, b, c].sort((a, b) => a - b);
 
-  result.push(arr[0] * arr[1] * arr[2]);
+  result.push(a * (b + c));
 
-  result.push(arr[0] + arr[1] + arr[2]);
+  result.push(a * b * c);
 
-  result.push((arr[0] + arr[1]) * arr[2]);
+  result.push(a + b + c);
+
+  result.push((a + b) * c);
 
   return Math.max(...result);
 }

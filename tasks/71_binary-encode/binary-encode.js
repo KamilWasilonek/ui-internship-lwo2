@@ -1,17 +1,11 @@
 export function binaryEncode(text = '') {
-  const arr = text
+  return text
       .split('')
       .map((item) => {
         return item
-            .split('')
-            .map((letter, index) => {
-              let binary = item.charCodeAt(index).toString(2);
-              let padding = 8 - binary.length;
-              binary = '0'.repeat(padding) + binary;
-              return binary;
-            })
-            .join('');
+            .charCodeAt()
+            .toString(2)
+            .padStart(8, 0);
       })
       .join(' ');
-  return arr;
 }

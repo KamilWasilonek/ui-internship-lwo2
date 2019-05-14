@@ -5,13 +5,7 @@ export function DNAStrand(str) {
     G: 'C',
     C: 'G',
   };
-  let result = '';
-  for (let i = 0; i < str.length; i++) {
-    Object.keys(DNAPairs).forEach((key) => {
-      if (key === str[i]) {
-        result += DNAPairs[key];
-      }
-    });
-  }
-  return result;
+  return [...str].reduce((result, letter) => {
+    return result.concat(DNAPairs[letter]);
+  }, '');
 }

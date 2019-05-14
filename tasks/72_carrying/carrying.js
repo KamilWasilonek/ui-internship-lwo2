@@ -1,24 +1,14 @@
-export function addTogether(a, b) {
-  if (a && b) {
-    if (typeof a === 'number' && typeof b == 'number') {
-      return a + b;
-    } else {
-      return undefined;
-    }
+export function addTogether(...args) {
+  let isNums = args.every((item) => typeof item === 'number');
+  if (!isNums) {
+    return;
   }
-
-  if (a || b) {
-    if (typeof a !== 'number') {
-      return undefined;
-    } else {
-      return (num) => {
-        if (typeof num !== 'number') {
-          return undefined;
-        } else {
-          return a + num;
-        }
-      };
-    }
+  if (typeof args[1] !== 'number') {
+    return (number) => {
+      if (typeof number === 'number') {
+        return args[0] + number;
+      }
+    };
   }
-  return undefined;
+  return args[0] + args[1];
 }
