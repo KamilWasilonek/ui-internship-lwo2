@@ -7,25 +7,23 @@ export class Person {
   }
 
   getFirstName() {
-    return (this._firstName = this.fullName.split(' ')[0]);
+    return this._firstName;
   }
 
   getLastName() {
-    return (this._lastName = this.fullName.split(' ')[1]);
+    return this._lastName;
   }
 
   getFullName() {
-    return this.fullName;
+    return this._firstName + ' ' + this._lastName;
   }
 
   setFirstName(first) {
     this._firstName = first;
-    this.fullName = this._firstName + ' ' + this._lastName;
   }
 
   setLastName(last) {
     this._lastName = last;
-    this.fullName = this._firstName + ' ' + this._lastName;
   }
 
   setFullName(fullName) {

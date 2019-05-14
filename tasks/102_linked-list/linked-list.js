@@ -24,7 +24,7 @@ LinkedList.prototype.push = function(value) {
     node.prev = current;
     this.tail = node;
   }
-  this.amount += 1;
+  this.amount++;
 };
 
 LinkedList.prototype.pop = function() {
@@ -72,13 +72,13 @@ LinkedList.prototype.removeItem = function(value) {
   let current = this.head;
   while (current) {
     if (current.value === value) {
-      if (current == this.head && current == this.tail) {
+      if (current === this.head && current === this.tail) {
         this.head = null;
         this.tail = null;
-      } else if (current == this.head) {
+      } else if (current === this.head) {
         this.head = this.head.next;
         this.head.prev = null;
-      } else if (current == this.tail) {
+      } else if (current === this.tail) {
         this.tail = this.tail.prev;
         this.tail.next = null;
       } else {

@@ -13,14 +13,12 @@ Stack.prototype.push = function(data) {
   let node = new Node(data);
   if (this.last === null) {
     this.last = node;
-    this.size += 1;
-    this.isEmpty = false;
   } else {
     node.prev = this.last;
     this.last = node;
-    this.size += 1;
-    this.isEmpty = false;
   }
+  this.size++;
+  this.isEmpty = false;
 };
 
 Stack.prototype.pop = function() {
@@ -29,11 +27,10 @@ Stack.prototype.pop = function() {
   } else {
     let result = this.last.value;
     this.last = this.last.prev;
-    this.size -= 1;
+    this.size--;
     if (this.size === 0) {
       this.isEmpty = true;
     }
     return result;
   }
 };
-
