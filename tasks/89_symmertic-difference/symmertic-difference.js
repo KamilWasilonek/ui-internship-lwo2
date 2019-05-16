@@ -1,7 +1,7 @@
 export function sym(...args) {
   const symmetricDifference = args.reduce((result, curr) => {
-    curr = new Set(curr);
-    curr.forEach((item) => {
+    const currSet = new Set(curr);
+    currSet.forEach((item) => {
       if (result.has(item)) {
         result.delete(item);
       } else {

@@ -5,7 +5,9 @@
         "sourceType": "module"
     },
     "rules": {
-        "require-jsdoc": 0
+        "require-jsdoc": 0,
+        "eqeqeq": "error",
+        "no-param-reassign": ["error", { "props": true }]
     },
     "globals":{
         "Set": true

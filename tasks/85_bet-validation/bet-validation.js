@@ -1,16 +1,24 @@
 // eslint-disable-next-line camelcase
 export function validate_bet(range, bet) {
-  range = range[0] > range[1] ? range.reverse() : range;
+  const rangeOfNumbers = range;
+  let result = bet;
+  rangeOfNumbers[0] > rangeOfNumbers[1]
+    ? rangeOfNumbers.reverse()
+    : rangeOfNumbers;
+
   const regex = /[^0-9\s,]/g;
-  if (!regex.test(bet)) {
-    bet = bet.match(/\d+/g);
-    let allNumsInRange = bet.every((num) => {
-      return num >= 1 && num <= range[1];
-    });
-    if (!allNumsInRange || bet.length < range[0]) {
+  if (!regex.test(result)) {
+    result = [...new Set(result.match(/\d+/g))];
+    if (result.length !== rangeOfNumbers[0]) {
       return 'None';
     }
-    return bet.sort((a, b) => a - b);
+    const allNumsInRange = result.every((num) => {
+      return num >= 1 && num <= rangeOfNumbers[1];
+    });
+    if (!allNumsInRange) {
+      return 'None';
+    }
+    return result.sort((a, b) => a - b).slice(0, rangeOfNumbers[0]);
   }
   return 'None';
 }
