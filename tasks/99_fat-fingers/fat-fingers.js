@@ -6,8 +6,8 @@ export function fatFingers(strToTransform) {
       return result;
     }
     if (shouldCapitalize) {
-      return (result += letter.toUpperCase());
+      return result + letter.toUpperCase();
     }
-    return (result += letter);
+    return result + letter;
   }, '');
 }

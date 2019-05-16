@@ -1,4 +1,4 @@
-export function leastCommonMultiple(a, b) {
+export function leastCommonMultiple(arg1, arg2) {
   // let firstArgMultiply = arg1;
   // let secondArgMultiply = arg2;
   // let result = [arg1, arg2];
@@ -14,6 +14,8 @@ export function leastCommonMultiple(a, b) {
   //   result.push(firstArgMultiply);
   //   result.push(secondArgMultiply);
   // }
+  let a = arg1;
+  let b = arg2;
   const argsMultiple = a * b;
   let tmp;
   while (b) {

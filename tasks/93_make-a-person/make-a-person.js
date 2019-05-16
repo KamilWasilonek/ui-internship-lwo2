@@ -1,9 +1,9 @@
 export class Person {
   constructor(fullName) {
     this.fullName = fullName;
-    fullName = fullName.split(' ');
-    this._firstName = fullName[0];
-    this._lastName = fullName[1];
+    const dividedFullName = fullName.split(' ');
+    this._firstName = dividedFullName[0];
+    this._lastName = dividedFullName[1];
   }
 
   getFirstName() {
