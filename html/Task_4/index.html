@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Schedule</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap&subset=latin-ext"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <input type="checkbox" id="high" />
+      <label class="label" id="high-label" for="high"
+        >Show tasks with high priority</label
+      >
+
+      <input type="checkbox" id="medium" />
+      <label class="label" id="medium-label" for="medium"
+        >Show tasks with medium priority</label
+      >
+
+      <input type="checkbox" id="low" />
+      <label class="label" id="low-label" for="low"
+        >Show tasks with low priority</label
+      >
+
+      <table>
+        <thead>
+          <tr>
+            <th colspan="3">Schedule</th>
+          </tr>
+          <tr>
+            <th>Name of task</th>
+            <th>Day</th>
+            <th>Priority</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="high">
+            <td>Feed the dog</td>
+            <td>Monday</td>
+            <td>High</td>
+          </tr>
+          <tr class="low">
+            <td>Close windows</td>
+            <td>Every</td>
+            <td>Low</td>
+          </tr>
+          <tr class="high">
+            <td>Make a cake</td>
+            <td>Tuesday</td>
+            <td>High</td>
+          </tr>
+          <tr class="medium">
+            <td>Read book</td>
+            <td>Friday</td>
+            <td>Medium</td>
+          </tr>
+          <tr class="high">
+            <td>Buy food for family</td>
+            <td>Saturday</td>
+            <td>High</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
