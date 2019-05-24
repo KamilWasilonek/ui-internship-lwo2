@@ -1,0 +1,72 @@
+body {
+  margin: 50px;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+label {
+  margin: 10px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#red-label {
+  color: red;
+}
+
+#green-label {
+  color: green;
+}
+
+#blue-label {
+  color: blue;
+}
+
+/* Checkboxs operations */
+#red:checked ~ .red {
+  display: none;
+}
+
+#red:checked ~ #red-label {
+  opacity: 0.4;
+}
+
+#green:checked ~ .green {
+  display: none;
+}
+
+#green:checked ~ #green-label {
+  opacity: 0.4;
+}
+
+#blue:checked ~ .blue {
+  display: none;
+}
+
+#blue:checked ~ #blue-label {
+  opacity: 0.4;
+}
+
+.color {
+  display: inline-block;
+  margin: 10px;
+  padding: 5px;
+  border-radius: 5px;
+  color: white;
+}
+
+.red {
+  background: red;
+}
+
+.green {
+  background: green;
+}
+
+.blue {
+  background: blue;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
