@@ -1,6 +1,4 @@
 body {
-  width: 100%;
-  height: 100%;
   box-sizing: border-box;
   font-family: "Lato", sans-serif;
 }
@@ -10,45 +8,45 @@ body {
   margin: 0 auto;
 }
 
-.container .label {
+.label {
   display: inline-block;
   margin: 20px;
   padding: 15px;
   cursor: pointer;
-  background: #4062eb;
+  background: rgb(184, 41, 6);
   border-radius: 5px;
   color: white;
 }
 
-.container input[type="checkbox"] {
+input[type="checkbox"] {
   display: none;
 }
 
-.container table {
+table {
   width: 100%;
   border-collapse: collapse;
   border-spacing: 0;
   overflow: hidden;
 }
 
-.container table thead {
+table thead {
   background: #4062eb;
   color: white;
 }
 
-.container table tbody {
+table tbody {
   color: #808080;
 }
 
-.container table tbody tr td {
+table tbody tr td {
   position: relative;
 }
 
-.container table tbody tr:hover {
+table tbody tr:hover {
   background: #ffa;
 }
 
-.container table tbody tr td {
+table tbody tr td {
   position: relative;
 }
 
@@ -74,37 +72,34 @@ td:hover::after {
   z-index: -1;
 }
 
-.container table th,
-.container table td {
+table th,
+table td {
   padding: 5px;
   border: 1px solid black;
   cursor: default;
 }
 
 /* Filter buttons */
-#high:checked ~ table tbody .low,
-#high:checked ~ table tbody .medium {
+#high:not(:checked) ~ table .high {
   display: none;
 }
 
-#high:checked ~ #high-label {
-  background: rgb(184, 41, 6);
-}
-
-#medium:checked ~ table tbody .low,
-#medium:checked ~ table tbody .high {
+#medium:not(:checked) ~ table .medium {
   display: none;
 }
 
-#medium:checked ~ #medium-label {
-  background: rgb(184, 41, 6);
-}
-
-#low:checked ~ table tbody .high,
-#low:checked ~ table tbody .medium {
+#low:not(:checked) ~ table .low {
   display: none;
 }
 
-#low:checked ~ #low-label {
-  background: rgb(184, 41, 6);
+#high:not(:checked) ~ #high-label {
+  background: #4062eb;
+}
+
+#medium:not(:checked) ~ #medium-label {
+  background: #4062eb;
+}
+
+#low:not(:checked) ~ #low-label {
+  background: #4062eb;
 }
