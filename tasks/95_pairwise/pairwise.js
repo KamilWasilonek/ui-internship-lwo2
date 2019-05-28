@@ -1,8 +1,8 @@
-export function pairwise(arr, num) {
-  let arrToSearch = arr;
-  return arr.reduce((sum, item, index) => {
-    for (let i = index + 1; i < arr.length; i++) {
-      if (item + arr[i] === num) {
+export function pairwise(arr, expectedSum) {
+  let arrToSearch = arr.slice();
+  return arrToSearch.reduce((sum, item, index) => {
+    for (let i = index + 1; i < arrToSearch.length; i++) {
+      if (item + arrToSearch[i] === expectedSum) {
         arrToSearch[i] = '';
         return sum + index + i;
       }

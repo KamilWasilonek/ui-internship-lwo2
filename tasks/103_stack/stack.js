@@ -11,12 +11,10 @@ export function Stack() {
 
 Stack.prototype.push = function(data) {
   let node = new Node(data);
-  if (this.last === null) {
-    this.last = node;
-  } else {
+  if (this.last !== null) {
     node.prev = this.last;
-    this.last = node;
   }
+  this.last = node;
   this.size++;
   this.isEmpty = false;
 };
@@ -24,13 +22,12 @@ Stack.prototype.push = function(data) {
 Stack.prototype.pop = function() {
   if (this.last === null) {
     return undefined;
-  } else {
-    let result = this.last.value;
-    this.last = this.last.prev;
-    this.size--;
-    if (this.size === 0) {
-      this.isEmpty = true;
-    }
-    return result;
   }
+  let result = this.last.value;
+  this.last = this.last.prev;
+  this.size--;
+  if (this.size === 0) {
+    this.isEmpty = true;
+  }
+  return result;
 };
