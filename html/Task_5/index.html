@@ -1,139 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Newspaper</title>
     <link rel="stylesheet" href="style.css" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap"
-      rel="stylesheet"
-    />
-    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet"/>
   </head>
   <body>
-    <!-- Website title -->
-    <h1 class="page-title page-title--font page-title--border">
-      The Best Newspaper
-    </h1>
 
-    <!-- Daily informations bar -->
-    <div class="info-bar info-bar--background info-bar--border">
-      <!-- Tempareture -->
-      <span class="info-bar__span info-bar__temperature">
-        <img src="assest/rain-icon.png" alt="Weather-icon" />
-        <b>13<sup>o</sup>C</b></span
-      >
-      <!-- Date -->
-      <span class="info-bar__span info-bar__date">Thursday, May 23, 2019</span>
+    <header>
+      <!-- Website title -->
+      <h1 class="page-title">
+        The Best Newspaper
+      </h1>
 
-      <!-- Actions -->
-      <span class="info-bar__span info-bar__actions"
-        ><a class="info-bar__link--color" href="#">SUBSCRIBE NOW</a> &nbsp; |
-        &nbsp;<a class="info-bar__link--color" href="#">LOG IN</a>
-      </span>
-    </div>
+      <!-- Daily informations bar -->
+      <div class="info-bar">
+        <!-- Temparature -->
+        <div class="info-bar__temperature">
+          <img src="assest/rain-icon.png" alt="Weather-icon" />
+          <b>13<sup>o</sup>C</b>
+        </div>
 
-    <!-- Banner image -->
-    <img class="banner" src="assest/banner.jpg" alt="Banner" />
+        <!-- Date -->
+        <div class="info-bar__date">Thursday, May 23, 2019</div>
 
-    <!-- Layout changing buttons -->
-    <input class="btn" type="checkbox" id="dark-theme" />
-    <label class="btn__label btn__label--position
-    btn__label--position-1" for="dark-theme">Dark Theme</label>
+        <!-- Actions -->
+        <div class="info-bar__actions">
+          <a class="info-bar__link" href="#">SUBSCRIBE NOW</a>
+          &nbsp; | &nbsp;
+          <a class="info-bar__link" href="#">LOG IN</a>
+        </div>
+      </div>
+  
+      <!-- Banner image -->
+      <img class="banner" src="assest/banner.jpg" alt="Banner" />
+    </header>
 
-    <input class="btn" type="checkbox" id="font-change" />
-    <label class="btn__label btn__label--position
-    btn__label--position-2" for="font-change">Change Font</label>
+    <!-- Layout changing checkboxes -->
+    <input class="checkbox" type="checkbox" id="dark-theme" />
+    <label class="checkbox__label checkbox__label--position-1" id='dark-theme' for="dark-theme">
+      Dark Theme
+    </label>
 
-    <input class="btn" type="checkbox" id="bigger-font" />
-    <label class="btn__label btn__label--position
-    btn__label--position-3" for="bigger-font">Bigger Font</label>
+    <input class="checkbox" type="checkbox" id="font-change" />
+    <label class="checkbox__label checkbox__label--position-2" id='font-change' for="font-change">
+      Change Font
+    </label>
+
+    <input class="checkbox" type="checkbox" id="bigger-font" />
+    <label class="checkbox__label checkbox__label--position-3" id='bigger-font' for="bigger-font">
+      Bigger Font
+    </label>
 
     <!-- News area -->
-    <div class="articles articles--font">
-      <!-- Article 1 -->
-      <div class="article">
-        <h2 class="article__title article__title--font">
+    <section class="articles">
+      <article class="article">
+        <h2 class="article__title">
           India Election Results: Modi and the B.J.P. Make History
         </h2>
+
         <figure class="article__figure">
-          <img class="article__img--size" src="assest/india-1.jpg" alt="Article-1" />
+          <img class="article__img" src="assest/india-1.jpg" alt="Article-1"/>
         </figure>
-        <h4 class="article__intro article__intro--font">
+
+        <h4 class="article__intro">
           With a commanding lead, Prime Minister Narendra Modi and his party are
           set to expand their majority. “India wins yet again!” he posted on
           Twitter.
         </h4>
-      </div>
+      </article>
 
-      <!-- Article 2 -->
-      <div class="article">
-        <h2 class="article__title article__title--font">
+      <article class="article">
+        <h2 class="article__title">
           Trump Gives Attorney General Sweeping Power in Review of 2016 Campaign
           Inquiry
         </h2>
         <figure class="article__figure">
-          <img class="article__img--size" src="assest/flag.jpg" alt="Article-1" />
+          <img class="article__img" src="assest/flag.jpg" alt="Article-2"/>
         </figure>
-        <h4 class="article__intro article__intro--font">
+        <h4 class="article__intro">
           President Trump and Attorney General William P. Barr this week at the
           White House. The directive gives Mr. Barr immense leverage over the
           intelligence community and enormous power over what the public learns
           about the roots of the Russia investigation.
         </h4>
-      </div>
+      </article>
 
-      <!-- Article 3 -->
-      <div class="article">
-        <h2 class="article__title article__title--font">
+      <article class="article">
+        <h2 class="article__title">
           Prime Minister Narendra Modi and his party are set to expand their
           majority
         </h2>
+
         <figure class="article__figure">
-          <img class="article__img--size" src="assest/india-3.jpg" alt="Article-1" />
+          <img class="article__img" src="assest/india-3.jpg" alt="Article-3"/>
         </figure>
-        <h4 class="article__intro article__intro--font">
+
+        <h4 class="article__intro">
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam
           provident suscipit praesentium incidunt placeat voluptate tempora
           maxime fuga architecto dolorum! Officiis, voluptas quaerat accusantium
           repellendus ipsam dolores error hic. Natus illum, suscipit fugiat
           ipsum labore ad vero optio nihil ducimus.
         </h4>
-      </div>
-    </div>
+      </article>
+    </section>
 
     <!-- Artilce detalis -->
-    <div class="article-details article-details--columns ">
-      <p class="article-details__title article-details__title--font">
+    <div class="article-details">
+      <p class="article-details__title">
         India Election Results: Gandhi Concedes as Modi Makes History
       </p>
+
       <p class="article-details__intro">
         With a commanding lead, Prime Minister Narendra Modi and his party are
         set to expand their majority. “India wins yet again!” he posted on
         Twitter.India has produced in decades, appeared easily headed for
         another five-year term, according to election returns so far.
       </p>
+
       <p>
         Prime Minister Narendra Modi, one of the most powerful and divisive
         leaders India has produced in decades, appeared easily headed for
         another five-year term, according to election returns so far.
       </p>
+      
+      
       <p>
         The Election Commission reported that Mr. Modi’s Bharatiya Janata Party,
         or B.J.P., was ahead in at least 300 parliamentary districts, far beyond
         the 272 seats it would need for a majority in the 543-seat Parliament.
-        <figure class="article-details__figure">
-          <img class="article-details__img" src="assest/india-2.jpg" alt="India" />
-          <figcaption class="article-details__caption">
-            Hands full of colors
-          </figcaption>
-          Closeup photo of person holding color soils
-        </figure>
+      </p>
+
+      <figure class="article-details__figure">
+        <img class="article-details__img" src="assest/india-2.jpg" alt="India"/>
+        <figcaption class="article-details__caption">
+          Hands full of colors
+        </figcaption>
+      </figure>
+
+      <p>
         At this pace, the party would actually expand on its current majority —
         a development no one was predicting in recent months. In Prime Minister
         Narendra Modi’s small inner circle, the B.J.P.’s president, Amit Shah,
@@ -141,25 +151,28 @@
         Shah is the party operative most credit with helping to engineer this
         victory.
       </p>
+      
       <blockquote class="article-details__blockquote">
-        <p>
           The main opposition Congress Party was ahead in 49 seats, according to
           Election Commission data.
-        </p>
       </blockquote>
-
+      
       <p>
         But that was before tensions with Pakistan handed Mr. Modi an issue he
         could command. He campaigned heavily on national security and on a
         forceful foreign policy, and it's now clear that played well among
         India’s 900 million registered voters.
-        <figure class="article-details__figure">
-          <img class="article-details__img" src="assest/india-3.jpg" alt="India" />
-          <figcaption class="article-details__caption">
-            White and brown dome building near green and coconut tree grass at
-            daytime
-          </figcaption>
-        </figure>
+      </p>
+
+      <figure class="article-details__figure">
+        <img class="article-details__img" src="assest/india-3.jpg" alt="India"/>
+        <figcaption class="article-details__caption">
+          White and brown dome building near green and coconut tree grass at
+          daytime
+        </figcaption>
+      </figure>
+
+      <p>
         Rahul Gandhi, leader of the opposition Congress Party, conceded defeat
         on Thursday after it was clear that Mr. Modi’s party had swept the
         election. “I said during the campaign that the people were the masters,
@@ -167,12 +180,14 @@
         news conference from Congress headquarters in New Delhi. “We concede in
         this election that Narendra Modi and the B.J.P. have won.”
       </p>
+      
       <figure class="article-details__figure">
-        <img class="article-details__img" src="assest/india-1.jpg" alt="India" />
+        <img class="article-details__img" src="assest/india-1.jpg" alt="India"/>
         <figcaption class="article-details__caption">
           Architectural photography of mosque
         </figcaption>
       </figure>
+
       <p>
         In Prime Minister Narendra Modi’s small inner circle, the B.J.P.’s
         president, Amit Shah, is perhaps his closest confidante. And outside of
@@ -180,7 +195,7 @@
         helping to engineer this victory.
       </p>
 
-      <img class="article-details__big-img" src="assest/big-img.jpg" alt="Big img" />
+      <img class="article-details__big-img" src="assest/big-img.jpg" alt="Big img"/>
 
       <p>
         For much of the election campaign, Mr. Shah, 54, a Hindu hard-liner who
