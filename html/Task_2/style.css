@@ -4,8 +4,13 @@ body {
   box-sizing: border-box;
 }
 
+.container{
+  display: flex;
+  align-items: flex-start;
+}
+
 label {
-  margin: 10px;
+  margin: 5px 10px;
   text-decoration: underline;
   cursor: pointer;
 }
@@ -22,12 +27,16 @@ label {
   color: blue;
 }
 
+.colors {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .color {
-  display: inline-block;
-  margin: 10px;
+  margin: 3px;
   padding: 5px;
-  border-radius: 5px;
   color: white;
+  border-radius: 5px;
 }
 
 .red {
@@ -47,27 +56,27 @@ input[type="checkbox"] {
 }
 
 /* Checkbox operations */
-#red:checked ~ .red {
+#red:not(:checked) ~ .colors .red {
   display: none;
 }
 
-#red:checked ~ #red-label {
+#red:not(:checked) ~ #red-label {
   opacity: 0.4;
 }
 
-#green:checked ~ .green {
+#green:not(:checked) ~ .colors .green {
   display: none;
 }
 
-#green:checked ~ #green-label {
+#green:not(:checked) ~ #green-label {
   opacity: 0.4;
 }
 
-#blue:checked ~ .blue {
+#blue:not(:checked) ~ .colors .blue {
   display: none;
 }
 
-#blue:checked ~ #blue-label {
+#blue:not(:checked) ~ #blue-label {
   opacity: 0.4;
 }
 
