@@ -56,26 +56,14 @@ input[type="checkbox"] {
 }
 
 /* Checkbox operations */
-#red:not(:checked) ~ .colors .red {
-  display: none;
-}
-
-#red:not(:checked) ~ #red-label {
-  opacity: 0.4;
-}
-
-#green:not(:checked) ~ .colors .green {
-  display: none;
-}
-
-#green:not(:checked) ~ #green-label {
-  opacity: 0.4;
-}
-
+#red:not(:checked) ~ .colors .red,
+#green:not(:checked) ~ .colors .green,
 #blue:not(:checked) ~ .colors .blue {
   display: none;
 }
 
+#red:not(:checked) ~ #red-label,
+#green:not(:checked) ~ #green-label,
 #blue:not(:checked) ~ #blue-label {
   opacity: 0.4;
 }
