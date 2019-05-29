@@ -89,16 +89,9 @@ body {
   font-size: 1.2rem;
 }
 
-#dark-theme:checked ~ #dark-theme {
-  background: #821414;
-  color: white;
-}
-
-#font-change:checked ~ #font-change {
-  background: #821414;
-  color: white;
-}
-#bigger-font:checked ~ #bigger-font {
+#dark-theme:checked ~ #dark-theme-label,
+#font-change:checked ~ #font-change-label,
+#bigger-font:checked ~ #bigger-font-label {
   background: #821414;
   color: white;
 }
