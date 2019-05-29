@@ -14,65 +14,70 @@
     <table width="100%" cellspacing="0" cellpadding="5px" border="1px">
       <!-- Title -->
       <thead>
-        <th colspan="3" height="98px" align="center">
-          <h1>Markup of “Basic HTML” task</h1>
-        </th>
+        <tr>
+          <th colspan="3" height="98px" align="center">
+            <h1>Markup of “Basic HTML” task</h1>
+          </th>
+        </tr>
       </thead>
 
       <tbody>
-        <!-- Left side -->
-        <td width="198px" valign="top" align="left">
-          <h2>Menu</h2>
-          <p><a href="#">Main</a></p>
-          <p><a href="#">Products</a></p>
-          <p><a href="#">Cafe</a></p>
-          <p><a href="#">Restaurants</a></p>
-          <p><a href="#">Questions</a></p>
-          <p><a href="#">Promotions</a></p>
-        </td>
-        
+        <tr>
+          <!-- Left side -->
+          <td width="198px" valign="top" align="left">
+            <h2>Menu</h2>
+            <p><a href="#">Main</a></p>
+            <p><a href="#">Products</a></p>
+            <p><a href="#">Cafe</a></p>
+            <p><a href="#">Restaurants</a></p>
+            <p><a href="#">Questions</a></p>
+            <p><a href="#">Promotions</a></p>
+          </td>
+          
           <!-- Content -->
           <td>
-            <table cellpadding="5px">
+            <table>
+
               <thead>
-                <th><font size="5">Main Content</font></th>
+                <tr>
+                  <th>
+                    <h2>Main Content</h2>
+                  </th>
+                </tr>
               </thead>
+
               <tbody>
                 <tr>
                   <td>
-                    <img
-                      width="200px"
-                      height="150px"
-                      align="right"
-                      src="photo.jpeg"
-                      alt="Photo"
-                    />
-                    It has long been established that in assessing the design
-                    and composition of readable text interferes with
-                    concentration. Lorem Ipsum is used because it provides a
-                    more or less standard template filling, as well as a real
-                    distribution of letters and spaces in paragraphs, which is
-                    not obtained by simple duplication "Here is your text.. Here
-                    your text.. Here your text.."Many of the programs electronic
-                    layout and HTML editors use Lorem Ipsum as default text, so
-                    that keyword search "lorem ipsum" immediately shows how many
-                    web pages are still waiting for his present birth. Over the
-                    years, the text Lorem Ipsum has received a lot of versions.
-                    Some versions appeared by mistake, some - intentionally (for
-                    example, humorous versions).It has long been established
-                    that in assessing the design and composition of readable
-                    text interferes with concentration. Lorem Ipsum is used
-                    because it provides a more or less standard template
-                    filling, as well as a real distribution of letters and
-                    spaces in paragraphs, which is not obtained by simple
-                    duplication "Here is your text.. Here your text.. Here your
-                    text.."Many of the programs electronic layout and HTML
-                    editors use Lorem Ipsum as default text, so that keyword
-                    search "lorem ipsum" immediately shows how many web pages
-                    are still waiting for his present birth. Over the years, the
-                    text Lorem Ipsum has received a lot of versions. Some
-                    versions appeared by mistake, some - intentionally (for
-                    example, humorous versions). <sup>1</sup>
+                    <img width="200" height="150" align="right" src="photo.jpeg" alt="Photo"/>
+                    <span>
+                      It has long been established that in assessing the design
+                      and composition of readable text interferes with
+                      concentration. Lorem Ipsum is used because it provides a
+                      more or less standard template filling, as well as a real
+                      distribution of letters and spaces in paragraphs, which is
+                      not obtained by simple duplication "Here is your text.. Here
+                      your text.. Here your text.."Many of the programs electronic
+                      layout and HTML editors use Lorem Ipsum as default text, so
+                      that keyword search "lorem ipsum" immediately shows how many
+                      web pages are still waiting for his present birth. Over the
+                      years, the text Lorem Ipsum has received a lot of versions.
+                      Some versions appeared by mistake, some - intentionally (for
+                      example, humorous versions).It has long been established
+                      that in assessing the design and composition of readable
+                      text interferes with concentration. Lorem Ipsum is used
+                      because it provides a more or less standard template
+                      filling, as well as a real distribution of letters and
+                      spaces in paragraphs, which is not obtained by simple
+                      duplication "Here is your text.. Here your text.. Here your
+                      text.."Many of the programs electronic layout and HTML
+                      editors use Lorem Ipsum as default text, so that keyword
+                      search "lorem ipsum" immediately shows how many web pages
+                      are still waiting for his present birth. Over the years, the
+                      text Lorem Ipsum has received a lot of versions. Some
+                      versions appeared by mistake, some - intentionally (for
+                      example, humorous versions). <sup>1</sup>
+                    </span>
                     <ul align="center">
                       <li>
                         <i
@@ -86,15 +91,11 @@
                 <tr>
                   <td><b>Items in the shop</b><p></p></td>
                 </tr>
-
+                
+                <!-- Shop items -->
                 <tr>
                   <td>
-                    <table
-                      width="100%"
-                      cellspacing="0"
-                      cellpadding="5px"
-                      border="1px"
-                    >
+                    <table width="100%" cellspacing="0" cellpadding="5px" border="1px">
                       <thead>
                         <tr>
                           <th>
@@ -126,82 +127,37 @@
                   </td>
                 </tr>
 
-                <!-- Items in shop -->
               </tbody>
+
             </table>
           </td>
 
+          <!-- Right side -->
           <td width="198px" valign="top">
-            <table width="200px" cellpadding="5px">
-              <tbody>
-                <!-- Login -->
-                <tr>
-                  <td>
-                    <table cellspacing="0" cellpadding="0">
-                      <tr>
-                        <td>
-                          Login:
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <input type="text" placeholder="You login" />
-                          <p></p>
-                        </td>
-                      </tr>
-                    </table>
-                  </td>
-                </tr>
+        
+            <p>Login:</p>
+            <input type="text" placeholder="Your login">
 
-                <!--Password -->
-                <tr>
-                  <td>
-                    <table cellspacing="0" cellpadding="0">
-                      <tr>
-                        <td>
-                          Password:
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <input type="password" placeholder="*******" />
-                          <p></p>
-                        </td>
-                      </tr>
-                    </table>
-                  </td>
-                </tr>
+            <p>Password:</p>
+            <input type="password" placeholder="********">
+          
+            <p>
+              <select>
+                <option value="Admin">Admin</option>
+                <option value="Tester">Tester</option>
+                <option value="User">User</option>
+              </select>
+            </p>
 
-                <tr>
-                  <td>
-                    <table>
-                      <tr>
-                        <td>
-                          <select>
-                            <option value="Admin">Admin</option>
-                            <option value="Tester">Tester</option>
-                            <option value="User">User</option>
-                          </select>
-                          <p></p>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <input type="checkbox" /> Remember me
-                          <p></p>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <button>Login</button>
-                          <p></p>
-                        </td>
-                      </tr>
-                    </table>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+            <p>
+              <input type="checkbox" />
+              <label>Remember me</label>
+            </p>
+           
+            <p>
+              <button>Login</button>
+            </p>
+
           </td>
         </tr>
       </tbody>
