@@ -1,0 +1,237 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+  font-weight: lighter;
+}
+
+.banner {
+  padding: 150px 0 50px 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url("./assets/banner/layer-8.png") no-repeat right center;
+  background-size: cover;
+  color: #ffffff;
+  text-align: center;
+}
+
+.banner__header {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.banner__title {
+  margin: 40px 0 20px 0;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+
+.banner_description {
+  margin-bottom: 100px;
+  font-size: 0.9rem;
+}
+
+.banner__mouse {
+  width: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .banner__shape > img {
+    width: 40px;
+  }
+
+  .banner__mouse {
+    width: 20px;
+  }
+}
+
+
+
+/* About us */
+.about-us {
+  position: relative;
+  padding: 70px 10%;
+  text-align: center;
+}
+
+.about-us__title {
+  position: absolute;
+  top: 60px;
+  left: 25%;
+  width: 50%;
+  background: #ffffff;
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.about-us__description {
+  padding: 10%;
+  margin: 0 auto;
+  border-top: solid 2px #3c3c3c;
+  font-size: 0.9rem;
+}
+
+
+
+/* Services */
+.services {
+  position: relative;
+  padding: 70px 10%;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url("./assets/services-bg/layer-4.png") no-repeat 75% center;
+  background-size: cover;
+  color: #ffffff;
+  text-align: center;
+}
+
+.services__title {
+  position: absolute;
+  top: 60px;
+  right: 25%;
+  width: 50%;
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.services__line {
+  height: 2px;
+  background: linear-gradient(
+    to left,
+    #ffffff 0%,
+    #ffffff 20%,
+    transparent 20%,
+    transparent 80%,
+    #ffffff 80%,
+    #ffffff 100%
+  );
+}
+
+.services__description {
+  margin: 0 auto;
+  padding: 10%;
+  font-size: 0.9rem;
+}
+
+
+
+/* What we do */
+.what-we-do {
+  position: relative;
+  margin: 70px 10%;
+  padding: 70px 10% 0 10%;
+  border-top: solid 2px #3c3c3c;
+  text-align: center;
+}
+
+.what-we-do__title {
+  position: absolute;
+  top: -10px;
+  right: 25%;
+  width: 50%;
+  background: #ffffff;
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.what-we-do__action {
+  margin-bottom: 60px;
+}
+
+.action__title {
+  margin: 20px 0;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.action__description {
+  font-size: 0.9rem;
+}
+
+@media screen and (min-width: 768px) {
+  .services__icon > img {
+    width: 40px;
+  }
+}
+
+
+
+/* Cards */
+.card-1 {
+  background-image: url("./assets/cards/topworkz/layer-5-copy.png");
+}
+.card-2 {
+  background-image: url("./assets/cards/joint/layer-5-copy-3.png");
+}
+.card-3 {
+  background-image: url("./assets/cards/market/layer-5-copy-2.png");
+}
+.card-4 {
+  background-image: url("./assets/cards/worktop/layer-5-copy-4.png");
+}
+.card-5 {
+  background-image: url("./assets/cards/lable/layer-5-copy-4.png");
+}
+.card-6 {
+  background-image: url("./assets/cards/kyiv/layer-5-copy-4.png");
+}
+
+.card {
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-bottom: 10px;
+  padding: 80px 0 20px 0;
+}
+
+.card > p {
+  margin-left: 20px;
+  color: white;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+
+
+/* Contact us */
+.contact-us {
+  position: relative;
+  margin: 70px 10% 0 10%;
+  padding: 10%;
+  text-align: center;
+  border-top: solid 2px #3c3c3c;
+}
+
+.contact-us__title {
+  position: absolute;
+  top: -10px;
+  left: 25%;
+  width: 50%;
+  background: #ffffff;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.contact-us__description {
+  margin-bottom: 20px;
+}
+
+.contact-us__button {
+  margin-top: 15px;
+  padding: 15px 30px;
+  color: white;
+  background-color: #3c3c3c;
+  text-transform: uppercase;
+}
+
+/* Footer */
+.footer {
+  padding: 50px;
+  text-align: center;
+}
+
+.footer__all-rights {
+  margin-top: 20px;
+}
