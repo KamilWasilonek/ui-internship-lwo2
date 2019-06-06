@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Minimo</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata|Playfair+Display|Ubuntu&display=swap" rel="stylesheet"/>
+  </head>
+
+  <body>
+    <!-- Container -->
+    <div class="container">
+      <!-- Header -->
+      <header>
+        <!-- Navbar -->
+        <nav class="navbar">
+          <!-- Logo -->
+          <div class="navbar__logo">minim&oslash;</div>
+          <!-- Menu list -->
+          <ul class="navbar__menu-list">
+            <li class="menu__item">
+              <a href="#">lifestyle</a>
+            </li>
+            <li class="menu__item">
+              <a href="#">photodiary</a>
+            </li>
+            <li class="menu__item">
+              <a href="#">music</a>
+            </li>
+            <li class="menu__item">
+              <a href="#">travel</a>
+            </li>
+          </ul>
+          <!-- Menu Button -->
+          <button type="button" class="navbar__menu-btn">
+            <img class="navbar__icon" src="./assets/icons/bars-solid.svg" alt="Menu button">
+          </button>
+        </nav>
+      </header>
+
+      <!-- Banner image -->
+      <picture>
+        <source media="(min-width: 1200px)" srcset="assets/banner/banner@3x.png">  
+        <source media="(min-width: 768px)" srcset="assets/banner/banner@2x.png">
+        <img src="assets/banner/banner.png" class="banner" alt="Banner image"/>
+      </picture>
+      
+      <!-- Main -->
+      <main class="content-container">
+        <article class="article">
+          <header>
+            <!-- Article type -->
+            <p class="article__type">photodiary</p>
+  
+            <!-- Article title -->
+            <h2 class="article__title">
+              The perfect weekend getway
+            </h2>
+          </header>
+
+          <!-- Article content -->
+          <p class="article__content">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+            enim ad minim veniam, quis nostrud exercitation ullamco laboris
+            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+            sunt in culpa qui officia deserunt mollit anim id est laborum. Sed
+            ut perspiciatis unde omnis iste natus error sit voluptatem
+            accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
+            quae ab illo inventore veritatis et quasi architecto beatae vitae
+            dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
+            aspernatur aut odit aut fugit, sed quia consequuntur magni dolores
+            eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam
+            est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci
+            velit, sed quia non numquam eius modi tempora incidunt ut labore
+            et dolore magnam aliquam quaerat voluptatem.
+          </p>
+
+          <!-- Article comment -->
+          <button type="button" class="article__comment">leave a comment</button>
+        </article>
+
+        <!-- Articles -->
+        <section class="articles">
+          <!-- Article 1 -->
+          <article class="article">
+            
+            <picture>
+              <source media="(min-width: 1200px)" srcset="assets/article-1/image@3x.png">  
+              <source media="(min-width: 500px)" srcset="assets/article-1/image@2x.png">
+              <img src="assets/article-1/image.png" class="article__img" alt="Article-1 image"/>
+            </picture>
+          
+            <header>
+              <p class="article__type">lifestyle</p>
+  
+              <h2 class="article__title">
+                More than just a music festival
+              </h2>
+            </header>
+
+            <p class="article__content">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+            </p>
+          </article>
+
+          <!-- Article 2 -->
+          <article class="article">
+
+            <picture>
+              <source media="(min-width: 1200px)" srcset="assets/article-2/image@3x.png">  
+              <source media="(min-width: 500px)" srcset="assets/article-2/image@2x.png">
+              <img src="assets/article-2/image.png" class="article__img" alt="Article-2 image"/>
+            </picture>
+
+            <header>
+              <p class="article__type">lifestyle</p>
+  
+              <h2 class="article__title">
+                Life tastes better with coffee
+              </h2>
+            </header>
+
+            <p class="article__content">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+            </p>
+          </article>
+
+          <!-- Article 3 -->
+          <article class="article">
+
+            <picture>
+              <source media="(min-width: 1200px)" srcset="assets/article-3/image@3x.png">  
+              <source media="(min-width: 500px)" srcset="assets/article-3/image@2x.png">
+              <img src="assets/article-3/image.png" class="article__img" alt="Article-3 image"/>
+            </picture>
+            
+            <header>
+              <p class="article__type">photodiary</p>
+
+              <h2 class="article__title">
+                American dream
+              </h2>
+            </header>
+          
+
+            <p class="article__content">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+            </p>
+          </article>
+
+          <!-- Article 4 -->
+          <article class="article">
+
+            <picture>
+              <source media="(min-width: 1200px)" srcset="assets/article-4/image@3x.png">  
+              <source media="(min-width: 500px)" srcset="assets/article-4/image@2x.png">
+              <img src="assets/article-3/image.png" class="article__img" alt="Article-4 image"/>
+            </picture>
+
+            <header>
+              <p class="article__type">photodiary</p>
+  
+              <h2 class="article__title">
+                A day exploring the Alps
+              </h2>
+            </header>
+
+            <p class="article__content">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+            </p>
+          </article>
+        </section>
+      </main>
+    </div>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+      <div>
+        <h2 class="newsletter__title">
+          Sign up for our newsletter!
+        </h2>
+        <form class="newsletter__email">
+          <input type="email" class="email__input" placeholder="Enter a valid email address"/>
+          <button type="submit" class="email__arrow"><img src="./assets/icons/paper-plane-solid.svg" alt="Send email"></button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Container -->
+    <div class="container">
+      <div class="content-container">
+
+        <!-- Articles -->
+        <section class="articles">
+          <!-- Article 5 -->
+          <div class="article">
+
+            <picture>
+              <source media="(min-width: 1200px)" srcset="assets/article-5/image@3x.png">  
+              <source media="(min-width: 500px)" srcset="assets/article-5/image@2x.png">
+              <img src="assets/article-5/image.png" class="article__img" alt="Article-5 image"/>
+            </picture>
+
+            <header>
+              <p class="article__type">lifestyle</p>
+  
+              <h2 class="article__title">
+                Top 10 song for running
+              </h2>
+            </header>
+
+            <p class="article__content">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+            </p>
+          </div>
+
+          <!-- Article 6 -->
+          <div class="article">
+
+            <picture>
+              <source media="(min-width: 1200px)" srcset="assets/article-6/image@3x.png">  
+              <source media="(min-width: 500px)" srcset="assets/article-6/image@2x.png">
+              <img src="assets/article-6/image.png" class="article__img" alt="Article-6 image"/>
+            </picture>
+
+            <header>
+              <p class="article__type">lifestyle</p>
+  
+              <h2 class="article__title">
+                Cold winter days
+              </h2>
+            </header>
+
+            <p class="article__content">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+            </p>
+          </div>
+        </section>
+
+        <!-- Load more button -->
+        <button type="button" class="load-more">
+          Load more
+        </button>
+
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <a href="#" class="footer-link">Terms and conditions</a>
+        <a href="#" class="footer-link">Privacy</a>
+
+        <div class="footer__right-side">
+          <span>Follow</span>
+          <a href="#" class="footer__icon"><img src="./assets/icons/facebook-f-brands.svg" alt="Facebook"></a>
+          <a href="#" class="footer__icon"><img src="./assets/icons/twitter-brands.svg" alt="Twitter"></a>
+          <a href="#" class="footer__icon"><img src="./assets/icons/instagram-brands.svg" alt="Instagram"></a>
+        </div>
+    </footer>
+  </body>
+</html>
