@@ -11,7 +11,7 @@ h1, h2, h3, h4, h5, h6, p, ul {
 
 /* Container */
 .container {
-  padding: 0 70px;
+  padding: 0 30px;
 }
 
 /* Navbar */
@@ -274,6 +274,10 @@ h1, h2, h3, h4, h5, h6, p, ul {
 
 /* Media queries */
 @media only screen and (min-width: 768px) {
+  .container {
+    padding: 0 70px;
+  }
+
   .navbar__menu-list {
     display: -webkit-box;
     display: -ms-flexbox;
