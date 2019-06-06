@@ -7,7 +7,6 @@
     <title>Minimo</title>
     <link rel="stylesheet" href="style.css" />
     <link href="https://fonts.googleapis.com/css?family=Inconsolata|Playfair+Display|Ubuntu&display=swap" rel="stylesheet"/>
-    <script src="https://kit.fontawesome.com/997c739150.js"></script>
   </head>
 
   <body>
@@ -18,160 +17,212 @@
         <!-- Navbar -->
         <nav class="navbar">
           <!-- Logo -->
-          <div class="navbar__logo ">minim&oslash;</div>
+          <div class="navbar__logo">minim&oslash;</div>
           <!-- Menu list -->
           <ul class="navbar__menu-list">
-            <li class="menu__item content-text--font">lifestyle</li>
-            <li class="menu__item content-text--font">photodiary</li>
-            <li class="menu__item content-text--font">music</li>
-            <li class="menu__item content-text--font">travel</li>
+            <li class="menu__item">
+              <a href="#">lifestyle</a>
+            </li>
+            <li class="menu__item">
+              <a href="#">photodiary</a>
+            </li>
+            <li class="menu__item">
+              <a href="#">music</a>
+            </li>
+            <li class="menu__item">
+              <a href="#">travel</a>
+            </li>
           </ul>
-          <i class="fas fa-bars navbar__hamburger-icon"></i>
+          <!-- Menu Button -->
+          <button type="button" class="navbar__menu-btn">
+            <img class="navbar__icon" src="./assets/icons/bars-solid.svg" alt="Menu button">
+          </button>
         </nav>
-
-        <!-- Banner image -->
-        <img src="assets/banner/banner.png" srcset="assets/banner/banner@3x.png 3x, assets/banner/banner@2x.png 2x, assets/banner/banner.png" class="banner" alt="Banner image"/>
       </header>
 
+      <!-- Banner image -->
+      <picture>
+        <source media="(min-width: 1200px)" srcset="assets/banner/banner@3x.png">  
+        <source media="(min-width: 768px)" srcset="assets/banner/banner@2x.png">
+        <img src="assets/banner/banner.png" class="banner" alt="Banner image"/>
+      </picture>
+      
       <!-- Main -->
-      <main>
-        <div class="content-container">
-          <article class="article">
+      <main class="content-container">
+        <article class="article">
+          <header>
             <!-- Article type -->
-            <p class="article__type small-text--font">photodiary</p>
-
+            <p class="article__type">photodiary</p>
+  
             <!-- Article title -->
-            <h1 class="article__title title--font">
+            <h2 class="article__title">
               The perfect weekend getway
-            </h1>
+            </h2>
+          </header>
 
-            <!-- Article content -->
-            <p class="article__content content-text--font">
+          <!-- Article content -->
+          <p class="article__content">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+            enim ad minim veniam, quis nostrud exercitation ullamco laboris
+            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+            sunt in culpa qui officia deserunt mollit anim id est laborum. Sed
+            ut perspiciatis unde omnis iste natus error sit voluptatem
+            accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
+            quae ab illo inventore veritatis et quasi architecto beatae vitae
+            dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
+            aspernatur aut odit aut fugit, sed quia consequuntur magni dolores
+            eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam
+            est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci
+            velit, sed quia non numquam eius modi tempora incidunt ut labore
+            et dolore magnam aliquam quaerat voluptatem.
+          </p>
+
+          <!-- Article comment -->
+          <button type="button" class="article__comment">leave a comment</button>
+        </article>
+
+        <!-- Articles -->
+        <section class="articles">
+          <!-- Article 1 -->
+          <article class="article">
+            
+            <picture>
+              <source media="(min-width: 1200px)" srcset="assets/article-1/image@3x.png">  
+              <source media="(min-width: 500px)" srcset="assets/article-1/image@2x.png">
+              <img src="assets/article-1/image.png" class="article__img" alt="Article-1 image"/>
+            </picture>
+          
+            <header>
+              <p class="article__type">lifestyle</p>
+  
+              <h2 class="article__title">
+                More than just a music festival
+              </h2>
+            </header>
+
+            <p class="article__content">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum. Sed
-              ut perspiciatis unde omnis iste natus error sit voluptatem
-              accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-              quae ab illo inventore veritatis et quasi architecto beatae vitae
-              dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
-              aspernatur aut odit aut fugit, sed quia consequuntur magni dolores
-              eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam
-              est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci
-              velit, sed quia non numquam eius modi tempora incidunt ut labore
-              et dolore magnam aliquam quaerat voluptatem.
             </p>
-
-            <!-- Article comment -->
-            <p class="article__comment small-text--font">leave a comment</p>
           </article>
 
-          <!-- Articles -->
-          <section class="articles">
-            <!-- Article 1 -->
-            <div class="article">
-              <img src="assets/article-1/image.png" srcset="assets/article-1/image@3x.png 3x, assets/article-1/image@2x.png 2x, assets/article-1/image.png" class="article__img" alt="Article-1 image"/>
-              
-              <p class="article__type small-text--font">lifestyle</p>
+          <!-- Article 2 -->
+          <article class="article">
 
-              <h1 class="article__title title--font">
-                More than just a music festival
-              </h1>
+            <picture>
+              <source media="(min-width: 1200px)" srcset="assets/article-2/image@3x.png">  
+              <source media="(min-width: 500px)" srcset="assets/article-2/image@2x.png">
+              <img src="assets/article-2/image.png" class="article__img" alt="Article-2 image"/>
+            </picture>
 
-              <p class="article__content content-text--font">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              </p>
-            </div>
-
-            <!-- Article 2 -->
-            <div class="article">
-              <img src="assets/article-2/image.png" srcset="assets/article-2/image@3x.png 3x, assets/article-2/image@2x.png 2x, assets/article-2/image.png" class="article__img" alt="Article-2 image"/>
-
-              <p class="article__type small-text--font">lifestyle</p>
-
-              <h1 class="article__title title--font">
+            <header>
+              <p class="article__type">lifestyle</p>
+  
+              <h2 class="article__title">
                 Life tastes better with coffee
-              </h1>
+              </h2>
+            </header>
 
-              <p class="article__content content-text--font">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              </p>
-            </div>
+            <p class="article__content">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+            </p>
+          </article>
 
-            <!-- Article 3 -->
-            <div class="article">
-              <img src="assets/article-3/image.png" srcset="assets/article-3/image@3x.png 3x, assets/article-3/image@2x.png 2x, assets/article-3/image.png" class="article__img" alt="Article-3 image"/>
-              
-              <p class="article__type small-text--font">photodiary</p>
+          <!-- Article 3 -->
+          <article class="article">
 
-              <h1 class="article__title title--font">American dream</h1>
+            <picture>
+              <source media="(min-width: 1200px)" srcset="assets/article-3/image@3x.png">  
+              <source media="(min-width: 500px)" srcset="assets/article-3/image@2x.png">
+              <img src="assets/article-3/image.png" class="article__img" alt="Article-3 image"/>
+            </picture>
+            
+            <header>
+              <p class="article__type">photodiary</p>
 
-              <p class="article__content content-text--font">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              </p>
-            </div>
+              <h2 class="article__title">
+                American dream
+              </h2>
+            </header>
+          
 
-            <!-- Article 4 -->
-            <div class="article">
-              <img src="assets/article-4/image.png" srcset="assets/article-4/image@3x.png 3x, assets/article-4/image@2x.png 2x, assets/article-4/image.png" class="article__img" alt="Article-4 image"/>
+            <p class="article__content">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+            </p>
+          </article>
 
-              <p class="article__type small-text--font">photodiary</p>
+          <!-- Article 4 -->
+          <article class="article">
 
-              <h1 class="article__title title--font">
+            <picture>
+              <source media="(min-width: 1200px)" srcset="assets/article-4/image@3x.png">  
+              <source media="(min-width: 500px)" srcset="assets/article-4/image@2x.png">
+              <img src="assets/article-3/image.png" class="article__img" alt="Article-4 image"/>
+            </picture>
+
+            <header>
+              <p class="article__type">photodiary</p>
+  
+              <h2 class="article__title">
                 A day exploring the Alps
-              </h1>
+              </h2>
+            </header>
 
-              <p class="article__content content-text--font">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              </p>
-            </div>
-          </section>
-        </div>
+            <p class="article__content">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+            </p>
+          </article>
+        </section>
       </main>
     </div>
 
     <!-- Newsletter -->
     <section class="newsletter">
-      <div class="newsletter__container">
-        <h2 class="title--font newsletter__title">
+      <div>
+        <h2 class="newsletter__title">
           Sign up for our newsletter!
         </h2>
-        <div class="newsletter__email">
-          <input
-            class="email__input content-text--font"
-            type="text"
-            placeholder="Enter a valid email address"
-          />
-          <i class="fas fa-paper-plane email__arrow"></i>
-        </div>
+        <form class="newsletter__email">
+          <input type="email" class="email__input" placeholder="Enter a valid email address"/>
+          <button type="submit" class="email__arrow"><img src="./assets/icons/paper-plane-solid.svg" alt="Send email"></button>
+        </form>
       </div>
     </section>
 
     <!-- Container -->
     <div class="container">
       <div class="content-container">
+
         <!-- Articles -->
         <section class="articles">
           <!-- Article 5 -->
           <div class="article">
-            <img src="assets/article-5/image.png" srcset="assets/article-5/image@3x.png 3x, assets/article-5/image@2x.png 2x, assets/article-5/image.png" class="article__img" alt="Article-15image"/>
 
-            <p class="article__type small-text--font">lifestyle</p>
+            <picture>
+              <source media="(min-width: 1200px)" srcset="assets/article-5/image@3x.png">  
+              <source media="(min-width: 500px)" srcset="assets/article-5/image@2x.png">
+              <img src="assets/article-5/image.png" class="article__img" alt="Article-5 image"/>
+            </picture>
 
-            <h1 class="article__title title--font">Top 10 song for running</h1>
+            <header>
+              <p class="article__type">lifestyle</p>
+  
+              <h2 class="article__title">
+                Top 10 song for running
+              </h2>
+            </header>
 
-            <p class="article__content content-text--font">
+            <p class="article__content">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam, quis nostrud exercitation ullamco laboris
@@ -180,13 +231,22 @@
 
           <!-- Article 6 -->
           <div class="article">
-            <img src="assets/article-6/image.png" srcset="assets/article-6/image@3x.png 3x, assets/article-6/image@2x.png 2x, assets/article-6/image.png" class="article__img" alt="Article-6 image"/>
 
-            <p class="article__type small-text--font">lifestyle</p>
+            <picture>
+              <source media="(min-width: 1200px)" srcset="assets/article-6/image@3x.png">  
+              <source media="(min-width: 500px)" srcset="assets/article-6/image@2x.png">
+              <img src="assets/article-6/image.png" class="article__img" alt="Article-6 image"/>
+            </picture>
 
-            <h1 class="article__title title--font">Cold winter days</h1>
+            <header>
+              <p class="article__type">lifestyle</p>
+  
+              <h2 class="article__title">
+                Cold winter days
+              </h2>
+            </header>
 
-            <p class="article__content content-text--font">
+            <p class="article__content">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam, quis nostrud exercitation ullamco laboris
@@ -195,31 +255,24 @@
         </section>
 
         <!-- Load more button -->
-        <div class="load-more">
-          <div class="load-more__btn">
-            <p class="load-more__btn-text">
-              Load more
-            </p>
-          </div>
-        </div>
+        <button type="button" class="load-more">
+          Load more
+        </button>
+
       </div>
     </div>
 
     <!-- Footer -->
     <footer class="footer">
-      <div class="footer-container small-text--font">
+        <a href="#" class="footer-link">Terms and conditions</a>
+        <a href="#" class="footer-link">Privacy</a>
 
-        <span>Terms and conditions</span>
-        <span>Privacy</span>
-
-        <div class="footer__left-side">
+        <div class="footer__right-side">
           <span>Follow</span>
-          <i class="fab fa-facebook-f footer__icon"></i>
-          <i class="fab fa-twitter footer__icon"></i>
-          <i class="fab fa-instagram footer__icon"></i>
+          <a href="#" class="footer__icon"><img src="./assets/icons/facebook-f-brands.svg" alt="Facebook"></a>
+          <a href="#" class="footer__icon"><img src="./assets/icons/twitter-brands.svg" alt="Twitter"></a>
+          <a href="#" class="footer__icon"><img src="./assets/icons/instagram-brands.svg" alt="Instagram"></a>
         </div>
-
-      </div>
     </footer>
   </body>
 </html>
