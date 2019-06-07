@@ -6,9 +6,10 @@
     },
     "rules": {
         "require-jsdoc": 0,
-        "eqeqeq": "error"
+        "eqeqeq": "error",
+        "no-param-reassign": ["error", { "props": true }]
     },
-    "globals": {
+    "globals":{
         "Set": true
     }
 }
