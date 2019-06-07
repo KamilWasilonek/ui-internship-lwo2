@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>SingleProduct</title>
+  <link rel="stylesheet" href="./style.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <main class="product">
+    <!-- Images -->
+    <section class="product__images">
+      
+      <!-- Big image -->
+      <div class="images__big-img"></div>
+
+      <!-- Small images -->
+      <div class="images__small-images">
+        <div class="images__small-img"></div>
+        <div class="images__small-img"></div>
+        <div class="images__small-img"></div>
+        <div class="images__small-img"></div>
+      </div>     
+    </section>
+
+    <!-- Product details -->
+    <section class="details">
+      <!-- Return button -->
+      <a href="#">Back to Woman</a>
+
+      <!-- Title -->
+      <header class="details__header">
+        The Atelier Tailored Coat
+      </header>
+
+      <!-- Rate -->
+      <div class="details__rate">
+        <span>Icons</span>
+        <span>3 Review(s)</span>
+        <span>|</span>
+        <span>add review</span>
+      </div>
+
+      <!-- Price -->
+      <p class="details__price">
+        $499.00
+      </p>
+
+      <!-- Storehouse details -->
+      <div class="details__storehouse">
+        <p>
+          Availability : <span>In stock</span>
+        </p>
+        <p>
+          Product Code : <span>#4657</span>
+        </p>
+        <p>
+          Tags : <span>Fashion, Hood, Classic</span>
+        </p>
+      </div>
+
+      <!-- Product description -->
+      <div class="details__description">
+          <p>
+            Sleek, polished, and boasting an impeccably modern fit, this blue, 2-but-
+            ton Lazio suit features a notch lapel, flap pockets, and accompanying flat
+            front trousers—all in pure wool by Vitale Barberis Canonico.
+          </p>
+          
+          <ul>
+            <li>
+              Dark blue suit for a tone-on-tone look
+            </li>
+            <li>
+              Regular fit
+            </li>
+            <li>
+              100% Cotton
+            </li>
+            <li>
+              Free shipping with 4 days delivery
+            </li>
+          </ul>
+      </div>
+
+      <!-- Order form -->
+      <form class="details__form">
+        <!-- Color -->
+        <label for="color">COLOR</label>
+        <select class="form__color">
+            <option disabled selected value>Select Color</option>
+            <option value="Black">Black</option>
+            <option value="White">White</option>
+        </select>
+
+        <!-- Size -->
+        <label for="size">SIZE</label>
+        <select class="form__size">
+            <option disabled selected value>Select Size</option>
+            <option value="Big">Big</option>
+            <option value="Small">Small</option>
+        </select>
+
+        <!-- Amount -->
+        <label for="amount">QTY</label>
+        <input class="form__amout" type="number" placeholder="1" min="1" max="5">
+      </form>
+
+      <!-- Reset button -->
+      <button class="details__reset">
+        clear selection
+      </button>
+
+      <!-- Bookmark buttons -->
+      <button type="button">
+        add to cart
+      </button>
+      <button type="button">
+        add to wishlist
+      </button>
+
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__social">
+      
+      <!-- Facebook -->
+      <span>share this</span>
+      <button type="button">Like</button>
+      <button type="button">Like</button>
+      <span>23k</span>
+      
+      <!-- Twiteer -->
+      <button type="button">Like</button>
+      <span>93</span>
+
+      <!-- Pin it -->
+      <button type="button">Like</button>
+      <span>65K+</span>
+      
+    </div>
+  </footer>
+</body>
+</html>

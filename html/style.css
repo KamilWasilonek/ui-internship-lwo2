@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
+}
+
+.product {
+  padding: 0 5%;
+}
+
+.product__images {
+  
+}
+
+.images__big-img {
+  height: 400px;
+  margin-bottom: 10px;
+  background: grey;
+}
+
+.images__small-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+}
+
+.images__small-img {
+  background: grey;
+  height: 170px;
+}
