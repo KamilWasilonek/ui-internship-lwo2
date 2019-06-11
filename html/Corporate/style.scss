@@ -1,0 +1,369 @@
+@import url('https://fonts.googleapis.com/css?family=Exo:300,400,700&display=swap');
+
+$font-primary: 'Exo', sans-serif;
+$color-primary: #3a3a3a;
+$color-secondary: #f04c4c;
+$section-bg-color: #FCFCFB;
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: $font-primary;
+  box-sizing: border-box;
+}
+
+@media screen and (min-width: 678px){
+  html {
+    font-size: 1.2rem;
+  }
+}
+
+body {
+  color: $color-primary;
+}
+
+h2 {
+  font-weight: lighter;
+}
+
+@mixin section-type() {
+  color: $color-secondary;
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 3.2px;
+}
+
+@mixin section-title() {
+  margin: 10px 0 20px 0;
+  font-size: 1.7rem;
+  letter-spacing: 1.6px;
+  font-weight: normal;
+}
+
+@mixin section-subtitle() {
+  margin: 20px 0 10px 0;
+  font-size: 1.2rem;
+  font-weight: normal;
+}
+
+@mixin section-description {
+  font-size: 0.8rem;
+  line-height: 1.6;
+  opacity: 0.8;
+}
+
+.banner {
+  padding: 200px 10%;
+  background: url(./assets/banner-img/photo-1433354359170-23-a-4-ae-7338-c-6@3x.jpg) no-repeat;
+  background-size: cover;
+  background-position: right bottom;
+  text-align: center;
+  
+  &__container {
+    margin: 0 auto;
+  }
+
+  &__title {
+    font-size: 2rem;
+  }
+
+  &__play {
+    width: 40px;
+    margin: 20px 0;
+    opacity: 0.8;
+    cursor: pointer;
+  }
+
+  &__try-now {
+    display: block;
+    margin: 0 auto;
+    padding: 10px 35px;
+    background: $color-secondary;
+    color: #eeeeee;
+    border-radius: 3px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+
+  &__description {
+    margin-top: 10px;
+    font-size: 0.7rem;
+  }
+}
+
+.unique-platform {
+  padding: 70px 10%;
+  text-align: center;
+
+  &__type {
+    @include section-type();
+  }
+
+  &__title {
+    @include section-title();
+
+    .title__dots {
+      color: $color-secondary;
+    }
+  }
+
+  &__description {
+    @include section-description();
+  }
+}
+
+.features {
+  position: relative;
+  padding: 70px 10%;
+  background: $section-bg-color;
+  text-align: center;
+
+  &__headphones {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    width: 100px;
+  }
+
+  &__type {
+    @include section-type();
+  }
+
+  &__title {
+    @include section-title();
+  }
+
+  &__feature {
+    margin: 50px 0;
+  }
+
+  &__icon {
+    width: 50px;
+  }
+
+  &__subtitle{
+    @include section-subtitle();
+  }
+
+  &__description {
+    @include section-description();
+  }
+
+  &__coffe {
+    position: absolute;
+    bottom: 0; 
+    right: 15%;
+    width: 150px;
+  }
+}
+
+.responsive-design {
+  padding: 70px 10%;
+  text-align: center;
+
+  &__laptop {
+    display: none;
+  }
+
+  &__type {
+    @include section-type();
+  }
+
+  &__title {
+    @include section-title();
+
+    .title__dots {
+      color: $color-secondary;
+    }
+  }
+
+  &__description {
+    @include section-description();
+  }
+}
+
+.founders {
+  padding: 70px 10% 20px 10%;
+  background: url(./assets/triangle-bg/group-4@3x.png) no-repeat;
+  background-size: cover;
+  text-align: center;
+
+  &__single-person {
+    margin-bottom: 70px;
+  }
+
+  .single-person {
+    &__img {
+      width: 70px;
+      height: 70px;
+      margin: 0 auto;
+      background: url(./assets/ceo/entrepreneurship-3498259_640.jpg) no-repeat;
+      background-size: cover;
+      border-radius: 60px;
+    }
+
+    &__name {
+      @include section-subtitle();
+      color: #ffffff;
+    }
+
+    &__position {
+      color: $color-secondary;
+      font-size: 0.6rem;
+    }
+
+    &__description {
+      @include section-description();
+      margin-top: 20px;
+      color: #ffffff;
+      font-style: italic;
+    }
+  }
+
+  &__company {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+    picture {
+      flex-basis: 50%;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.awsome-feature {
+  padding: 70px 10%;
+  background: $section-bg-color;
+  text-align: center;
+
+  &__type {
+    @include section-type();
+  }
+
+  &__title {
+    @include section-title();
+  }
+
+  &__description {
+    @include section-description();
+  }
+
+}
+
+.contact {
+  padding: 70px 10%;
+  background: #323969;
+  text-align: center;
+  color: #ffffff;
+
+  &__type {
+    @include section-type();
+  }
+
+  &__title {
+    @include section-title();
+    margin-bottom: 40px;
+    color: #ffffff;
+  }
+
+  &__input,
+  &__submit {
+    width: 60%;
+    padding: 10px 10px;
+  }
+
+  &__input {
+    margin-bottom: 20px;
+    background: #323969;
+    border: 1px solid #ffffff;
+    border-radius: 3px;
+  }
+
+  &__input::placeholder {
+    color: #ffffff;
+  }
+
+  &__submit {
+    color: #ffffff;
+    background: $color-secondary;
+    border: none;
+    border-radius: 3px;
+    text-transform: uppercase;
+  }
+
+  &__trial {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    margin-bottom: 20px;
+    font-size: 0.7rem;
+
+    img {
+      width: 50px;
+    }
+
+  }
+
+  &__sing-agree {
+    margin-top: 20px;
+    color: rgba(246, 245, 243, 0.6);
+    font-size: 0.6rem;
+  }
+
+  &__terms {
+    color: rgba(246, 245, 243, 0.6);
+  }
+}
+
+.footer {
+  padding: 70px 10%;
+  
+
+  a {
+    @include section-description();
+    display: block;
+    color: $color-primary;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  &__subtitle {
+    @include section-subtitle();
+  }
+
+  &__form {
+    .form__email {
+      width: 200px;
+      height: 40px;
+      padding-left: 10px;
+      background: $section-bg-color;
+      border: 1px solid lightgray;
+      border-radius: 3px;
+    }
+
+    .form__submit {
+      width: 50px;
+      height: 40px;
+      margin: -50px;
+      background: $color-secondary;
+      border-radius: 3px;
+    }
+
+    .form__submit > img {
+      width: 20px;
+      height: 20px;
+    }
+  }
+  
+  &__socials {
+    .socials__icon {
+      width: 15px;
+      height: 15px;
+      opacity: 0.4;
+    }
+  }
+}
+
+
