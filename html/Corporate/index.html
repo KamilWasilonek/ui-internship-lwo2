@@ -27,29 +27,48 @@
 
   <!-- Unique platform -->
   <section class="unique-platform">
-    <p class="unique-platform__type">New design</p>
-    <h2 class="unique-platform__title">There is no other platforms for you as like <span class="title__dots">....</span></h2>
-    <p class="unique-platform__description">
-      Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Curabitur blandit tempus porttitor. Etiam porta sem malesuada magna mollis euismod. Vestibulum id ligula porta felis euismod semper.
-      <br> <br>
-      Donec sed odio dui. Aenean lacinia bibendum nulla sed consectetur. Donec ullamcorper nulla non metus auctor fringilla. Aenean lacinia bibendum nulla sed consectetur. Nulla vitae elit libero, a pharetra augue.</p>
+
+    <div class="unique-platform__left-side">
+      <p class="unique-platform__type">New design</p>
+      <h2 class="unique-platform__title">There is no other platforms for you as like <span class="title__dots">....</span></h2>
+      <p class="unique-platform__description">
+        Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Curabitur blandit tempus porttitor. Etiam porta sem malesuada magna mollis euismod. Vestibulum id ligula porta felis euismod semper.
+        <br> <br>
+        Donec sed odio dui. Aenean lacinia bibendum nulla sed consectetur. Donec ullamcorper nulla non metus auctor fringilla. Aenean lacinia bibendum nulla sed consectetur. Nulla vitae elit libero, a pharetra augue.</p>
+    </div>
+
+    <div class="unique-platform__triangle">
+      <div class="triangle__shape"></div>
+    </div>
+
   </section>
 
   <!-- Features -->
   <section class="features">
 
     <picture>
+      <source media="(min-width:1024px)" srcset="./assets/pencils-cup/pen-holder@3x.png">
+      <img class="features__pencils" src="./assets/pencils-cup/pen-holder@2x.png" alt="">
+    </picture>
+
+    <picture>
       <source media="(min-width:1024px)" srcset="./assets/headphones/earphones@3x.png">
-      <img class="features__headphones" src="./assets/headphones/earphones@2x.png" alt="Headphones">
+      <img class="features__headphones" src="./assets/headphones/earphones@2x.png" alt="">
+    </picture>
+
+    <picture>
+      <source media="(min-width:1024px)" srcset="./assets/coffe-cup/coffee-cup@3x.png">
+      <img class="features__coffe" src="./assets/coffe-cup/coffee-cup@2x.png" alt="Coffe cup">
     </picture>
 
     <p class="features__type">New features</p>
     <h2 class="features__title">Some awesone features</h2>
-    <div>
+
+    <div class="features__container">
       <div class="features__feature"> 
         <picture>
           <source media="(min-width:1024px)" srcset="./assets/image-icon/picture@3x.png">
-          <img class="features__icon" src="./assets/image-icon/picture@2x.png" alt="Image icon">
+          <img class="features__icon" src="./assets/image-icon/picture@2x.png" alt="">
         </picture>
 
         <h4 class="features__subtitle">Some awesone features</h4>
@@ -60,7 +79,7 @@
       <div class="features__feature"> 
         <picture>
           <source media="(min-width:1024px)" srcset="./assets/plane-icon/airplane@3x.png">
-          <img class="features__icon" src="./assets/plane-icon/airplane@2x.png" alt="Plane icon">
+          <img class="features__icon" src="./assets/plane-icon/airplane@2x.png" alt="">
         </picture>
 
         <h4 class="features__subtitle">Some awesone features</h4>
@@ -71,7 +90,7 @@
       <div class="features__feature"> 
         <picture>
           <source media="(min-width:1024px)" srcset="./assets/light-bulb-icon/bulb@3x.png">
-          <img class="features__icon" src="./assets/light-bulb-icon/bulb@2x.png" alt="Light bulb icon">
+          <img class="features__icon" src="./assets/light-bulb-icon/bulb@2x.png" alt="">
         </picture>
 
         <h4 class="features__subtitle">Some awesone features</h4>
@@ -79,26 +98,31 @@
         <p class="features__description">Donec sed odio dui. Aenean lacinia bibendum nulla sed consectetur. Nulla vitae elit libero, a pharetra augue.</p>
       </div>
 
-      <picture>
-        <source media="(min-width:1024px)" srcset="./assets/coffe-cup/coffee-cup@3x.png">
-        <img class="features__coffe" src="./assets/coffe-cup/coffee-cup@2x.png" alt="Coffe cup">
-      </picture>
+
 
     </div>
+
   </section>
 
   <!-- Responsive design -->
   <section class="responsive-design">
+    
+    <div class="responsive-design__left">
+      <div class="responsive-design__shape"></div>
       <picture>
         <source media="(min-width:1024px)" srcset="./assets/laptop/macbook@3x.png">
         <img class="responsive-design__laptop" src="./assets/laptop/macbook@2x.png" alt="Laptop">
       </picture>
-  
-      <div class="responsive-design__text">
-        <p class="responsive-design__type">New design</p>
-        <h2 class="responsive-design__title">Resposive design, just need your tap <span class="title__dots">....</span></h2>
-        <p class="responsive-design__description">Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Curabitur blandit tempus porttitor. Etiasem malesuada magn. Vestibulum felis euismod semper.</p>
-      </div>
+    </div>
+    
+    
+    <div class="responsive-design__right">
+      <p class="responsive-design__type">New design</p>
+      <h2 class="responsive-design__title">Resposive design, just need your tap <span class="title__dots">....</span></h2>
+      <p class="responsive-design__description">Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Curabitur blandit tempus porttitor. Etiasem malesuada magn. Vestibulum felis euismod semper.</p>
+    </div>
+
+   
   </section>
   
   <!-- Founders -->
@@ -210,6 +234,13 @@
     <p class="awsome-feature__description">
       Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Curabitur blandit tempus porttitor. Etiasem malesuada magn. Vestibulum felis euismod semper.
     </p>
+
+    <picture>
+      <source media="(min-width:1024px)" srcset="./assets/browser-screen/rectangle-24@3x.png">
+      <img class="awsome-feature__screen" src="./assets/browser-screen/rectangle-24@2x.png" alt="">
+    </picture>
+
+    
   </section>
 
   <!-- Contact -->
@@ -224,7 +255,7 @@
     </header>
 
     <!-- Contact form -->
-    <form>
+    <form class="contact__form">
       <input class="contact__input" type="text" placeholder="FULL NAME">
 
       <input class="contact__input" type="email" placeholder="YOUR EMAIL">
@@ -244,6 +275,8 @@
 
   <!-- Footer -->
   <section class="footer">
+
+    <div class="footer__shape"></div>
 
     <div class="footer__container footer__startex">
       <h4 class="footer__subtitle">StartEx</h4>

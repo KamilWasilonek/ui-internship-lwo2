@@ -18,6 +18,12 @@ $section-bg-color: #FCFCFB;
   }
 }
 
+@media screen and (min-width: 1024px){
+  html {
+    font-size: 1.3rem;
+  }
+}
+
 body {
   color: $color-primary;
 }
@@ -52,6 +58,7 @@ h2 {
   opacity: 0.8;
 }
 
+// -------------- Banner -------------- 
 .banner {
   padding: 200px 10%;
   background: url(./assets/banner-img/photo-1433354359170-23-a-4-ae-7338-c-6@3x.jpg) no-repeat;
@@ -92,6 +99,7 @@ h2 {
   }
 }
 
+// -------------- Unique platform -------------- 
 .unique-platform {
   padding: 70px 10%;
   text-align: center;
@@ -111,19 +119,76 @@ h2 {
   &__description {
     @include section-description();
   }
+
+  &__triangle {
+    display: none;
+  }
 }
 
+@media screen and (min-width: 1024px){
+  .unique-platform {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    padding: 0;
+    text-align: left;
+
+    &__left-side {
+      // flex-basis: 60%;
+      padding: 100px 15%;
+    }
+
+    &__triangle {
+      position: relative;
+      display: block;
+      // flex-basis: 40%;
+      height: 100%;
+      background: $section-bg-color;
+  
+      .triangle__shape {
+        width: 100%;
+        height: 100%;
+        background: $color-secondary;
+        clip-path: polygon(100% 20%, 0% 100%, 100% 100%);
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1600px){
+  .unique-platform {
+    &__left-side {
+      padding: 200px 15%;
+    }
+  }
+}
+
+// -------------- Features -------------- 
 .features {
   position: relative;
   padding: 70px 10%;
   background: $section-bg-color;
   text-align: center;
 
+  &__pencils {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 10%;
+    width: 200px;
+  }
+
   &__headphones {
     position: absolute;
     top: 0;
     right: 10px;
     width: 100px;
+  }
+    
+  &__coffe {
+    position: absolute;
+    bottom: 0; 
+    right: 15%;
+    width: 150px;
   }
 
   &__type {
@@ -150,14 +215,38 @@ h2 {
     @include section-description();
   }
 
-  &__coffe {
-    position: absolute;
-    bottom: 0; 
-    right: 15%;
+
+}
+
+@media screen and (min-width: 678px){
+ .features {
+  &__headphones {
     width: 150px;
+  }
+    
+  &__coffe {
+    width: 200px;
+  }
+ }
+}
+
+@media screen and (min-width: 1024px){
+  .features {
+    padding: 100px 10%;
+
+    &__container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-column-gap: 20px;
+    }
+
+    &__pencils {
+      display: block;
+    }
   }
 }
 
+// -------------- Responsive design -------------- 
 .responsive-design {
   padding: 70px 10%;
   text-align: center;
@@ -183,6 +272,57 @@ h2 {
   }
 }
 
+@media screen and (min-width: 1024px){
+  .responsive-design {
+    display: flex;
+    padding: 0;
+    
+    &__left {
+      flex-basis: 45%;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &__shape {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: $color-secondary;
+      clip-path: polygon(0 0, 10% 0, 70% 100%, 0 100%);
+    }
+
+    &__laptop {
+      display: block;
+      width: 500px;
+    }
+
+    &__right {
+      flex-basis: 55%;
+      padding: 150px 10% 150px 0;
+      text-align: left;
+    }
+
+  }
+}
+
+@media screen and (min-width: 1024px){
+  .responsive-design {
+    &__laptop {
+      width: 600px;
+    }
+
+    &__right {
+      padding: 200px 10% 200px 0;
+    }
+  }
+}
+
+// -------------- Founders -------------- 
 .founders {
   padding: 70px 10% 20px 10%;
   background: url(./assets/triangle-bg/group-4@3x.png) no-repeat;
@@ -230,9 +370,45 @@ h2 {
       flex-basis: 50%;
       margin-bottom: 20px;
     }
+    img {
+      width: 150px;
+    }
   }
 }
 
+@media screen and (min-width: 1024px){
+  .founders {
+    padding: 100px 10% 70px 10%;
+    &__people {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-column-gap: 100px;
+    }
+
+    &__company {
+      // justify-content: space-between;
+      align-items: center;
+
+      picture {
+        margin: 20px;
+        flex-basis: auto;
+        justify-content: space-between;
+      }
+
+      img {
+        width: 200px;
+      }
+    };
+  }
+}
+
+@media screen and (min-width: 1600px){
+  .founders {
+    padding: 150px 10% 100px 10%;
+  }
+}
+
+// -------------- Awsome-feature -------------- 
 .awsome-feature {
   padding: 70px 10%;
   background: $section-bg-color;
@@ -250,8 +426,30 @@ h2 {
     @include section-description();
   }
 
+  &__screen {
+    display: none;
+    height: 400px;
+    margin: 0 auto;
+  }
 }
 
+@media screen and (min-width: 1024px){
+  .awsome-feature {
+    padding: 100px 10% 0 10%;
+
+    &__description {
+      width: 70%;
+      margin: 0 auto;
+    }
+
+    &__screen {
+      margin-top: 100px;
+      display: block;
+    }
+  }
+}
+
+// -------------- Contact -------------- 
 .contact {
   padding: 70px 10%;
   background: #323969;
@@ -317,16 +515,49 @@ h2 {
   }
 }
 
-.footer {
-  padding: 70px 10%;
-  
+@media screen and (min-width: 1024px){
+  .contact {
+    padding: 100px 10%;
+    
+    &__form {
+      position: relative;
+      display: flex;
+      margin-top: 100px;
+    }
 
-  a {
+    &__trial {
+      top: -50px;
+      right: 0;
+      position: absolute;
+
+    }
+
+    &__input {
+      margin-bottom: 0;
+      margin-right: 20px;
+    }
+
+  
+  }
+}
+
+// -------------- Footer -------------- 
+.footer {
+  width: 80%;
+  margin: 0 auto;
+  padding: 70px 10%;
+  text-align: center;
+  
+  &__shape {
+    display: none;
+  }
+
+  a, p {
     @include section-description();
+    font-size: 0.6rem;
     display: block;
     color: $color-primary;
     text-decoration: none;
-    cursor: pointer;
   }
 
   &__subtitle {
@@ -334,36 +565,85 @@ h2 {
   }
 
   &__form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     .form__email {
-      width: 200px;
-      height: 40px;
-      padding-left: 10px;
-      background: $section-bg-color;
+      margin: 0;
+      padding: 7px 10px;
       border: 1px solid lightgray;
       border-radius: 3px;
     }
 
+    .form__email:focus {
+      outline: none;
+    }
+
     .form__submit {
-      width: 50px;
-      height: 40px;
-      margin: -50px;
+      padding: 5px;
+      margin: -5px;
       background: $color-secondary;
+      border: 1px solid $color-secondary;
       border-radius: 3px;
     }
 
     .form__submit > img {
-      width: 20px;
-      height: 20px;
+      width: 15px;
+      height: 15px;
     }
   }
   
   &__socials {
+    padding-top: 20px;
+
     .socials__icon {
-      width: 15px;
-      height: 15px;
-      opacity: 0.4;
+      width: 20px; 
+      height: 20px;
     }
   }
 }
+
+@media screen and (min-width: 678px){
+  .footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-row-gap: 20px;
+    width: 100%;
+    margin: 0;
+  }
+}
+
+@media screen and (min-width: 1024px){
+  .footer {
+    position: relative;
+    grid-template-columns: 2fr 1fr 1fr 2fr; 
+    grid-column-gap: 50px;
+    text-align: left;
+
+    a,p {
+      font-size: 0.6rem;
+      line-height: 2;
+    }
+
+    &__form {
+      justify-content: left;
+    }
+
+    &__shape {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: $color-secondary;
+      clip-path: polygon(80% 0%, 100% 0%, 100% 93%, 98% 100%, 96% 90%);
+    }
+  }
+}
+
+
 
 
