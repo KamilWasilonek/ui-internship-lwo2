@@ -14,111 +14,135 @@
   <section class="banner">
     <div class="banner__container">
       <!-- Title -->
-      <h2 class="banner__title">
+      <header class="banner__title">
         There is no other platforms for you as like 
-      </h2>
-      <!-- Play icon -->
-      <img class="banner__play" src="./assets/play-icon/play-video-icon.svg" alt="Play icon">
+      </header>
+
+      <!-- Play -->
+      <button type="button" class="banner__play">
+        <img  src="./assets/play-icon/play-video-icon.svg" alt="">
+      </button> 
+
       <!-- Button -->
       <button class="banner__try-now" type="button">Try now</button>
+
+      <!-- Description -->
       <p class="banner__description">* No need to add cards details</p>
     </div>
   </section>
 
   <!-- Unique platform -->
   <section class="unique-platform">
-
+      
+    <!-- Left side -->
     <div class="unique-platform__left-side">
+    
+      <!-- Type -->
       <p class="unique-platform__type">New design</p>
-      <h2 class="unique-platform__title">There is no other platforms for you as like <span class="title__dots">....</span></h2>
-      <p class="unique-platform__description">
+
+      <!-- Title -->
+      <header class="unique-platform__title section-title">
+        There is no other platforms for you as like <span class="section-title__dots">....</span>
+      </header>
+     
+      <!-- Description -->
+      <p class="unique-platform__description unique-platform__description--margin">
         Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Curabitur blandit tempus porttitor. Etiam porta sem malesuada magna mollis euismod. Vestibulum id ligula porta felis euismod semper.
-        <br> <br>
-        Donec sed odio dui. Aenean lacinia bibendum nulla sed consectetur. Donec ullamcorper nulla non metus auctor fringilla. Aenean lacinia bibendum nulla sed consectetur. Nulla vitae elit libero, a pharetra augue.</p>
+      </p>
+      <p class="unique-platform__description">
+        Donec sed odio dui. Aenean lacinia bibendum nulla sed consectetur. Donec ullamcorper nulla non metus auctor fringilla. Aenean lacinia bibendum nulla sed consectetur. Nulla vitae elit libero, a pharetra augue.
+      </p>
     </div>
 
-    <div class="unique-platform__triangle">
-      <div class="triangle__shape"></div>
+    <!-- Right side -->
+    <div class="unique-platform__right-side">
+      <div class="unique-platform__bg-shape"></div>
     </div>
 
   </section>
 
   <!-- Features -->
   <section class="features">
+    <!-- Type -->
+    <p class="features__type">New features</p>
 
+    <!-- Title -->
+    <header class="features__title">Some awesone features</header>
+
+    <div class="features__container">
+      <!-- Feature 1 -->
+      <div class="features__feature feature"> 
+        <picture>
+          <source media="(min-width:1024px)" srcset="./assets/image-icon/picture@3x.png">
+          <img class="feature__icon" src="./assets/image-icon/picture@2x.png" alt="">
+        </picture>
+
+        <h4 class="feature__subtitle">Some awesone features</h4>
+        
+        <p class="feature__description">Donec sed odio dui. Aenean lacinia bibendum nulla sed consectetur. Nulla vitae elit libero, a pharetra augue.</p>
+      </div>
+
+      <!-- Feature 2 -->
+      <div class="features__feature feature"> 
+        <picture>
+          <source media="(min-width:1024px)" srcset="./assets/plane-icon/airplane@3x.png">
+          <img class="feature__icon" src="./assets/plane-icon/airplane@2x.png" alt="">
+        </picture>
+
+        <h4 class="feature__subtitle">Some awesone features</h4>
+        
+        <p class="feature__description">Donec sed odio dui. Aenean lacinia bibendum nulla sed consectetur. Nulla vitae elit libero, a pharetra augue.</p>
+      </div>
+
+      <!-- Feature 3 -->
+      <div class="features__feature feature"> 
+        <picture>
+          <source media="(min-width:1024px)" srcset="./assets/light-bulb-icon/bulb@3x.png">
+          <img class="feature__icon" src="./assets/light-bulb-icon/bulb@2x.png" alt="">
+        </picture>
+
+        <h4 class="feature__subtitle">Some awesone features</h4>
+        
+        <p class="feature__description">Donec sed odio dui. Aenean lacinia bibendum nulla sed consectetur. Nulla vitae elit libero, a pharetra augue.</p>
+      </div>
+    </div>
+
+    <!-- Pencils cup -->
     <picture>
       <source media="(min-width:1024px)" srcset="./assets/pencils-cup/pen-holder@3x.png">
-      <img class="features__pencils" src="./assets/pencils-cup/pen-holder@2x.png" alt="">
+      <img class="features__pencil-cup" src="./assets/pencils-cup/pen-holder@2x.png" alt="">
     </picture>
 
+    <!-- Headphones -->
     <picture>
       <source media="(min-width:1024px)" srcset="./assets/headphones/earphones@3x.png">
       <img class="features__headphones" src="./assets/headphones/earphones@2x.png" alt="">
     </picture>
 
+    <!-- Coffe cup -->
     <picture>
       <source media="(min-width:1024px)" srcset="./assets/coffe-cup/coffee-cup@3x.png">
-      <img class="features__coffe" src="./assets/coffe-cup/coffee-cup@2x.png" alt="Coffe cup">
+      <img class="features__coffe-cup" src="./assets/coffe-cup/coffee-cup@2x.png" alt="">
     </picture>
-
-    <p class="features__type">New features</p>
-    <h2 class="features__title">Some awesone features</h2>
-
-    <div class="features__container">
-      <div class="features__feature"> 
-        <picture>
-          <source media="(min-width:1024px)" srcset="./assets/image-icon/picture@3x.png">
-          <img class="features__icon" src="./assets/image-icon/picture@2x.png" alt="">
-        </picture>
-
-        <h4 class="features__subtitle">Some awesone features</h4>
-        
-        <p class="features__description">Donec sed odio dui. Aenean lacinia bibendum nulla sed consectetur. Nulla vitae elit libero, a pharetra augue.</p>
-      </div>
-
-      <div class="features__feature"> 
-        <picture>
-          <source media="(min-width:1024px)" srcset="./assets/plane-icon/airplane@3x.png">
-          <img class="features__icon" src="./assets/plane-icon/airplane@2x.png" alt="">
-        </picture>
-
-        <h4 class="features__subtitle">Some awesone features</h4>
-        
-        <p class="features__description">Donec sed odio dui. Aenean lacinia bibendum nulla sed consectetur. Nulla vitae elit libero, a pharetra augue.</p>
-      </div>
-
-      <div class="features__feature"> 
-        <picture>
-          <source media="(min-width:1024px)" srcset="./assets/light-bulb-icon/bulb@3x.png">
-          <img class="features__icon" src="./assets/light-bulb-icon/bulb@2x.png" alt="">
-        </picture>
-
-        <h4 class="features__subtitle">Some awesone features</h4>
-        
-        <p class="features__description">Donec sed odio dui. Aenean lacinia bibendum nulla sed consectetur. Nulla vitae elit libero, a pharetra augue.</p>
-      </div>
-
-
-
-    </div>
 
   </section>
 
   <!-- Responsive design -->
   <section class="responsive-design">
     
-    <div class="responsive-design__left">
-      <div class="responsive-design__shape"></div>
+    <!-- Left side -->
+    <div class="responsive-design__left-side">
+      <div class="responsive-design__bg-shape"></div>
       <picture>
         <source media="(min-width:1024px)" srcset="./assets/laptop/macbook@3x.png">
-        <img class="responsive-design__laptop" src="./assets/laptop/macbook@2x.png" alt="Laptop">
+        <img class="responsive-design__laptop" src="./assets/laptop/macbook@2x.png" alt="">
       </picture>
     </div>
     
-    
-    <div class="responsive-design__right">
+    <!-- Right side -->
+    <div class="responsive-design__right-side">
       <p class="responsive-design__type">New design</p>
-      <h2 class="responsive-design__title">Resposive design, just need your tap <span class="title__dots">....</span></h2>
+      <header class="responsive-design__title section-title">Resposive design, just need your tap <span class="section-title__dots">....</span></header>
       <p class="responsive-design__description">Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Curabitur blandit tempus porttitor. Etiasem malesuada magn. Vestibulum felis euismod semper.</p>
     </div>
 
@@ -132,7 +156,7 @@
     <div class="founders__people">
 
       <!-- First person -->
-      <div class="founders__single-person">
+      <div class="founders__single-person single-person">
 
         <div class="single-person__img"></div>
         
@@ -150,7 +174,7 @@
       </div>
 
       <!-- Second person -->
-      <div class="founders__single-person">
+      <div class="founders__single-person single-person">
 
         <div class="single-person__img"></div>
         
@@ -168,7 +192,7 @@
       </div>
 
       <!-- Third person -->
-      <div class="founders__single-person">
+      <div class="founders__single-person single-person">
 
         <div class="single-person__img"></div>
         
@@ -188,49 +212,34 @@
     </div>
 
     <!-- Company -->
-    <div class="founders__company">
-        
-        <picture>
-          <source media="(min-width:1024px)" srcset="./assets/company/hits/partner-logo-1@3x.png">
-          <img class="company__hint" src="./assets/company/hits/partner-logo-1@2x.png" alt="Hint company logo">
-        </picture>
+    <div class="founders__company founders-company">
+      <img class="founders-company__starbucks" src="./assets/starbucks/Logo_Template.png" alt="Starbucks company logo">
 
-        <picture>
-          <source media="(min-width:1024px)" srcset="./assets/company/rvlvr/partner-logo-4@3x.png">
-          <img class="company__hint" src="./assets/company/rvlvr/partner-logo-4@2x.png" alt="Rvlvr company logo">
-        </picture>
+      <img class="founders-company__starbucks" src="./assets/starbucks/Logo_Template.png" alt="Starbucks company logo">
 
-        <picture>
-          <source media="(min-width:1024px)" srcset="./assets/company/eatfinds/partner-logo-5@3x.png">
-          <img class="company__hint" src="./assets/company/eatfinds/partner-logo-5@2x.png" alt="Eatfinds company logo">
-        </picture>
+      <img class="founders-company__starbucks" src="./assets/starbucks/Logo_Template.png" alt="Starbucks company logo">
 
-        <picture>
-          <source media="(min-width:1024px)" srcset="./assets/company/igor/partner-logo-7@3x.png">
-          <img class="company__hint" src="./assets/company/igor/partner-logo-7@2x.png" alt="Igor company logo">
-        </picture>
+      <img class="founders-company__starbucks" src="./assets/starbucks/Logo_Template.png" alt="Starbucks company logo">
 
-        <picture>
-            <source media="(min-width:1024px)" srcset="./assets/company/sienna/partner-logo-8@3x.png">
-            <img class="company__hint" src="./assets/company/sienna/partner-logo-8@2x.png" alt="Sienna company logo">
-        </picture>
+      <img class="founders-company__starbucks" src="./assets/starbucks/Logo_Template.png" alt="Starbucks company logo">
+    </div>
 
-      </div>
   </section>
 
   <!-- Awsome feature -->
   <section class="awsome-feature">
     
-    <header>
-      <p class="awsome-feature__type">
-        New Feature
-      </p>
+    <!-- Type -->
+    <p class="awsome-feature__type">
+      New Feature
+    </p>
 
-      <h2 class="awsome-feature__title">
-        Some awsome feature
-      </h2>
+    <!-- Title -->
+    <header class="awsome-feature__title">
+      Some awsome feature
     </header>
     
+    <!-- Description -->
     <p class="awsome-feature__description">
       Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Curabitur blandit tempus porttitor. Etiasem malesuada magn. Vestibulum felis euismod semper.
     </p>
@@ -245,43 +254,55 @@
 
   <!-- Contact -->
   <section class="contact">
-    <header>
-      <p class="contact__type">
-        New features
-      </p>
-      <h2 class="contact__title">
+
+    <p class="contact__type">
+      New features
+    </p>
+    
+    <header class="contact__title">
         Over 1000 designers are using ...
-      </h2>
     </header>
 
-    <!-- Contact form -->
-    <form class="contact__form">
-      <input class="contact__input" type="text" placeholder="FULL NAME">
+    <!-- Form -->
+    <form class="contact__form contact-form">
+      <input class="contact-form__input" type="text" placeholder="FULL NAME">
 
-      <input class="contact__input" type="email" placeholder="YOUR EMAIL">
+      <input class="contact-form__input" type="email" placeholder="YOUR EMAIL">
 
-      <input class="contact__input" type="password" placeholder="PASSWORD">
+      <input class="contact-form__input" type="password" placeholder="PASSWORD">
 
-      <div class="contact__trial">
+      <div class="contact-form__trial">
         <img src="./assets/down-arrow/arrow@2x.png" alt="Arrow">
         <span>30 days free trial for all.</span>
       </div>
 
-      <button class="contact__submit" type="submit">Try now</button>
+      <button class="contact-form__submit submit" type="submit">Try now</button>
     </form>
 
-    <p class="contact__sing-agree">By Signing up you agree to our <a class="contact__terms" href="#">terms & Services.</a> terms & Services.</p>
+    <!-- Terms -->
+    <p class="contact__sing-agree">
+      By Signing up you agree to our
+      <a class="contact__terms" href="#">terms & Services.</a>
+      terms & Services.
+    </p>
+
   </section>
 
   <!-- Footer -->
   <section class="footer">
 
-    <div class="footer__shape"></div>
+    <div class="footer__bg-shape"></div>
 
-    <div class="footer__container footer__startex">
-      <h4 class="footer__subtitle">StartEx</h4>
+    <div class="footer__container">
+
+      <h4 class="footer__subtitle">Starts <div class="footer__title-bg">Ex</div></h4>
+
       <p>
-        Aenean lacinia bibendum nulla sed consectetur. Aenean eu leo quam. </p>
+        Aenean lacinia bibendum nulla sed consectetur.  
+      </p> 
+      <p>
+          Aenean eu leo quam.
+      </p>
       <p>
         USA &  CAN: 1-888-123-4567
       </p>
@@ -291,36 +312,36 @@
       
     </div>
 
-    <div class="footer__container footer__support">
+    <div class="footer__container">
       <h4 class="footer__subtitle" >Support</h4>
       <a href="#">Help Center</a>
       <a href="#">Get Started</a>
       <a href="#">Contact US</a>
     </div>
 
-    <div class="footer__container footer__about-us">
+    <div class="footer__container">
       <h4 class="footer__subtitle">About US</h4>
       <a href="#">About US</a>
       <a href="#">Terms of Use</a>
       <a href="#">Privacy Policy</a>
     </div>
 
-    <div class="footer__container footer__newsletter">
+    <div class="footer__container">
       
       <h4 class="footer__subtitle">Get Newsletter</h4>
       
-      <form class="footer__form">
-        <input class="form__email" type="email" placeholder="EMAIL">
-        <button class="form__submit" type="submit">
+      <form class="footer__form footer-form">
+        <input class="footer-form__email" type="email" placeholder="EMAIL">
+        <button class="footer-form__submit" type="submit">
           <img src="./assets/paper-plane/send.png" alt="">
         </button>
       </form>
 
-      <div class="footer__socials">
-        <img class="socials__icon" src="./assets/footer-icons/basketball-ball-solid.svg" alt="Basketball">
-        <img class="socials__icon" src="./assets/footer-icons/facebook-f-brands.svg" alt="Facebook">
-        <img class="socials__icon" src="./assets/footer-icons/google-plus-g-brands.svg" alt="Google+">
-        <img class="socials__icon" src="./assets/footer-icons/twitter-brands.svg" alt="Twitter">
+      <div class="footer__socials footer-socials">
+        <img class="footer-socials__icon" src="./assets/footer-icons/basketball-ball-solid.svg" alt="Basketball">
+        <img class="footer-socials__icon" src="./assets/footer-icons/facebook-f-brands.svg" alt="Facebook">
+        <img class="footer-socials__icon" src="./assets/footer-icons/google-plus-g-brands.svg" alt="Google+">
+        <img class="footer-socials__icon" src="./assets/footer-icons/twitter-brands.svg" alt="Twitter">
       </div>
     </div>
   </section>

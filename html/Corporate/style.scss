@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Exo:300,400,700&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Exo:300,400,700&display=swap");
 
-$font-primary: 'Exo', sans-serif;
+$font-primary: "Exo", sans-serif;
 $color-primary: #3a3a3a;
 $color-secondary: #f04c4c;
-$section-bg-color: #FCFCFB;
+$section-bg-color: #fcfcfb;
 
 * {
   margin: 0;
@@ -12,15 +12,9 @@ $section-bg-color: #FCFCFB;
   box-sizing: border-box;
 }
 
-@media screen and (min-width: 678px){
+@media screen and (min-width: 1024px) {
   html {
     font-size: 1.2rem;
-  }
-}
-
-@media screen and (min-width: 1024px){
-  html {
-    font-size: 1.3rem;
   }
 }
 
@@ -40,14 +34,12 @@ h2 {
 }
 
 @mixin section-title() {
-  margin: 10px 0 20px 0;
   font-size: 1.7rem;
   letter-spacing: 1.6px;
   font-weight: normal;
 }
 
 @mixin section-subtitle() {
-  margin: 20px 0 10px 0;
   font-size: 1.2rem;
   font-weight: normal;
 }
@@ -58,14 +50,26 @@ h2 {
   opacity: 0.8;
 }
 
-// -------------- Banner -------------- 
+@mixin vertical-padding($top: 100px, $bottom: 100px) {
+  padding-top: $top;
+  padding-bottom: $bottom;
+}
+
+@mixin default-padding ($left: 10%, $right: 10%, $top: 100px, $bottom: 100px) {
+  padding-left: $left;
+  padding-right: $right;
+  padding-top: $top;
+  padding-bottom: $bottom;
+}
+
+// -------------- Banner --------------
 .banner {
-  padding: 200px 10%;
-  background: url(./assets/banner-img/photo-1433354359170-23-a-4-ae-7338-c-6@3x.jpg) no-repeat;
-  background-size: cover;
-  background-position: right bottom;
+  @include default-padding();
+  @include vertical-padding(200px, 200px);
+  background: url(./assets/banner-img/photo-1433354359170-23-a-4-ae-7338-c-6@3x.jpg)
+    right bottom/cover no-repeat;
   text-align: center;
-  
+
   &__container {
     margin: 0 auto;
   }
@@ -75,18 +79,24 @@ h2 {
   }
 
   &__play {
-    width: 40px;
     margin: 20px 0;
-    opacity: 0.8;
-    cursor: pointer;
+    background: transparent;
+    border: none;
+
+    img {
+      width: 40px;
+      opacity: 0.8;
+      cursor: pointer;
+    }
   }
 
   &__try-now {
     display: block;
     margin: 0 auto;
     padding: 10px 35px;
+    color: #ffffff;
     background: $color-secondary;
-    color: #eeeeee;
+    border: none;
     border-radius: 3px;
     letter-spacing: 3px;
     text-transform: uppercase;
@@ -99,10 +109,30 @@ h2 {
   }
 }
 
-// -------------- Unique platform -------------- 
+@media screen and (min-width: 1024px) {
+  .banner {
+    @include vertical-padding(250px, 250px);
+
+    &__play {
+      img {
+        width: 60px;
+      }
+    }
+  }
+}
+
+// -------------- Unique platform --------------
+.section-title {
+  &__dots {
+    color: $color-secondary;
+  } 
+}
+
 .unique-platform {
-  padding: 70px 10%;
-  text-align: center;
+  &__left-side {
+    @include default-padding();
+    text-align: center;
+  }
 
   &__type {
     @include section-type();
@@ -110,86 +140,74 @@ h2 {
 
   &__title {
     @include section-title();
+    margin: 10px 0 20px 0;
+  }
 
-    .title__dots {
-      color: $color-secondary;
+  &__description {
+    @include section-description();
+
+    &--margin {
+      margin-bottom: 20px;
     }
+  }
+
+  &__right-side {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .unique-platform {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+
+    &__left-side {
+      text-align: left;
+    }
+
+    &__right-side {
+      display: block;
+      height: 100%;
+      background: $section-bg-color;
+    }
+
+    &__bg-shape {
+      height: 100%;
+      background: $color-secondary;
+      clip-path: polygon(100% 20%, 0% 100%, 100% 100%);
+    }
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .unique-platform {
+    &__left-side {
+      padding: 200px 15% 200px 20%;
+    }
+  }
+}
+
+// -------------- Features --------------
+.feature {
+  &__icon {
+    width: 50px;
+  }
+
+  &__subtitle {
+    @include section-subtitle();
+    margin-bottom: 20px;
   }
 
   &__description {
     @include section-description();
   }
-
-  &__triangle {
-    display: none;
-  }
 }
 
-@media screen and (min-width: 1024px){
-  .unique-platform {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr;
-    padding: 0;
-    text-align: left;
-
-    &__left-side {
-      // flex-basis: 60%;
-      padding: 100px 15%;
-    }
-
-    &__triangle {
-      position: relative;
-      display: block;
-      // flex-basis: 40%;
-      height: 100%;
-      background: $section-bg-color;
-  
-      .triangle__shape {
-        width: 100%;
-        height: 100%;
-        background: $color-secondary;
-        clip-path: polygon(100% 20%, 0% 100%, 100% 100%);
-      }
-    }
-  }
-}
-
-@media screen and (min-width: 1600px){
-  .unique-platform {
-    &__left-side {
-      padding: 200px 15%;
-    }
-  }
-}
-
-// -------------- Features -------------- 
 .features {
+  @include default-padding();
   position: relative;
-  padding: 70px 10%;
   background: $section-bg-color;
   text-align: center;
-
-  &__pencils {
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 10%;
-    width: 200px;
-  }
-
-  &__headphones {
-    position: absolute;
-    top: 0;
-    right: 10px;
-    width: 100px;
-  }
-    
-  &__coffe {
-    position: absolute;
-    bottom: 0; 
-    right: 15%;
-    width: 150px;
-  }
 
   &__type {
     @include section-type();
@@ -203,56 +221,71 @@ h2 {
     margin: 50px 0;
   }
 
-  &__icon {
-    width: 50px;
+  &__pencil-cup {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 10%;
+    width: 250px;
   }
 
-  &__subtitle{
-    @include section-subtitle();
-  }
-
-  &__description {
-    @include section-description();
-  }
-
-
-}
-
-@media screen and (min-width: 678px){
- .features {
   &__headphones {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    width: 100px;
+  }
+
+  &__coffe-cup {
+    position: absolute;
+    bottom: 0;
+    right: 15%;
     width: 150px;
   }
-    
-  &__coffe {
-    width: 200px;
-  }
- }
 }
 
-@media screen and (min-width: 1024px){
+@media screen and (min-width: 678px) {
   .features {
-    padding: 100px 10%;
+    &__headphones {
+      width: 150px;
+    }
+
+    &__coffe-cup {
+      width: 200px;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .features {
+    @include vertical-padding(200px, 200px);
 
     &__container {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      grid-column-gap: 20px;
+      grid-column-gap: 100px;
     }
 
-    &__pencils {
+    &__pencil-cup {
       display: block;
     }
   }
 }
 
-// -------------- Responsive design -------------- 
+// -------------- Responsive design --------------
 .responsive-design {
-  padding: 70px 10%;
   text-align: center;
 
-  &__laptop {
+  &__left-side {
     display: none;
+  }
+  
+  &__laptop {
+    width: 500px;
+  }
+  
+  &__right-side {
+    @include default-padding();
   }
 
   &__type {
@@ -261,10 +294,7 @@ h2 {
 
   &__title {
     @include section-title();
-
-    .title__dots {
-      color: $color-secondary;
-    }
+    margin: 10px 0 20px 0;
   }
 
   &__description {
@@ -272,12 +302,11 @@ h2 {
   }
 }
 
-@media screen and (min-width: 1024px){
+@media screen and (min-width: 1024px) {
   .responsive-design {
     display: flex;
-    padding: 0;
-    
-    &__left {
+
+    &__left-side {
       flex-basis: 45%;
       position: relative;
       display: flex;
@@ -285,7 +314,7 @@ h2 {
       justify-content: center;
     }
 
-    &__shape {
+    &__bg-shape {
       position: absolute;
       top: 0;
       left: 0;
@@ -296,35 +325,65 @@ h2 {
       clip-path: polygon(0 0, 10% 0, 70% 100%, 0 100%);
     }
 
-    &__laptop {
-      display: block;
-      width: 500px;
-    }
-
-    &__right {
+    &__right-side {
       flex-basis: 55%;
       padding: 150px 10% 150px 0;
       text-align: left;
     }
-
   }
 }
 
-@media screen and (min-width: 1024px){
+@media screen and (min-width: 1600px) {
   .responsive-design {
     &__laptop {
       width: 600px;
     }
 
-    &__right {
+    &__right-side {
       padding: 200px 10% 200px 0;
     }
   }
 }
 
-// -------------- Founders -------------- 
+// -------------- Founders --------------
+.single-person {
+  &__img {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    background: url(./assets/ceo/entrepreneurship-3498259_640.jpg) no-repeat;
+    background-size: cover;
+    border-radius: 60px;
+  }
+
+  &__name {
+    @include section-subtitle();
+    margin: 10px 0 5px 0;
+    color: #ffffff;
+  }
+
+  &__position {
+    color: $color-secondary;
+    font-size: 0.6rem;
+  }
+
+  &__description {
+    @include section-description();
+    margin-top: 20px;
+    color: #ffffff;
+    font-style: italic;
+  }
+}  
+
+.founders-company {
+  &__starbucks {
+    margin: 20px;
+    width: 130px;
+  }
+}
+
 .founders {
-  padding: 70px 10% 20px 10%;
+  @include default-padding();
   background: url(./assets/triangle-bg/group-4@3x.png) no-repeat;
   background-size: cover;
   text-align: center;
@@ -332,85 +391,27 @@ h2 {
   &__single-person {
     margin-bottom: 70px;
   }
-
-  .single-person {
-    &__img {
-      width: 70px;
-      height: 70px;
-      margin: 0 auto;
-      background: url(./assets/ceo/entrepreneurship-3498259_640.jpg) no-repeat;
-      background-size: cover;
-      border-radius: 60px;
-    }
-
-    &__name {
-      @include section-subtitle();
-      color: #ffffff;
-    }
-
-    &__position {
-      color: $color-secondary;
-      font-size: 0.6rem;
-    }
-
-    &__description {
-      @include section-description();
-      margin-top: 20px;
-      color: #ffffff;
-      font-style: italic;
-    }
-  }
-
-  &__company {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-
-    picture {
-      flex-basis: 50%;
-      margin-bottom: 20px;
-    }
-    img {
-      width: 150px;
-    }
-  }
 }
 
-@media screen and (min-width: 1024px){
+@media screen and (min-width: 1024px) {
+  .founders-company {
+    &__starbucks {
+      margin: 40px;
+    }
+  }
+
   .founders {
-    padding: 100px 10% 70px 10%;
     &__people {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       grid-column-gap: 100px;
     }
-
-    &__company {
-      // justify-content: space-between;
-      align-items: center;
-
-      picture {
-        margin: 20px;
-        flex-basis: auto;
-        justify-content: space-between;
-      }
-
-      img {
-        width: 200px;
-      }
-    };
   }
 }
 
-@media screen and (min-width: 1600px){
-  .founders {
-    padding: 150px 10% 100px 10%;
-  }
-}
-
-// -------------- Awsome-feature -------------- 
+// -------------- Awsome-feature --------------
 .awsome-feature {
-  padding: 70px 10%;
+  @include default-padding();
   background: $section-bg-color;
   text-align: center;
 
@@ -420,6 +421,7 @@ h2 {
 
   &__title {
     @include section-title();
+    margin: 10px 0 20px 0;
   }
 
   &__description {
@@ -428,14 +430,14 @@ h2 {
 
   &__screen {
     display: none;
-    height: 400px;
     margin: 0 auto;
+    height: 400px;
   }
 }
 
-@media screen and (min-width: 1024px){
+@media screen and (min-width: 1024px) {
   .awsome-feature {
-    padding: 100px 10% 0 10%;
+    @include vertical-padding(100px, 0);
 
     &__description {
       width: 70%;
@@ -443,29 +445,14 @@ h2 {
     }
 
     &__screen {
-      margin-top: 100px;
       display: block;
+      margin-top: 100px;
     }
   }
 }
 
-// -------------- Contact -------------- 
-.contact {
-  padding: 70px 10%;
-  background: #323969;
-  text-align: center;
-  color: #ffffff;
-
-  &__type {
-    @include section-type();
-  }
-
-  &__title {
-    @include section-title();
-    margin-bottom: 40px;
-    color: #ffffff;
-  }
-
+// -------------- Contact --------------
+.contact-form {
   &__input,
   &__submit {
     width: 60%;
@@ -483,6 +470,19 @@ h2 {
     color: #ffffff;
   }
 
+  &__trial {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    margin-bottom: 10px;
+    font-size: 0.7rem;
+
+    img {
+      margin-top: 5px;
+      width: 20px;
+    }
+  }
+
   &__submit {
     color: #ffffff;
     background: $color-secondary;
@@ -490,18 +490,22 @@ h2 {
     border-radius: 3px;
     text-transform: uppercase;
   }
+}
 
-  &__trial {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    margin-bottom: 20px;
-    font-size: 0.7rem;
+.contact {
+  @include default-padding();
+  background: #323969;
+  text-align: center;
+  color: #ffffff;
 
-    img {
-      width: 50px;
-    }
+  &__type {
+    @include section-type();
+  }
 
+  &__title {
+    @include section-title();
+    margin: 10px 0 40px 0;
+    color: #ffffff;
   }
 
   &__sing-agree {
@@ -515,135 +519,146 @@ h2 {
   }
 }
 
-@media screen and (min-width: 1024px){
-  .contact {
-    padding: 100px 10%;
-    
-    &__form {
-      position: relative;
-      display: flex;
-      margin-top: 100px;
-    }
-
+@media screen and (min-width: 1024px) {
+  .contact-form {
     &__trial {
       top: -50px;
-      right: 0;
+      right: 6%;
       position: absolute;
-
     }
 
     &__input {
       margin-bottom: 0;
       margin-right: 20px;
     }
-
+  }
   
+  .contact {
+    &__title {
+      margin-bottom: 80px;
+    }
+
+    &__form {
+      position: relative;
+      display: flex;
+    }
   }
 }
 
-// -------------- Footer -------------- 
-.footer {
-  width: 80%;
-  margin: 0 auto;
-  padding: 70px 10%;
-  text-align: center;
-  
-  &__shape {
-    display: none;
+// -------------- Footer --------------
+.footer-socials {
+  &__icon {
+    width: 15px;
+    height: 15px;
+    margin-top: 10px;
+    opacity: 0.4;
+    cursor: pointer;
+  }
+}
+
+.footer-form {
+  &__email {
+    margin: 0;
+    padding: 7px 10px;
+    border: 1px solid lightgray;
+    border-radius: 3px;
   }
 
-  a, p {
+  &__email:focus {
+    outline: none;
+  }
+
+  &__submit {
+    padding: 5px;
+    margin: -5px;
+    background: $color-secondary;
+    border: 1px solid $color-secondary;
+    border-radius: 3px;
+  }
+
+  &__submit > img {
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+  }
+}
+
+
+.footer {
+  position: relative;
+  padding: 50px 10%;
+  text-align: center;
+
+  &__bg-shape {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: $color-secondary;
+    clip-path: polygon(80% 0%, 100% 0%, 100% 93%, 98% 100%, 96% 90%);
+  }
+
+  a,
+  p {
     @include section-description();
-    font-size: 0.6rem;
     display: block;
     color: $color-primary;
     text-decoration: none;
+    line-height: 2;
   }
 
   &__subtitle {
     @include section-subtitle();
+    margin: 30px 0 10px 0;
   }
 
+  
   &__form {
     display: flex;
     align-items: center;
     justify-content: center;
-
-    .form__email {
-      margin: 0;
-      padding: 7px 10px;
-      border: 1px solid lightgray;
-      border-radius: 3px;
-    }
-
-    .form__email:focus {
-      outline: none;
-    }
-
-    .form__submit {
-      padding: 5px;
-      margin: -5px;
-      background: $color-secondary;
-      border: 1px solid $color-secondary;
-      border-radius: 3px;
-    }
-
-    .form__submit > img {
-      width: 15px;
-      height: 15px;
-    }
   }
-  
-  &__socials {
-    padding-top: 20px;
 
-    .socials__icon {
-      width: 20px; 
-      height: 20px;
-    }
+  &__title-bg {
+    display: inline;
+    padding: 10px 15px 10px 3px;
+    color: white;
+    background: $color-secondary;
+    clip-path: polygon(0 0, 100% 50%, 0 100%);
+    text-align: center;
   }
 }
 
-@media screen and (min-width: 678px){
+
+@media screen and (min-width: 678px) {
   .footer {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-row-gap: 20px;
-    width: 100%;
-    margin: 0;
   }
 }
 
-@media screen and (min-width: 1024px){
+@media screen and (min-width: 1024px) {
   .footer {
-    position: relative;
-    grid-template-columns: 2fr 1fr 1fr 2fr; 
+    padding: 70px 10%;
+    grid-template-columns: 2fr 1fr 1fr 2fr;
     grid-column-gap: 50px;
     text-align: left;
 
-    a,p {
+    a,
+    p {
       font-size: 0.6rem;
-      line-height: 2;
     }
 
     &__form {
       justify-content: left;
     }
 
-    &__shape {
+    &__bg-shape {
       display: block;
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      background: $color-secondary;
-      clip-path: polygon(80% 0%, 100% 0%, 100% 93%, 98% 100%, 96% 90%);
     }
   }
 }
-
-
-
-
