@@ -28,6 +28,29 @@ html {
   }
 }
 
+.section-title {
+  position: absolute;
+  top: 58px;
+  left: 25%;
+  width: 50%;
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+@media screen and (min-width: 768px) {
+  .section-title {
+    top: 54px;
+  }
+}
+
+
+@media screen and (min-width: 1200px) {
+  .section-title {
+    top: 82px;
+  }
+}
+
 /* ------------------------------------------------ Banner ------------------------------------------------ */
 .banner {
   padding: 150px 0 50px 0;
@@ -46,9 +69,13 @@ html {
 .banner__title {
   margin: 40px 0 20px 0;
   font-size: 1.7rem;
-  font-weight: bold;
   text-transform: uppercase;
 }
+
+.banner__title > p {
+  font-weight: bold;
+}
+
 
 .banner__description {
   margin-bottom: 100px;
@@ -120,25 +147,21 @@ html {
 }
 
 .about-us__title {
-  position: absolute;
-  top: 60px;
-  left: 25%;
-  width: 50%;
   background: #ffffff;
-  font-size: 1.25rem;
-  font-weight: bold;
-  text-transform: uppercase;
 }
 
 .about-us__description {
-  margin: 0 auto;
+  margin: 0 auto auto;
   padding: 10%;
   border-top: solid 2px #3c3c3c;
 }
 
+.description__text {
+  margin-bottom: 20px;
+}
+
 @media screen and (min-width: 768px) {
   .about-us__title{
-    top: 52px;
     font-size: 1.7rem;
   }
 
@@ -150,10 +173,6 @@ html {
 @media screen and (min-width: 1200px) {
   .about-us {
     padding: 100px 20%;
-  }
-
-  .about-us__title {
-    top: 80px;
   }
 
   .about-us__description {
@@ -171,16 +190,6 @@ html {
   background-size: cover;
   color: #ffffff;
   text-align: center;
-}
-
-.services__title {
-  position: absolute;
-  top: 60px;
-  right: 25%;
-  width: 50%;
-  font-size: 1.25rem;
-  font-weight: bold;
-  text-transform: uppercase;
 }
 
 .services__line {
@@ -208,7 +217,6 @@ html {
   }
 
   .services__title {
-    top: 53px;
     font-size: 1.7rem;
   }
 
@@ -226,9 +234,18 @@ html {
     url("./assets/services-bg/layer-4@3x.png") no-repeat 75% center;
   }
 
-  .services__title {
-    top: 80px;
+  .services__line {
+    background: linear-gradient(
+      to left,
+      #ffffff 0%,
+      #ffffff 10%,
+      transparent 10%,
+      transparent 90%,
+      #ffffff 90%,
+      #ffffff 100%
+    );
   }
+  
 }
 
 
@@ -236,25 +253,20 @@ html {
 /* ------------------------------------------------ What we do ------------------------------------------------ */
 .what-we-do {
   position: relative;
-  margin: 70px 10%;
-  padding: 70px 10% 0 10%;
-  border-top: solid 2px #3c3c3c;
+  padding: 70px 10%;
   text-align: center;
 }
  
 .what-we-do__title {
-  position: absolute;
-  top: -15px;
-  left: 20%;
-  width: 60%;
   background: #ffffff;
-  font-size: 1.25rem;
-  font-weight: bold;
-  text-transform: uppercase;
+}
+
+.what-we-do__container {
+  border-top: solid 2px #3c3c3c;
 }
 
 .what-we-do__action {
-  margin-bottom: 60px;
+  padding: 10%;
 }
 
 .action__title {
@@ -264,13 +276,11 @@ html {
 }
 
 @media screen and (min-width: 768px) {
-  .what-we-do {
-    padding: 100px 10% 0 10%;
+  .what-we-do__container {
     border: solid 2px #3c3c3c;
   }
-
+  
   .what-we-do__title {
-    top: -19px;
     font-size: 1.7rem;
   }
 
@@ -281,7 +291,7 @@ html {
 
 @media screen and (min-width: 1200px) {
   .what-we-do {
-    margin: 100px 20%;
+    padding: 100px 20%;
   }
   
   .services__icon > img {
@@ -319,14 +329,18 @@ html {
   background-repeat: no-repeat;
   font-size: 1rem;
   text-align: left;
-  cursor: pointer;
 }
 
-.card > p {
-  margin-left: 20px;
+.card > a {
+  padding-left: 20px;
   color: white;
   letter-spacing: 3px;
   text-transform: uppercase;
+  text-decoration: none;
+}
+
+.card > a:hover {
+  text-decoration: underline;
 }
 
 @media screen and (min-width: 600px) {
@@ -400,21 +414,17 @@ html {
 /* ------------------------------------------------ Contact us ------------------------------------------------ */
 .contact-us {
   position: relative;
-  margin: 70px 10% 0 10%;
-  padding: 10%;
-  border-top: solid 2px #3c3c3c;
+  padding: 70px 10% 0 10%;
   text-align: center;
 }
 
+.contact-us__container {
+  padding: 10%;
+  border-top: solid 2px #3c3c3c;
+}
+
 .contact-us__title {
-  position: absolute;
-  top: -10px;
-  left: 20%;
-  width: 60%;
   background: #ffffff;
-  font-size: 1.25rem;
-  font-weight: bold;
-  text-transform: uppercase;
 }
 
 .contact-us__description {
@@ -431,13 +441,12 @@ html {
 }
 
 @media screen and (min-width: 768px) {
-  .contact-us {
-    border: solid 2px #3c3c3c;
+  .contact-us__title {
+    font-size: 1.7rem;
   }
 
-  .contact-us__title {
-    top: -18px;
-    font-size: 1.7rem;
+  .contact-us__container {
+    border: solid 2px #3c3c3c;
   }
 
   .contact-us__button {
@@ -447,14 +456,7 @@ html {
 
 @media screen and (min-width: 1200px) {
   .contact-us {
-    margin: 100px 20%;
-    padding: 7%;
-  }
-}
-
-@media screen and (min-width: 1600px) {
-  .contact-us {
-    padding: 5%;
+    padding: 100px 20% 50px 20%;
   }
 }
 
