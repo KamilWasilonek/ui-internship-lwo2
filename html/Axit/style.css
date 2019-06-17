@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: normal;
+}
+
+.navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #000000;
+}
+
+.navbar__menu {
+  display: none;
+}
+
+.navbar__mobile-btn {
+  color: #ffffff;
+}
+
+.logo {
+  color: #ffffff;
+}
+
+.logo span {
+  color: #ff8b38;
+  font-weight: lighter;
+}
+
+.form__container {
+  padding: 10px 10% 40px 10%;
+}
+
+.form__input {
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+  padding: 5px 0;
+  border: none;
+  border-bottom: 1px solid #bdbdbd;
+}
+
+.form__input::-webkit-input-placeholder {
+  color: #bdbdbd;
+}
+
+.form__input:-ms-input-placeholder {
+  color: #bdbdbd;
+}
+
+.form__input::-ms-input-placeholder {
+  color: #bdbdbd;
+}
+
+.form__input::placeholder {
+  color: #bdbdbd;
+}
+
+.form__submit {
+  width: 100%;
+  padding: 15px 0;
+  color: #ffffff;
+  background: #ff8b38;
+  border: none;
+  font-weight: bold;
+}
+
+.banner {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(1, 7, 0, 0.75))), url(./assets/banner/image.png) no-repeat center/cover;
+  background: linear-gradient(rgba(1, 7, 0, 0.75)), url(./assets/banner/image.png) no-repeat center/cover;
+  text-align: center;
+}
+
+.banner__navbar {
+  padding: 10px 10%;
+}
+
+.banner__container {
+  padding: 70px 10%;
+}
+
+.banner__left-side {
+  color: #ffffff;
+}
+
+.banner__subtitle, .banner__description {
+  margin: 10px 0 20px 0;
+  font-family: 'Raleway', sans-serif;
+  font-weight: lighter;
+}
+
+.banner__btn {
+  padding: 5px 30px;
+  color: #ffffff;
+  background: transparent;
+  border: 1px solid #ffffff;
+}
+
+.banner__right-side {
+  margin-top: 50px;
+  background: #ffffff;
+}
+
+.banner__title {
+  background: #f5f5f5;
+  font-weight: bold;
+}
+
+.banner__title span {
+  color: #ff8b38;
+  font-weight: bold;
+}
+/*# sourceMappingURL=style.css.map */
