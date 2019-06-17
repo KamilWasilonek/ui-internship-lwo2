@@ -35,7 +35,6 @@
     <nav class="navbar">
       <div class="navbar__actions">
         <button class="navbar__like">&#9825;</button>
-        <span class="navbar__separator"></span>
         <button class="navbar__search">&#128269;</button>
       </div>
 
@@ -81,14 +80,24 @@
     <section class="product__images">
       
       <!-- Big image -->
-      <div class="images__big-img"></div>
+      <div class="images__big-img">
+          <img src="./assets/product/cars-2372103_1920.jpg" alt="">
+      </div>
 
       <!-- Small images -->
       <div class="images__small-images">
-        <div class="images__small-img"></div>
-        <div class="images__small-img"></div>
-        <div class="images__small-img"></div>
-        <div class="images__small-img"></div>
+        <div class="images__small-img">
+            <img src="./assets/product/cars-2372103_1920.jpg" alt="">
+        </div>
+        <div class="images__small-img">
+            <img src="./assets/product/cars-2372103_1920.jpg" alt="">
+        </div>
+        <div class="images__small-img">
+            <img src="./assets/product/cars-2372103_1920.jpg" alt="">
+        </div>
+        <div class="images__small-img">
+            <img src="./assets/product/cars-2372103_1920.jpg" alt="">
+        </div>
       </div>     
     </section>
 
@@ -115,8 +124,7 @@
           <img src="./assets/rate-star/star.png" alt="Rate star">
           <img src="./assets/rate-star/star.png" alt="Rate star">
         </div>
-        <p>3 Review(s)</p>
-        <p>|</p>
+        <p class="rate__reviews">3 Review(s)</p>
         <a class="rate__add-review" href="#">add review</a>
       </div>
 
@@ -164,57 +172,55 @@
 
       <!-- Order form -->
       <form class="details__form">
-        <!-- Color -->
-        <div>
-          <label for="color">COLOR</label>
-          <div class="form__container form__color">  
-            <select>
+
+        <div class="form__container">
+           <!-- Color -->
+          <div>
+            <label for="color">COLOR</label>
+            <select id="color" class="form__color">
                 <option disabled selected value>Select Color</option>
                 <option value="Black">Black</option>
                 <option value="White">White</option>
             </select>
           </div>
-        </div>
-       
-        <!-- Size -->
-        <div>
-          <label for="size">SIZE</label>
-          <div class="form__container form__size">
-            <select>
+        
+          <!-- Size -->
+          <div>
+            <label for="size">SIZE</label>
+            <select id="size" class="form__size">
                 <option disabled selected value>Select Size</option>
                 <option value="Big">Big</option>
                 <option value="Small">Small</option>
             </select>
           </div>
-        </div>
 
-        <!-- Amount -->
-        <div> 
-          <label for="amount">QTY</label>
-          <div class="form__container form__amount">
-              <input type="number" min="1" max="10" value="1"> 
+          <!-- Amount -->
+          <div> 
+            <label for="amount">QTY</label>
+            <input id="amount" class="form__amount" type="number" min="1" max="10" value="1"> 
           </div>
         </div>
+       
+        <!-- Reset -->
+        <button type="reset" class="form__reset">
+          clear selection
+        </button>
+        
+        <div class="form__bookmarks">
+          <!-- Add to cart -->
+          <button class="bookmarks__button-1" type="submit">
+            add to cart
+          </button>
+
+          <!-- Add to wishlist -->
+          <button class="bookmarks__button-2" type="button">
+              &#9825; add to wishlist
+          </button>
+        </div>
+
       </form>
-
-      <!-- Reset link -->
-      <a href="#" class="details__reset">
-        clear selection
-      </a>
-
-      <!-- Bookmark buttons -->
-      <div class="details__bookmarks">
-        <!-- Add to cart -->
-        <button class="bookmarks__button-1" type="button">
-          add to cart
-        </button>
-
-        <!-- Add to wishlist -->
-        <button class="bookmarks__button-2" type="button">
-            &#9825; add to wishlist
-        </button>
-      </div>
-     
+      
+      
       <!-- Socials -->
       <div class="socials">
         
