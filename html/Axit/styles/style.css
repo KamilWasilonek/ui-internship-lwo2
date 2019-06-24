@@ -599,6 +599,7 @@
   max-width: 300px;
   margin: 50px auto 0 auto;
   background: #323232;
+  border: none;
   color: #ffffff;
   text-align: center;
 }
@@ -869,6 +870,10 @@
   padding: 20px 0 10px 0;
   background: #323232;
   text-align: center;
+}
+
+.footer a {
+  text-decoration: none;
 }
 
 .footer__icon {
