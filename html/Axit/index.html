@@ -5,44 +5,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./styles/style.css">
 </head>
 <body>
 
+  <!-- Banner -->
   <section class="banner">
+
     <!-- Navbar -->
-    <header class="banner__navbar navbar">
-
+    <header class="navbar banner__navbar">
+     
       <!-- Navbar logo -->
-      <p class="navbar__logo logo">
+      <a href="#" class="logo navbar__logo">
         AX<span>IT</span>
-      </p>
-
+      </a>
+    
       <!-- Navigation -->
       <nav>
         <!-- Desktop menu -->
-        <ul class="navbar__menu menu">
-          <li class="menu__item">
+        <ul class="navbar__menu">
+          <li>
             <a href="#">Features</a>
           </li>
-          <li class="menu__item">
+          <li>
             <a href="#">About</a>
           </li>
-          <li class="menu__item">
+          <li>
             <a href="#">Pricing</a>
           </li>
-          <li class="menu__item">
+          <li>
             <a href="#">Reviews</a>
           </li>
-          <li class="menu__item">
+          <li>
             <a href="#">Contact</a>
           </li>
         </ul>
 
         <!-- Mobile button -->
-        <div class="navbar__mobile-btn">
+        <button type="button" class="navbar__mobile-btn">
           &#9776;
-        </div>
+        </button>
       </nav>
     </header>
 
@@ -51,7 +53,7 @@
 
       <!-- Left side -->
       <div class="banner__left-side">
-        <h1 class="banner__logo logo">
+        <h1 class="logo banner__logo">
           AX<span>IT</span>
         </h1>
         
@@ -60,13 +62,15 @@
           FOR BEAUTIFUL PROTOTYPES
         </h2>
 
-        <p class="banner__description">
+        <span class="separator banner__separator "></span>
+
+        <p class="description banner__description">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
           euismod bibendum laoreet. Proin gravida dolor sit amet lacus
           accumsan et viverra justo commodo.
         </p>
 
-        <button type="button" class="banner__btn">
+        <button type="button" class="transparent-btn banner__btn">
           Download
         </button>
       </div>
@@ -77,79 +81,87 @@
           Try Your <span>FREE</span> Trial Today
         </p>
   
-        <form class="banner__form form">
+        <form class="form banner__form">
 
-          <div class="form__container">
-            <input class="form__input" type="text" placeholder="Name">
-            <input class="form__input" type="email" placeholder="Email">
-            <input class="form__input" type="password" placeholder="Password">
-          </div>
-
-          <button class="form__submit" type="submit">
+          <input class="form__input" type="text" placeholder="Name">
+          <input class="form__input" type="email" placeholder="Email">
+          <input class="form__input" type="password" placeholder="Password">
+         
+          <!-- Submit -->
+          <button class="banner__form-submit" type="submit">
             Get Started
           </button>
+
         </form>
       </div>
     </div>
   </section>
 
+  <!-- Socials -->
   <section class="socials">
     <div class="socials__text">
-      <h2 class="socials__title">
+      <h2 class="title title--bold socials__title">
         Social Media
       </h2>
 
-      <p class="socials__description">
+      <p class="description socials__description">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
         Aenean euismod bibendum laoreet.
       </p>
     </div>
 
     <div class="socials__icons">
-      <a href="#"><img src="./assets/socials/facebook-f-brands (2).svg" alt=""></a>
-      <a href="#"><img src="./assets/socials/facebook-f-brands (2).svg" alt=""></a>
-      <a href="#"><img src="./assets/socials/facebook-f-brands (2).svg" alt=""></a>
-      <a href="#"><img src="./assets/socials/facebook-f-brands (2).svg" alt=""></a>
-      <a href="#"><img src="./assets/socials/facebook-f-brands (2).svg" alt=""></a>
-      <a href="#"><img src="./assets/socials/facebook-f-brands (2).svg" alt=""></a>
+      <a href="#"><img src="./assets/socials-black/facebook-logo.png" alt=""></a>
+      <a href="#"><img src="./assets/socials-black/twitter-logo-silhouette.png" alt=""></a>
+      <a href="#"><img src="./assets/socials-black/google-plus-logo.png" alt=""></a>
+      <a href="#"><img src="./assets/socials-black/pinterest-logo.png" alt=""></a>
+      <a href="#"><img src="./assets/socials-black/instagram-logo.png" alt=""></a>
+      <a href="#"><img src="./assets/socials-black/stumbleupon-logo.png" alt=""></a>
+      <a href="#"><img src="./assets/socials-black/wifi-connection-signal-symbol (1).png" alt=""></a>
       
     </div>
   </section>
 
+  <!-- Tabs -->
   <section class="tabs">
+
+    <!-- Buttons -->
     <div class="tabs__tab-container">
-      <div class="tabs__tab">
+      <button type="button"  class="tabs__tab">
         Tab 1
-      </div>
-      <div class="tabs__tab">
+      </button>
+      <button type="button" class="tabs__tab">
         Tab 2
-      </div>
-      <div class="tabs__tab">
+      </button>
+      <button type="button" class="tabs__tab">
         Tab 3
-      </div>
+      </button>
     </div>
 
+    <!-- Content -->
     <div class="tabs__text-container">
-      <h2 class="tabs__title">
+      <h2 class="title title--bold tabs__title">
         Tabs with soft transitioning effect.
       </h2>
   
-      <p class="tabs__description">
+      <p class="description tabs__description">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod 
         bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra 
         justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque 
         penatibus et magnis dis parturient montes.
       </p>
-      <p class="tabs__description">
+
+      <p class="description tabs__description">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod 
         bibendum laoreet.
       </p>
   
-      <button type="button" class="tabs__button button button--orange">
+      <button type="button" class="button button--orange tabs__button">
         Download
       </button>
     </div>
 
+    <!-- Picture -->
     <div class="tabs__city">
       <picture>
         <source media="min-width:1024px" srcset="./assets/cities/tabs-icon/image-right-u-255@3x.png">
@@ -159,9 +171,10 @@
     
   </section>
 
+  <!-- Sub-list -->
   <section class="sub-list">
 
-    <!-- Image -->
+    <!-- Picture -->
     <div class="sub-list__city">
       <picture>
         <source media="min-width:1024px" srcset="./assets/cities/sub-list/image-left-sub-list-u-260@3x.png">
@@ -171,94 +184,266 @@
 
     <!-- Text -->
     <div class="sub-list__text">
-      <h2 class="sub-list__title">
+
+      <h2 class="title title--bold sub-list__title">
         Sub list section
       </h2>
 
-      <p class="sub-list__description">
+      <span class="separator sub-list__separator "></span>
+
+      <p class="description sub-list__description">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean 
         euismod bibendum laoreet. Proin gravida dolor sit amet lacus 
         accumsan et viverra justo commodo.
       </p>
 
-      <div class="sub-list__service service">
-        <div class="service__icon">
-          <img src="./assets/cloud-storage-icon/cloud-storage-download.png" alt="">
+      <div class="sub-list__services">
+
+        <!-- Service 1 -->
+        <div class="sub-list-service">
+          <!-- Image -->
+          <img class="sub-list-service__icon" src="./assets/cloud-storage-icon/cloud-storage-download.png" alt="">
+      
+          <!-- Text -->
+          <div class="sub-list-service__text">
+            <p class="sub-list-service__title">
+              Title
+            </p>
+
+            <p class="sub-list-service__description description">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+              Aenean euismod bibendum laoreet.
+            </p>
+          </div>
         </div>
 
-        <div class="service__text">
-          
-          <p class="service__title">
-            Title
-          </p>
+        <!-- Service 2 -->
+        <div class="sub-list-service">
+          <!-- Image -->
+          <img class="sub-list-service__icon" src="./assets/cloud-storage-icon/cloud-storage-download.png" alt="">
+      
+          <!-- Text -->
+          <div class="sub-list-service__text">
+            <p class="sub-list-service__title">
+              Title
+            </p>
 
-          <p class="service__description">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-            Aenean euismod bibendum laoreet.
-          </p>
-
+            <p class="sub-list-service__description description">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+              Aenean euismod bibendum laoreet.
+            </p>
+          </div>
         </div>
+
       </div>
-
-
-      <div class="sub-list__service service">
-        <div class="service__icon">
-          
-        </div>
-
-        <div class="service__text">
-          
-          <p class="service__title">
-            Title
-          </p>
-
-          <p class="service__description">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-            Aenean euismod bibendum laoreet.
-          </p>
-
-        </div>
-      </div>
+    
       
     </div>
 
   </section>
 
+  <!-- Standard picture -->
   <section class="standard-picture">
     <div class="standard-picture__text">
-      <h2 class="standard-picture__title">
+      <h2 class="title title--bold standard-picture__title">
         Standard Picture Section
       </h2>
 
-      <p class="standard-picture__description">
+      <span class="separator standard-picture__separator "></span>
+
+      <p class="description standard-picture__description">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean 
           euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan 
           et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis 
           natoque penatibus et magnis dis parturient montes.
       </p>
-      <p class="standard-picture__description">
+      <p class="description standard-picture__description">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod 
           bibendum laoreet.
       </p>
     </div>
 
-    <!-- <div class="standard-picture__city">
+    <div class="standard-picture__city">
       <picture>
-          <source media="min-width:1024px" srcset="./assets/standard-picture/image-right-standard-u-262@3x.png">
-          <img src="./assets/standard-picture/image-right-standard-u-262@2x.png" alt="Some city view">
-        </picture>
-    </div> -->
+        <source media="min-width:1024px" srcset="./assets/standard-picture/image-right-standard-u-262@3x.png">
+        <img src="./assets/standard-picture/image-right-standard-u-262@2x.png" alt="Some city view">
+      </picture>
+    </div>
+
+  </section>
+
+  <!-- Awsome things -->
+  <section class="awsome-things">
+    <h2 class="title title--big awsome-things__title">
+      Why this is awsome
+    </h2>
+
+    <span class="separator awsome-things__separator"></span>
+
+    <p class="description awsome-things__description">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    </p>
+
+    <div class="awsome-things__services">
+      <!-- Service 1 -->
+      <div class="awsome-things__service awsome-things-service">
+        
+        <img src="./assets/awsome-things/lightbulb.png" alt="" class="awsome-things-service__icon">
+
+        <p class="title title--bold awsome-things-service__title">
+          Thoughtful Design
+        </p>
+
+        <p class="description awsome-things-service__description">
+          Lorem ipsum dolor sit amet, consectetur adipiscing 
+          elit. Aenean euismod bibendum laoreet. Proin gravida 
+          dolor sit amet lacus accumsan et viverra.
+        </p>
+        
+      </div>
+
+      <!-- Service 2 -->
+      <div class="awsome-things__service awsome-things-service">
+        
+        <img src="./assets/awsome-things/happy.png" alt="" class="awsome-things-service__icon">
+
+        <p class="title title--bold awsome-things-service__title">
+          Well Crafted
+        </p>
+
+        <p class="description awsome-things-service__description">
+          Lorem ipsum dolor sit amet, consectetur adipiscing 
+          elit. Aenean euismod bibendum laoreet. Proin gravida 
+          dolor sit amet lacus accumsan et viverra.
+        </p>
+        
+      </div>
+
+      <!-- Service 3 -->
+      <div class="awsome-things__service awsome-things-service">
+        
+        <img src="./assets/awsome-things/flash.png" alt="" class="awsome-things-service__icon">
+
+        <p class="title title--bold awsome-things-service__title">
+          Easy to Customize
+        </p>
+
+        <p class="description awsome-things-service__description">
+          Lorem ipsum dolor sit amet, consectetur adipiscing 
+          elit. Aenean euismod bibendum laoreet. Proin gravida 
+          dolor sit amet lacus accumsan et viverra.
+        </p>
+        
+      </div>
+    </div>
+    
   </section>
  
+  <!-- Pricing -->
+  <section class="pricing">
+      <h2 class="title title--big pricing__title">Pricing option</h2>
+
+      <span class="separator pricing__separator "></span>
+
+      <p class="description pricing__description">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      </p>
+
+      <div class="pricing__prices">
+
+        <!-- Price 1 -->
+        <button class="price pricing__price">
+          <p class="price__title">Basic</p>
+
+          <div class="price__money">
+            
+            <p class="price__number">
+              $ <span>0</span>
+            </p>
+            
+            <p class="description  price__period">Free for Life</p>
+
+            <p class="price__popularity">
+            </p>
+          </div>
+
+          <ul class="price__options">
+            <li class="price__option">1 gb of space</li>
+            <li class="price__option">10 gb of bandwidth</li>
+            <li class="price__option">3 websites</li>
+            <li class="price__option">basic customization</li>
+            <li class="price__option">wordpress intergration</li>
+            <li class="price__option">email support</li>
+          </ul>
+        </button>
+       
+        <!-- Price 2 -->
+        <button class="price pricing__price">
+         
+          <p class="price__title">Professional</p>
+
+          <div class="price__money">
+            
+            <p class="price__number">
+              $ <span>19</span>
+            </p>
+            
+            <p class="description  price__period">Monthly Payment</p>
+
+            <p class="price__popularity price__popularity--with-text">
+              OUR MOST POPULAR
+            </p>
+          </div>
+
+          <ul class="price__options">
+            <li class="price__option">5 gb of space</li>
+            <li class="price__option">50 gb of bandwidth</li>
+            <li class="price__option">12 websites</li>
+            <li class="price__option">Advanced customization</li>
+            <li class="price__option">wordpress intergration</li>
+            <li class="price__option">email support</li>
+          </ul>
+         
+        </button>
+       
+        <!-- Price 3 -->
+        <button class="price pricing__price">
+          <p class="price__title">Enterprice</p>
+  
+          <div class="price__money">
+            
+            <p class="price__number">
+              $ <span>7</span><span>0</span>
+            </p>
+            
+            <p class="description  price__period">Monthly Payment</p>
+
+            <p class="price__popularity">
+            </p>
+          </div>
+
+          <ul class="price__options">
+            <li class="price__option">unlimited space</li>
+            <li class="price__option">unlimited bandwidth</li>
+            <li class="price__option">100 websites</li>
+            <li class="price__option">advanced customization</li>
+            <li class="price__option">wordpress intergration</li>
+            <li class="price__option">24/7 customer support</li>
+          </ul>
+        </button >
+
+      </div>
+  </section>
+
   <!-- Customers -->
   <section class="customers">
     <h2 class="customers__title title title--big">
       WHAT OUR CUSTOMERS ARE SAYING
     </h2>
 
-    <span class="customers__separator separator"></span>
+    <span class="separator customers__separator"></span>
 
-    <p class="customers__description description">
+    <p class="description customers__description">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     </p>
 
@@ -266,7 +451,7 @@
 
       <!-- Customer 1 -->
       <div class="customers__customer customer">
-        <p class="customer__opinion description">
+        <p class="description customer__opinion">
           Lorem ipsum dolor sit amet, 
           consectetur adipisicing elit. Doloribus 
           accusamus expedita repellat similique 
@@ -285,7 +470,7 @@
 
        <!-- Customer 2 -->
       <div class="customers__customer customer customer--reversed">
-        <p class="customer__opinion customer--reversed__opinion description">
+        <p class="description customer__opinion customer--reversed__opinion ">
           Lorem ipsum dolor sit amet, 
           consectetur adipisicing elit. Doloribus 
           accusamus expedita repellat similique 
@@ -304,7 +489,7 @@
       
       <!-- Customer 3 -->
       <div class="customers__customer customer">
-        <p class="customer__opinion description">
+        <p class="description customer__opinion ">
           Lorem ipsum dolor sit amet, 
           consectetur adipisicing elit. Doloribus 
           accusamus expedita repellat similique 
@@ -321,65 +506,56 @@
         </div>
       </div>
 
-
-      
-
-
     </div>
-
-
   </section>
 
   <!-- Stylish design -->
   <section class="stylish-design">
-    <h2 class="stylish-design__title title title--big">
+    <h2 class="title title--big stylish-design__title ">
       STYLISH AXURE DESIGN
     </h2>
 
-    <span class="stylish-design__separator separator"></span>
+    <span class="separator stylish-design__separator "></span>
 
-    <p class="stylish-design__description description">
+    <p class="description stylish-design__description ">
       Use the sections you need, remove the ones you don't.  Create gorgeous prototypes faster than ever!
     </p>
 
-    <button type="button" class="stylish-design__btn transparent-btn">Download</button>
+    <button type="button" class="transparent-btn stylish-design__btn ">Download</button>
   </section>
 
   <!-- Contact -->
   <section class="contact">
     
     <!-- Title -->
-    <h2 class="contact__title title title--big">
+    <h2 class="title title--big contact__title">
       Contact us
     </h2>
 
     <!-- Separator -->
-    <span class="contact__separator separator"></span>
+    <span class="separator contact__separator "></span>
 
     <!-- Description -->
-    <p class="contact__description description">
+    <p class="description contact__description ">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     </p>
 
     <!-- Form -->
-    <form class="contact__form form">
+    <form class="form contact__form ">
 
       <div class="contact__inputs">
-
         <div class="contact__inputs-left">
-          <input class="contact__input form__input" type="text" placeholder="Name">
+          <input class="form__input contact__input" type="text" placeholder="Name">
   
-          <input class="contact__input form__input" type="email" placeholder="Email">
+          <input class="form__input contact__input" type="email" placeholder="Email">
   
-          <input class="contact__input form__input" type="text" placeholder="Subject">
+          <input class="form__input contact__input" type="text" placeholder="Subject">
         </div>
 
-        <input class="contact__message form__input" type="text" placeholder="Message">
-
+        <input class="form__input contact__message" type="text" placeholder="Message">
       </div>
       
-
-      <button class="contact__btn button button--orange" type="submit">
+      <button class="button button--orange contact__btn" type="submit">
         Send Message
       </button>
 

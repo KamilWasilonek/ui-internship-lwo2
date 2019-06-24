@@ -1,6 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700&display=swap');
+@import './variables.scss';
 
+@mixin default-padding($top: 70px, $right: 10%, $bottom: 70px, $left: 10%) {
+  padding: $top $right $bottom $left;
+}
+
+// Reset
 * {
   margin: 0;
   padding: 0;
@@ -9,52 +15,15 @@
   font-weight: normal;
 }
 
-// @media screen and (min-width: 768px) {
-//  html {
-//    font-size: 1.2rem;
-//  }
-// }
-
-@function strip-unit($value) {
-  @return $value / ($value * 0 + 1);
-}
-
-@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
-  $u1: unit($min-vw);
-  $u2: unit($max-vw);
-  $u3: unit($min-font-size);
-  $u4: unit($max-font-size);
-
-  @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
-    & {
-      font-size: $min-font-size;
-      @media screen and (min-width: $min-vw) {
-        font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
-      }
-      @media screen and (min-width: $max-vw) {
-        font-size: $max-font-size;
-      }
-    }
+@media screen and (min-width: 1024px) {
+  html {
+    font-size: 1.2rem;
   }
 }
 
-@mixin description-style {
-  margin: 20px 0;
-  color: $description-text-color;
-}
-
-
-$color-secondary: #ff8b38;
-$section-bg-color: #f5f5f5;
-$footer-bg-color: rgb(50, 50, 50);
-$description-text-color: #86878b;
-$white-color: #ffffff;
-
-@mixin default-padding($top: 70px, $right: 10%, $bottom: 70px, $left: 10%) {
-  padding: $top $right $bottom $left;
-}
-
 // ------------------- Reusable elements -------------------
+
+// Navbar
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -62,7 +31,8 @@ $white-color: #ffffff;
   background: #000000;
 
   &__logo {
-    // font-size: 1.7rem;
+    font-size: 1.5rem;
+    text-decoration: none;
   }
 
   &__menu {
@@ -80,12 +50,16 @@ $white-color: #ffffff;
 
     li > a:hover {
       color: $color-secondary;
+      text-decoration: underline;
     }
   }
 
   &__mobile-btn {
-    font-size: 20px;
     color: #ffffff;
+    background: transparent;
+    border: none;
+    font-size: 25px;
+    cursor: pointer;
   }
 }
 
@@ -101,6 +75,15 @@ $white-color: #ffffff;
   }
 }
 
+@media screen and (min-width: 1024px) {
+  .navbar {
+    &__menu {
+      font-size: 0.8rem;
+    }
+  }
+}
+
+// Logo
 .logo {
   color: #ffffff;
 
@@ -110,27 +93,40 @@ $white-color: #ffffff;
   }
 }
 
-.form {
-  &__input {
-    display: block;
-    border: none;
-    border-bottom: 1px solid $description-text-color;
-    cursor: pointer;
-  }
-}
-
+// Transparent button
 .transparent-btn {
   padding: 10px 20px;
   color: $white-color;
   background: transparent;
   border: 2px solid $white-color;
-  font-weight: bold;
+  font-size: 0.7rem;
+  cursor: pointer;
+
+  &:hover {
+    background: $color-secondary;
+  }
+}
+
+// Form
+.form {
+  &__input {
+    display: block;
+    border: none;
+    border-bottom: 1px solid $description-text-color;
+    font-size: 0.7rem;
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
+  }
 }
 
 .button {
   padding: 10px 20px;
   border: none;
   border-radius: 3px;
+  font-size: 0.7rem;
   cursor: pointer;
 
   &--orange {
@@ -154,7 +150,6 @@ $white-color: #ffffff;
 }
 
 .description {
-  margin: 20px 0;
   color: $description-text-color;
   font-size: 0.8rem;
 }
@@ -168,7 +163,7 @@ $white-color: #ffffff;
 
 // ------------------- Banner -------------------
 .banner {
-  background: linear-gradient(rgba(0, 0, 0, 0.65)), url(./assets/banner/image.png) no-repeat center/cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.65)), url(../assets/banner/image.png) no-repeat center/cover;
   text-align: center;
 
   &__navbar {
@@ -185,21 +180,28 @@ $white-color: #ffffff;
   }
 
   &__logo {
-    // font-size: 4rem;
+    font-size: 3rem;
   }
 
-  &__subtitle,
-  &__description {
+  &__subtitle {
     margin: 10px 0 20px 0;
     font-family: 'Raleway', sans-serif;
     font-weight: lighter;
   }
 
-  &__description {
-    @include description-style();
+  &__separator {
+    margin: 0 auto;
+    background: #ffffff;
   }
 
+  &__description {
+    margin: 20px 0;
+  }
 
+  &__btn {
+    margin-top: 20px;
+  } 
+  
   // Right side
   &__right-side {
     margin: 50px auto 0 auto;
@@ -219,25 +221,38 @@ $white-color: #ffffff;
     }
   }
 
-  //Button
-  &__btn {
-    padding: 5px 30px;
+  &__form {
+    input {
+      width: 80%;
+      margin: 40px auto;
+      opacity: 0.6;
+    }
+  }
+
+  &__form-submit {
+    width: 100%;
+    padding: 15px 0;
     color: #ffffff;
-    background: transparent;
-    border: 1px solid #ffffff;
-  } 
+    background: $color-secondary;
+    border: none;
+    cursor: pointer;
+  }
 }  
 
 @media screen and (min-width: 768px) {
   .banner {
-    
-    background: linear-gradient(rgba(0, 0, 0, 0.65)), url(./assets/banner/image@3x.png) no-repeat center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.65)), url(../assets/banner/image@3x.png) no-repeat center/cover;
   
+    &__separator {
+      margin: 0;
+    }
+
     &__container {
       padding: 130px 10%;
       display: grid;
       grid-template-columns: 1fr 0.8fr;
       grid-column-gap: 5%;
+      align-items: flex-end;
     }
 
     &__left-side {
@@ -256,25 +271,28 @@ $white-color: #ffffff;
   display: none;
   align-items: center;
   justify-content: space-between;
-  padding: 30px 10%;
+  padding: 10px 10%;
   text-align: left;
 
   &__text {
-    flex: 1;
+    flex-basis: 40%;
+    margin-right: 60px;
   }
 
   &__title {
-    font-weight: bold;
+    margin: 0;
   }
 
   &__description {
-    @include description-style();
-    margin: 20px 0;
+    margin: 10px 0;
+    font-size: 0.7rem;
   }
 
   &__icons {
-    flex: 1;
+    flex: 50%;
+    max-width: 500px;
     display: flex;
+    justify-content: space-between;
     opacity: 0.4;
     img {
       width: 30px;
@@ -298,32 +316,33 @@ $white-color: #ffffff;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-column-gap: 1px;
+    align-items: flex-start;
     max-width: 500px;
-    margin: 50px auto;
+    margin: 0 auto 40px auto;
   }
 
   &__tab {
+    display: block;
     padding: 20px;
     color: #ffffff;
-    background: rgb(50, 50, 50);
+    background: $footer-bg-color;
     border: none;
     border-radius: 3px;
     text-transform: uppercase;
+    font-size: 0.8rem;
     cursor: pointer;
 
     &:hover {
-      color: #ffffff;
       background: $color-secondary;
     }
   }
 
-  &__title {
-    font-weight: bold;
+  &__description {
+    margin: 20px 0;
   }
 
-  &__description {
-    @include description-style();
-    margin: 20px 0;
+  &__button {
+    margin-top: 20px;
   }
 
   &__city {
@@ -348,8 +367,8 @@ $white-color: #ffffff;
     }
     
     &__tab {
-      padding: 40px;
-      max-width: 130px;;
+      padding: 40px 30px;
+      max-width: 100px;
       border: 1px solid $section-bg-color;
       white-space: nowrap;
     }
@@ -376,6 +395,104 @@ $white-color: #ffffff;
   @include default-padding();
   text-align: center;
 
+  &__separator {
+    margin: 0 auto;
+  }
+
+  &__description {
+    margin: 20px 0;
+  }
+
+  &__city {
+    display: none;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.sub-list-service {
+  margin: 40px 0;
+
+  &__title {
+    margin: 10px 0;
+  }
+  
+  &__icon {
+    width: 50px;
+    padding: 10px;
+    border: 2px solid $color-secondary;
+    border-radius: 60px;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .sub-list {
+    &__services {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-column-gap: 30px;
+    }
+
+    &__city {
+      display: block;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .sub-list {
+    display: flex;
+    align-items: center;
+    text-align: left;
+
+    &__services {
+      display: block;
+    }
+    
+    &__separator {
+      margin: 0;
+    }
+
+    &__city {
+      flex-basis: 60%;
+      display: block;
+    }
+
+    &__text {
+      flex-basis: 50%;
+      margin-left: 30px;
+    }
+  }
+
+  .sub-list-service {
+    display: flex;
+    text-align: left;
+    align-items: center;
+    width: 100%;
+    // margin: 40px auto;
+
+    &__text {
+      margin-left: 30px;
+    }
+
+    &__description {
+      margin: 10px 0;
+    }
+
+    &__icon {
+      width: 60px;
+    }
+  } 
+}
+
+// ------------------- Standard picture -------------------
+.standard-picture {
+  @include default-padding();
+  background: $section-bg-color;
+  text-align: center;
+
   &__city {
     display: none;
 
@@ -384,118 +501,180 @@ $white-color: #ffffff;
     }
   }
 
-  &__title {
-    font-weight: bold;
+  &__separator {
+    margin: 0 auto;
   }
 
   &__description {
-    @include description-style();
+    margin: 20px 0;
   }
 }
 
-.service {
-  margin: 40px 0;
-
-  &__icon {
-    // flex-basis: 70px;
-    // display: flex;
-    // justify-content: center;
-    // align-items: center;
-    // width: 40px;
-    // height: 40px;
-    // margin: 0 auto;
-    // border: 2px solid $color-secondary;
-    // border-radius: 60px;
-
-
-    
-      // width: 20px;
-      // height: 20px;
- 
-  }
-
-  &__title {
-    margin: 10px 0;
-    font-weight: bold;
-  }
-
-  &__description {
-    @include description-style();
-  }
-}
-
-
-@media screen and (min-width: 1024px) {
-  .sub-list {
+@media screen and (min-width: 768px) {
+  .standard-picture {
     display: flex;
+    align-items: center;
     text-align: left;
-    
-    &__city {
-      margin-left: -30px;
-      flex-basis: 50%;
-      display: block;
+
+    &__separator {
+      margin: 0;
     }
 
     &__text {
       flex-basis: 50%;
-      margin-left: 30px;
-    }
-
-  }
-
-  .service {
-    display: flex;
-    margin: 15px 0;
-
-    &__icon {
-      width: 60px;
       margin-right: 20px;
     }
 
-    &__title {
-      margin: 0;
+    &__city {
+      display: block;
+      flex-basis: 50%;
     }
   }
 }
 
-// ------------------- Contact -------------------
-.stylish-design {
+// ------------------- Awsome things -------------------
+.awsome-things {
   @include default-padding();
-  background: linear-gradient(rgba(0,0,0,0.65)), url(./assets/stylish-design/u-25-state-0@3x.png) no-repeat center/cover;
   text-align: center;
-
-  &__title {
-    color: $white-color;
-  }
 
   &__separator {
     margin: 0 auto;
-    background: $white-color;
   }
 
   &__description {
-    color: $white-color;
+    margin: 20px 0;
+  }
+
+  &__services {
+    margin-top: 40px;
+  }
+}
+
+.awsome-things-service {
+  margin: 50px 0;
+
+  &__icon {
+    width: 50px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 2px solid $color-secondary;
+    border-radius: 60px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .awsome-things {
+    &__services {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-column-gap: 40px;
+    }
+  }
+
+  .awsome-things-service {
+    margin: 40px 20px 0 20px;
+  }
+}
+
+
+// ------------------- Pricing -------------------
+.pricing {
+  @include default-padding();
+  background: $section-bg-color;
+  text-align: center;
+
+  &__separator {
+    margin: 0 auto;
+  }
+
+  &__description {
+    margin: 20px 0;
+  }
+}
+
+.price {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  margin: 50px auto 0 auto;
+  background: $footer-bg-color;
+  color: #ffffff;
+  text-align: center;
+  
+  &__title {
+    padding: 15px 0;
+    border-bottom: 1px solid #ffffff;
+  }
+
+  &__number {
+    font-size: 1.3rem;
     font-family: Raleway;
-    opacity: 0.6;
+
+    span {
+      font-family: Raleway;
+      font-size: 4rem;
+      font-weight: bold;
+    }
+  }
+
+  &__period {
+    margin: 15px 0;
+    font-style: italic;
+  }
+
+  &__popularity {
+    min-height: 5px;
+    background: $color-secondary;
+  
+    &--with-text {
+      font-size: 0.8rem;
+      padding: 10px 0;
+    }
+  }
+
+  &__options {
+    color: $description-text-color;
+    font-size: 0.8rem;
+    list-style: none;
+  }
+
+  &__option {
+    padding: 10px 0;
+    background: #ffffff;
+    border-bottom: 1px solid $section-bg-color; 
+    text-transform: uppercase;
+    font-weight: lighter;
   }
 }
 
 @media screen and (min-width: 1024px) {
-  .stylish-design {
-    padding: 100px 10%;
+  .pricing {
+   &__prices {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 30px;
+    align-items: flex-end;
+    max-width: 1200px;
+    margin: 0 auto;
+   }
+  }
 
-    &__description {
-      margin: 40px 0;
-    }
+  .price {
+    width: 100%;
   }
 }
+
 // ------------------- Contact -------------------
 .customers {
-  @include default-padding();
+  padding: 70px 10% 30px 10%;
   text-align: center;
 
   &__separator {
     margin: 0 auto;
+  }
+
+  &__description {
+    margin: 20px 0;
   }
 
   &__container {
@@ -506,10 +685,8 @@ $white-color: #ffffff;
 }
 
 .customer {
-  display: flex;
-  max-width: 400px;
-  margin: 30px auto;
-  text-align: left;
+  max-width: 500px;
+  margin: 50px auto;
   
   &__opinion {
     position: relative;
@@ -533,7 +710,8 @@ $white-color: #ffffff;
   &__details {
     display: flex;
     align-items: center;
-    margin: 0 auto;
+    justify-content: center;
+    margin: 10px;
     text-align: left;
     
     img {
@@ -555,14 +733,21 @@ $white-color: #ffffff;
   }
 }
 
-.customer--reversed {
-  &__opinion {
-    order: 2;
-    margin: 0 0 0 40px;
+@media screen and (min-width: 500px) {
+  .customer {
+    display: flex;
+    text-align: left;
   }
 
-  &__details {
-    order: 1;
+  .customer--reversed {
+    &__opinion {
+      order: 2;
+      margin: 0 0 0 40px;
+    }
+
+    &__details {
+      order: 1;
+    }
   }
 }
 
@@ -588,6 +773,38 @@ $white-color: #ffffff;
   }
 }
 
+// ------------------- Stylish design -------------------
+.stylish-design {
+  @include default-padding();
+  background: linear-gradient(rgba(0,0,0,0.65)), url(../assets/stylish-design/u-25-state-0@3x.png) no-repeat center/cover;
+  text-align: center;
+
+  &__title {
+    color: $white-color;
+  }
+
+  &__separator {
+    margin: 0 auto;
+    background: $white-color;
+  }
+
+  &__description {
+    margin: 20px 0;
+    color: $white-color;
+    opacity: 0.6;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .stylish-design {
+    padding: 100px 10%;
+
+    &__description {
+      margin: 40px 0;
+    }
+  }
+}
+
 // ------------------- Contact -------------------
 .contact {
   @include default-padding();
@@ -595,6 +812,10 @@ $white-color: #ffffff;
   
   &__separator {
     margin: 0 auto;
+  }
+
+  &__description {
+    margin: 20px 0;
   }
 
   &__form {
