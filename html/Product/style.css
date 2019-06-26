@@ -437,20 +437,19 @@ html {
   margin-bottom: 30px; 
 }
 
-.bookmarks__button-1,
-.bookmarks__button-2 {
+.bookmarks-btn {
   padding: 15px 30px;
   font-weight: bold;
   text-transform: uppercase;
   cursor: pointer;
 }
 
-.bookmarks__button-1 {
+.bookmarks-btn--black {
   color: white;
   background: #000000;
 }
 
-.bookmarks__button-2 {
+.bookmarks-btn--white {
   background: transparent;
 }
 
