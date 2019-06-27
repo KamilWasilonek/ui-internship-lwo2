@@ -1,0 +1,40 @@
+@import '../variables.scss';
+@import '../mixins.scss';
+
+.awsome-feature {
+  background: $section-bg-color;
+  text-align: center;
+
+  @media screen and (min-width: 1024px) {
+    padding: 100px 10% 0 10%;
+  }
+
+  &__type {
+    @include section-type();
+  }
+
+  &__title {
+    @include section-title();
+    margin: 10px 0 20px 0;
+  }
+
+  &__description {
+    @include section-description();
+
+    @media screen and (min-width: 1024px) {
+      width: 70%;
+      margin: 0 auto;
+    }
+  }
+
+  &__screen {
+    display: none;
+    margin: 0 auto;
+    height: 400px;
+
+    @media screen and (min-width: 1024px) {
+      display: block;
+      margin-top: 100px;
+    }
+  }
+}

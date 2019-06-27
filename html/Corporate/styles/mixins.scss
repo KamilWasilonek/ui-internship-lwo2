@@ -1,0 +1,23 @@
+@mixin section-type() {
+  color: $color-secondary;
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 3.2px;
+}
+
+@mixin section-title() {
+  font-size: 1.7rem;
+  letter-spacing: 1.6px;
+  font-weight: normal;
+}
+
+@mixin section-subtitle() {
+  font-size: 1.2rem;
+  font-weight: normal;
+}
+
+@mixin section-description {
+  font-size: 0.8rem;
+  line-height: 1.6;
+  opacity: 0.8;
+}
