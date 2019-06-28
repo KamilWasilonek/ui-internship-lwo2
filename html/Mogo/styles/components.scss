@@ -1,0 +1,60 @@
+@import './variables.scss';
+
+.section-title {
+  font-family: $font-primary;
+  font-weight: bold;
+  text-transform: uppercase;
+  
+  &--white {
+    color: $white-color;
+  }
+
+  &--black {
+    color: $black-color;
+  }
+}
+
+.section-type {
+  font-family: $font-special;
+
+  &--white {
+    color: $white-color;
+  }
+
+  &--black {
+    color: $black-color;
+  }
+}
+
+.separator {
+  width: 5%;
+  height: 30px;
+
+  &--white {
+    background: $white-color;
+  }
+
+  &--orange {
+    color: #f38181;
+  }
+}
+
+.menu {
+  list-style: none;
+
+  &__item {
+    a {
+      text-decoration: none;
+    }
+
+    &--white {
+      a {
+        color: $white-color;
+      }
+    }
+  }
+
+
+
+}
+
