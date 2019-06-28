@@ -3,6 +3,8 @@
 .vscode/
 *.iml
 *.sublime*
+*.css
+*.map
 
 # common ignores
 node_modules
