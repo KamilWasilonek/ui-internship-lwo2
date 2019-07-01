@@ -1,0 +1,20 @@
+// @mixin md {
+//   @media screen and (min-width: 678px) {
+//     @content;
+//   }
+// }
+
+// @mixin lg {
+//   @media screen and (min-width: 1024px) {
+//     @content;
+//   }
+// }
+
+@mixin respond($size) {
+  @if $size == md {
+    @media (min-width: 678px) { @content; }
+  } 
+  @else if $size == lg {
+    @media (min-width: 1024px) { @content; }
+  } 
+}

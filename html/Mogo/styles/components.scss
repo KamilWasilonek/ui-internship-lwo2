@@ -10,7 +10,16 @@
   }
 
   &--black {
-    color: $black-color;
+    color: $title-color;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 70px;
+      height: 2px;
+      margin: 20px auto;
+      background: $separator-color;
+    }
   }
 }
 
@@ -22,21 +31,14 @@
   }
 
   &--black {
-    color: $black-color;
+    color: $title-color;
   }
 }
 
-.separator {
-  width: 5%;
-  height: 30px;
-
-  &--white {
-    background: $white-color;
-  }
-
-  &--orange {
-    color: #f38181;
-  }
+.section-description {
+  font-family: Roboto;
+  line-height: 1.6;
+  color: $description-color;
 }
 
 .menu {
@@ -53,8 +55,5 @@
       }
     }
   }
-
-
-
 }
 
