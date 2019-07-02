@@ -12,14 +12,15 @@
   &--black {
     color: $title-color;
 
-    &::after {
-      content: '';
-      display: block;
-      width: 70px;
-      height: 2px;
-      margin: 20px auto;
-      background: $separator-color;
-    }
+    
+  }
+  &::after {
+    content: '';
+    display: block;
+    width: 70px;
+    height: 2px;
+    margin: 20px auto;
+    background: $separator-color;
   }
 }
 
