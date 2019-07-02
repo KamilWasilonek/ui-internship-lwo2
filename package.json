@@ -6,7 +6,7 @@
     "test": "jest",
     "lint": "./node_modules/.bin/eslint tasks/**/*.js",
     "tdd": "jest --watch",
-    "sass": "node-sass -w html/Mogo/styles/ -o html/Mogo/styles"
+    "sass": "node-sass -w html/Mogo/styles/ --source-map-root -o html/Mogo/styles"
   },
   "husky": {
     "hooks": {

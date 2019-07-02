@@ -17,4 +17,7 @@
   @else if $size == lg {
     @media (min-width: 1024px) { @content; }
   } 
+  @else if $size == extra-lg {
+    @media (min-width: 1600px) { @content; }
+  } 
 }
