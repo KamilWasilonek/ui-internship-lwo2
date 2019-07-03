@@ -8,10 +8,6 @@
   <link rel="stylesheet" href="./styles/style.css">
 </head>
 <body>
-
- 
-  
- 
   <!-- Banner -->
   <section class="banner">
     <!-- Menu -->
@@ -35,11 +31,17 @@
           <li class="nav__menu-item">
             <a href="#">Contact</a>
           </li>
-          <li class="nav__menu-item">
-            <img src="./assests/images/banner/cart.svg" alt="Make shopping">
+          <li class="nav__menu-item nav__menu-icon">
+            <a href="#">
+              <div class="nav__menu-shopping"></div>
+              <!-- <img src="./assests/images/banner/cart.svg" alt="Make shopping"> -->
+            </a>
           </li>
           <li class="nav__menu-item nav__menu-icon">
-            <img src="./assests/images/banner/search.svg" alt="Search">
+            <a href="#">
+              <div class="nav__menu-search"></div>
+              <!-- <img src="./assests/images/banner/search.svg" alt="Search"> -->
+            </a> 
           </li>
         </ul>
 
@@ -78,16 +80,13 @@
     </div>
   </section>
 
-
-
-
   <!-- About us -->
-  <section class="about-us">
-    <p class="section-type section-type--black about-us__type">
+  <section class="about">
+    <p class="section-type section-type--black about__type">
       What we do
     </p>
     
-    <h2 class="section-title section-title--black about-us__title">
+    <h2 class="section-title section-title--black about__title">
       Story about us
     </h2>
 
@@ -95,31 +94,26 @@
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
     </p>
 
-    <div class="about-us__services">
+    <div class="about__services">
       
-      <div class="about-us__img-container about-us__img-container--overlay">
-        <div class="about-us__image-details">
-          <img class="about-us__icon" src="./assests/images/about-us/users.svg" alt="">
-          <p  class="about-us__text">Super team</p>
+      <div class="about__img-container about__img-container--equipment-bg">
+        <div class="about__image-details">
+          <img class="about__icon" src="./assests/images/about/users.svg" alt="">
+          <p  class="about__text">Super team</p>
         </div>
       </div>
       
-      <div class="about-us__image about-us__img-container">
-        <img src="./assests/images/about-us/layer-39@2x.jpg" alt="Workplace">
+      <div>
+        <img class="about__image" src="./assests/images/about/layer-39@2x.jpg" alt="Workplace">
       </div>
       
-      <div class="about-us__image about-us__img-container">
-        <img src="./assests/images/about-us/layer-41@2x.jpg" alt="Equipment">
+      <div>
+        <img class="about__image" src="./assests/images/about/layer-41@2x.jpg" alt="Equipment">
       </div>
     
     </div>
 
   </section>
-
-
-
-
-
 
   <!-- Counters -->
   <section class="counters">
@@ -151,11 +145,11 @@
 
   <!-- Company offer -->
   <section class="company-offer">
-    <p class="section-type section-type--black about-us__type">
+    <p class="section-type section-type--black company-offer__type">
       We work with
     </p>
     
-    <h2 class="section-title section-title--black about-us__title">
+    <h2 class="section-title section-title--black company-offer__title">
       Amazing services
     </h2>
 
@@ -228,6 +222,10 @@
       Unique design
     </h2>
 
+    <div class="unique-design__container">
+      <img class="unique-design__tablet" src="./assests/images/unique-design/display-bg-768-x-1024@2x.jpg" alt="Tablet view">
+      <!-- <img class="unique-design__mobile" src="./assests/images/unique-design/white@2x.png" alt="Mobile view"> -->
+    </div>
    
   </section>
 
@@ -246,45 +244,39 @@
     </p>
 
     <div class="services__content">
-      <img class="services__img" src="./assests/images/unique-design/layer-43@2x.jpg" alt="Photography">
+      <img class="services__img" src="./assests/images/unique-design/layer-43@3x.jpg" alt="Photography">
 
-      <div class="container">
+      <div class="services__container">
 
         <button class="accordion services__accordion">
           <img class="accordion__img" src="./assests/images/services/picture.svg" alt="">
           Photography
         </button>
-        <!-- <div class="panel">
-          <p>Lorem ipsum...</p>
-        </div> -->
 
         <button class="accordion services__accordion">
           <img class="accordion__img" src="./assests/images/services/equalizer.svg" alt="">
-          creativity
+          Creativity
         </button>
-        <!-- <div class="panel">
-          <p>Lorem ipsum...</p>
-        </div> -->
 
         <button class="accordion services__accordion">
           <img class="accordion__img" src="./assests/images/services/bullseye.svg" alt="">
-          web design
+          Web design
         </button>
-        <!-- <div class="panel">
-          <p>Lorem ipsum...</p>
-        </div> -->
 
       </div>
     </div>
   </section>
 
-  <!-- Slider -->
+  <!-- Slider with message-->
   <section class="slider">
     <button class="slider__previous-btn">
       <
     </button>
     <div class="slider__container">
-      <img class="slider__img slider-img--with-border" src="./assests/images/slider/speech-4.svg" alt="">
+      <div class="slider__img-box slider__img-box--with-border">
+         <img class="slider__img" src="./assests/images/slider/speech-4.svg" alt="">
+      </div>
+     
       <div class="slider__details">
         <p class="slider__quotation">
           “Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.”
@@ -295,12 +287,50 @@
     <button class="slider__next-btn">></button>
   </section>
 
+  <!-- Team -->
+  <section class="team">
+    <p class="section-type section-type--black team__type">
+      Who we are
+    </p>
+    
+    <h2 class="section-title section-title--black team__title">
+      Meet our team
+    </h2>
+
+    <p class="section-description">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+    </p>
+
+    <div class="team__services">
+      
+      <div class="team__img-container team__img-container--person-bg ">
+        <div class="team__image-details">
+          <img class="team__icon team__icon--facebook" src="./assests/images/team/facebook-logo.png" alt="">
+          <img class="team__icon" src="./assests/images/team/twitter-logo-silhouette (1).png" alt="">
+          <img class="team__icon" src="./assests/images/team/pinterest.png" alt="">
+          <img class="team__icon" src="./assests/images/team/instagram.png" alt="">
+        </div>
+      </div>
+      
+      <div>
+        <img class="team__image" src="./assests/images/team/layer-19@2x.jpg" alt="Mark">
+        <p class="team__person-name">Christopher Campbell</p>
+        <p class="section-description team__person-position">Branding/UX design</p>
+      </div>
+      
+      <div>
+        <img class="team__image" src="./assests/images/team/layer-18@2x.jpg" alt="Jim">
+        <p class="team__person-name">Michael Fertig </p>
+        <p class="section-description team__person-position">Developer</p>
+      </div>
+    
+    </div>
+  </section>
 
   <!-- Comapny logos -->
   <section class="company-logos">
     <img class="company-logos__image" src="./assests/images/campany-logos/layer-25@2x.jpg" alt="Company logos">
   </section>
-
 
   <!-- Projects -->
   <section class="projects">
@@ -348,15 +378,16 @@
     </div>
   </section>
 
-  <!-- Slider -->
+  <!-- Slider with people-->
   <section class="slider">
     <button class="slider__previous-btn">
       <
     </button>
     <div class="slider__container">
-      <!-- <div class="slider__img-container">
-        <img class="slider__image slider__image--rounded" src="./assests/images/slider/adult-audience-back-view-1493371 (1).jpg" alt="">
-      </div> -->
+      <div class="slider__img-box">
+          <img class="slider__img slider__img--rounded" src="./assests/images/opinion/layer-51@2x.jpg" alt="">
+      </div>
+      
       <div class="slider__details">
         <p class="slider__quotation">
           “Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.”
@@ -365,9 +396,8 @@
       </div>
     </div>
     <button class="slider__next-btn">></button>
-    
   </section>
-
+    
   <!-- Opinion -->
   <section class="opinion">
     <p class="section-type section-type--black opinion__type">

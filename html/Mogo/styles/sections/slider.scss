@@ -1,0 +1,87 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+
+.slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 10%;
+  background: #f8f8f8;
+  text-align: center;
+
+  @include respond(lg) {
+    text-align: left;
+  }
+
+  &__container {
+    padding: 0 30px;
+    display: flex;
+
+    @include respond(md) {
+      padding: 0 50px;
+    }
+  }
+
+  &__img-box {
+    display: none;
+
+    &--with-border {
+      width: 100px;
+      padding: 20px;
+      border: 2px solid $icon-color;
+    }
+    
+    @include respond(lg) {
+      display: block;
+    }
+  }
+
+  &__img {
+    width: 100%;
+
+    &--rounded {
+      width: 130px;
+      height: 130px;
+      border-radius: 90px;
+    }
+  }
+
+  &__details {
+    margin-left: 20px;
+    align-self: center;
+  }
+
+  &__quotation {
+    color: $description-color;
+    font-style: italic;
+  }
+
+  &__author {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    font-family: $font-special;
+
+    @include respond(lg) {
+      justify-content: left;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      width: 50px;
+      height: 2px;
+      margin-right: 5px;
+      background: $separator-color;
+    }
+  }
+
+  &__previous-btn,
+  &__next-btn {
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+}

@@ -20,6 +20,10 @@
     height: 2px;
     margin: 20px auto;
     background: $separator-color;
+
+    @include respond(lg) {
+      margin: 40px auto;
+    }
   }
 
   @include respond(lg) {
@@ -121,18 +125,52 @@
         font-size: 1rem;
       }
     }
+  }
 
+  &__menu-icon {
     img {
       width: 16px;
       cursor: pointer;
 
-      &:hover {
-        fill: $menu-on-hover-color;
-      }
-
       @include respond(lg) {
         width: 18px;
       }
+    }
+  }
+  &__menu-shopping,
+  &__menu-search {
+    position: relative;
+    width: 16px;
+    height: 16px;
+
+    &:hover::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+      height: 2px;
+      width: 100%;
+      background: $menu-on-hover-color;
+    }
+  }
+
+  &__menu-shopping {
+    background: url(../assests/images/banner/cart.svg) center bottom/cover
+      no-repeat;
+
+    &:hover {
+      background: url(../assests/images/banner/cart-color.svg) center
+        bottom/cover no-repeat;
+    }
+  }
+
+  &__menu-search {
+    background: url(../assests/images/banner/search.svg) center bottom/cover
+      no-repeat;
+
+    &:hover {
+      background: url(../assests/images/banner/magnifying-glass.svg) center
+        bottom/cover no-repeat;
     }
   }
 
@@ -143,5 +181,67 @@
     @include respond(md) {
       display: none;
     }
+  }
+}
+
+// Company offer
+.single-offer {
+  border-bottom: 1px dotted #d8d8d8;
+  &__title {
+    margin: 15px 0;
+    color: $title-color;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  @include respond(lg) {
+    display: flex;
+    align-items: flex-start;
+
+    &__icon {
+      margin-right: 20px;
+    }
+
+    &__title {
+      margin-top: 0;
+    }
+
+    border-bottom: 1px solid #d8d8d8;
+    &:nth-child(n + 4) {
+      border: none;
+    }
+  }
+}
+
+// Services 
+.accordion {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+  color: $title-color;
+  background-color: $white-color;
+  border: 1px solid #e5e5e5;
+  cursor: pointer;
+  text-align: left;
+  text-transform: uppercase;
+  font-weight: bold;
+
+  &__img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+  }
+
+  &:hover {
+    background: $description-color;
+  }
+
+  &::after {
+    content: "\276F";
+    width: 15px;
+    height: 15px;
+    margin-left: auto;
+    text-align: center;
   }
 }

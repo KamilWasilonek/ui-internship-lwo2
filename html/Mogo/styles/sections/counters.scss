@@ -1,0 +1,65 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+
+.counters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 50px 10%;
+  color: $white-color;
+  background: $icon-color;
+  text-align: center;
+
+  div:nth-child(even) {
+    border-top: 1px solid $white-color;
+    border-bottom: 1px solid $white-color;
+  }
+
+  @include respond(md) {
+    div {
+      border: 1px solid $white-color;
+    }
+
+    justify-content: space-around;
+  }
+
+  @include respond(lg) {
+    flex-wrap: nowrap;
+    padding: 0 10%;
+
+    div,
+    div:nth-child(even) {
+      border: none;
+    }
+
+    div:nth-child(odd) {
+      border-left: 1px solid $white-color;
+      border-right: 1px solid $white-color;
+    }
+  }
+
+  &__container {
+    flex-basis: 100%;
+    margin-bottom: 10px;
+    padding: 20px 0;
+
+    @include respond(md) {
+      flex-basis: 48%;
+      padding: 30px 10px;
+    }
+
+    @include respond(lg) {
+      margin: 0;
+    }
+  }
+
+  &__number {
+    font-family: $font-primary;
+    font-size: 3rem;
+    font-weight: bold;
+  }
+
+  &__details {
+    text-transform: uppercase;
+  }
+}
