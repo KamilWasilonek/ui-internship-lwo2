@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Kaushan+Script|Montserrat+Subrayada|Roboto&display=swap");
-@import "./variables.scss";
+@import url('https://fonts.googleapis.com/css?family=Kaushan+Script|Montserrat:300,400,600,700|Roboto:300,400,700&display=swap');@import "./variables.scss";
 @import "./components.scss";
 @import "./mixins.scss";
 
@@ -31,452 +30,48 @@ h6 {
 //   }
 // }
 
-
 // -------------- Banner --------------
-@import './sections/banner.scss';
+@import "./sections/banner.scss";
 
 // -------------- About us --------------
-@import './sections/about.scss';
+@import "./sections/about.scss";
 
 // -------------- Counters --------------
-@import './sections/counters.scss';
+@import "./sections/counters.scss";
 
 // -------------- Company offer --------------
-@import './sections/company-offer.scss';
+@import "./sections/company-offer.scss";
 
 // -------------- Unique design --------------
-@import './sections/unique-design.scss';
+@import "./sections/unique-design.scss";
 
 // -------------- Services --------------
-@import './sections/services.scss';
+@import "./sections/services.scss";
 
 // -------------- Slider --------------
-@import './sections/slider.scss';
+@import "./sections/slider.scss";
 
 // -------------- Team --------------
-@import './sections/team.scss';
+@import "./sections/team.scss";
 
-// -------------- Slider --------------
-.company-logos {
-  display: none;
-  padding: 50px 10%;
-  text-align: center;
-
-  @include respond(lg) {
-    padding: 50px 20%;
-    display: block;
-  }
-
-  &__image {
-    width: 100%;
-  }
-}
+// -------------- Company logos --------------
+@import "./sections/company-logos.scss";
 
 // -------------- Projects --------------
-.projects {
-  padding: 50px 10%;
-  text-align: center;
-
-  @include respond(lg) {
-    padding: 50px 20%;
-  }
-}
+@import "./sections/projects.scss";
 
 // -------------- Gallery --------------
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-
-  &__container {
-    width: 100%;
-    height: 100%;
-    &--wide {
-      grid-column: 3;
-      grid-row: 1 / span 2;
-    }
-
-    &--with-bg {
-      background: linear-gradient(
-          to bottom,
-          rgba(243, 129, 129, 0.85),
-          rgba(252, 227, 138, 0.85)
-        ),
-        url(../assests/images/gallery/layer-29@2x.jpg) center bottom/cover
-          no-repeat;
-    }
-
-    &--with-text {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: $white-color;
-      font-size: 0.7rem;
-      text-align: center;
-    }
-  }
-
-  &__image-details {
-    display: none;
-
-    @include respond(md) {
-      display: block;
-    }
-  }
-
-  &__image {
-    width: 100%;
-    height: 100%;
-  }
-
-  &__icon {
-    width: 20px;
-    height: 20px;
-  }
-
-  &__details-title {
-    margin: 5px 0;
-    text-transform: uppercase;
-  }
-}
+@import "./sections/gallery.scss";
 
 // -------------- Opinion --------------
-.opinion {
-  padding: 50px 10%;
-  background: linear-gradient(
-      rgba(255, 255, 255, 0.85),
-      rgba(255, 255, 255, 0.85)
-    ),
-    url(../assests/images/opinion/layer-53@2x.jpg) center bottom/cover no-repeat;
-  text-align: center;
-
-  @include respond(lg) {
-    padding: 50px 20%;
-  }
-
-  &__container {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-column-gap: 40px;
-
-    @include respond(md) {
-      grid-template-columns: 1fr 1fr;
-      grid-column-gap: 100px;
-    }
-  }
-
-  &__single-person {
-    margin-top: 50px;
-  }
-}
-
-.single-person {
-  display: flex;
-  text-align: left;
-
-  &__image {
-    flex-basis: 30%;
-    margin-right: 30px;
-  
-    img {
-      border-radius: 60px;
-    }
-  }
-
-  &__name {
-    text-transform: uppercase;
-    font-weight: bold;
-  }
-
-  &__position {
-    margin: 10px 0;
-    color: $description-color;
-    font-style: italic;
-
-    &::after {
-      content: "";
-      display: block;
-      margin: 20px 0;
-      width: 70px;
-      height: 2px;
-      background: $separator-color;
-    }
-  }
-}
+@import "./sections/opinion.scss";
 
 // -------------- Latest posts --------------
-.latest-posts {
-  padding: 50px 10%;
-  text-align: center;
-
-  &__container {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-column-gap: 20px;
-
-    @include respond(md) {
-      grid-template-columns: 1fr 1fr;
-    }
-
-    @include respond(lg) {
-      grid-template-columns: 1fr 1fr 1fr;
-    }
-  }
-
-  &__article {
-    // width: 300px;
-    margin-top: 60px;
-  }
-}
-
-.article {
-  &__image {
-    position: relative;
-  }
-
-  &__img {
-    width: 100%;
-  }
-
-  &__img-caption {
-    position: absolute;
-    top: 70%;
-    left: -10px;
-    width: 50px;
-    padding: 10px;
-    color: $white-color;
-    background: $icon-color;
-    font-size: 1.2rem;
-  }
-
-  // &__date {
-  //   position: absolute;
-  //   top: 30%;
-  //   left: -5px;
-  //   padding: 10px;
-  //   background: $icon-color;
-  // }
-
-  &__title {
-    font-weight: bold;
-  }
-
-  &__description {
-    padding: 15px;
-    border-bottom: 1px solid #e5e5e5;
-  }
-
-  &__views {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 15px;
-
-    img {
-      width: 16px;
-      margin-right: 5px;
-    }
-
-    p:nth-child(2) {
-      margin-right: 20px;
-    }
-  }
-}
+@import "./sections/latest-posts.scss";
 
 // -------------- Map --------------
-.map {
-  padding: 30px 10%;
-  background: linear-gradient(
-      rgba(255, 255, 255, 0.85),
-      rgba(255, 255, 255, 0.85)
-    ),
-    url(../assests/images/map/layer-59@2x.jpg) center bottom/cover no-repeat;
-  text-align: center;
-
-  &__icon {
-    width: 15px;
-    margin-bottom: 5px;
-
-    @include respond(lg) {
-      width: 20px;
-    }
-  }
-
-  &__title {
-    display: block;
-    color: $separator-color;
-    text-decoration: none;
-
-    &::after {
-      width: 40px;
-      margin-top: 10px;
-    }
-  }
-}
-
+@import "./sections/map.scss";
 
 // -------------- Footer --------------
-.footer {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-row-gap: 70px;
-  padding: 50px 10% 0 10%;
-  background: #ffffff;
+@import "./sections/footer.scss";
 
-  @include respond(lg) {
-    grid-template-columns: repeat(3, 1fr);
-    grid-column-gap: 20px;
-    // padding: 50px 20% 0 20%;
-  }
-
-  &__copyrights {
-    padding: 20px 0;
-    border-top: 1px solid #e5e5e5;
-    text-align: center;
-
-    span {
-      color: $separator-color;
-    }
-  }
-}
-
-.details {
-  &__description {
-    margin: 30px 0;
-  }
-
-  &__followers-number {
-    span {
-      font-size: 1.2rem;
-      font-weight: bold;
-    }
-
-    &::after {
-      content: "";
-      display: block;
-      width: 100%;
-      height: 1px;
-      margin: 10px 0;
-      background: #e5e5e5;
-    }
-  }
-
-  &__follow {
-    display: flex;
-    span {
-      margin-right: 20px;
-      color: $description-color;
-      font-family: $roboto-font;
-      font-style: italic;
-    }
-  }
-
-  &__socials {
-    display: flex;
-    list-style: none;
-
-    li:nth-child(odd) {
-      margin: 0 10px;
-    }
-  }
-
-  &__social-link {
-    img {
-      width: 16px;
-    }
-  }
-
-  &__form {
-    display: flex;
-    margin-top: 30px;
-  }
-
-  &__email {
-    // min-width: 200px;
-    padding: 7px 5px;
-
-    &::placeholder {
-      color: $description-color;
-      font-style: italic;
-    }
-  }
-
-  &__submit-btn {
-    padding: 7px 30px;
-    color: $white-color;
-    background: $icon-color;
-    border: none;
-    font-weight: bold;
-    text-transform: uppercase;
-    cursor: pointer;
-  }
-}
-
-.blog,
-.instagram {
-  &__title {
-    font-family: $font-primary;
-    font-weight: bold;
-    text-transform: uppercase;
-  }
-}
-
-.blog {
-  &__container {
-    margin: 20px 0 0 0;
-
-    div:last-child {
-      margin-bottom: 0;
-    }
-  }
-
-  &__single-post {
-    margin-bottom: 20px;
-    display: flex;
-  }
-
-  &__post-img {
-    margin-right: 20px;
-  }
-
-  &__post-title {
-    font-family: $font-primary;
-    font-weight: bold;
-    text-transform: uppercase;
-  }
-
-  &__post-date {
-    margin-top: 5px;
-    color: $description-color;
-    font-family: $roboto-font;
-    font-style: italic;
-  }
-}
-
-.instagram {
-  &__container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    margin: 30px 0;
-  }
-
-  &__image {
-    width: 100%;
-    height: 100%;
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  }
-
-  &__link {
-    color: $description-color;
-    text-decoration: none;
-    font-style: italic;
-    cursor: pointer;
-
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-}

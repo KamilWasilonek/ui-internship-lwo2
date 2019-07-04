@@ -5,7 +5,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 50px 10%;
   background: #f8f8f8;
   text-align: center;
 
@@ -24,12 +23,6 @@
 
   &__img-box {
     display: none;
-
-    &--with-border {
-      width: 100px;
-      padding: 20px;
-      border: 2px solid $icon-color;
-    }
     
     @include respond(lg) {
       display: block;
@@ -44,6 +37,13 @@
       height: 130px;
       border-radius: 90px;
     }
+
+    &--bordered {
+      width: 45px;
+      height: 45px;
+      padding: 20px;
+      border: 2px solid $icon-color;
+    }
   }
 
   &__details {
@@ -53,6 +53,8 @@
 
   &__quotation {
     color: $description-color;
+    font-family: $roboto-font;
+    font-weight: 300;
     font-style: italic;
   }
 
@@ -70,7 +72,7 @@
     &::before {
       content: "";
       display: block;
-      width: 50px;
+      width: 60px;
       height: 2px;
       margin-right: 5px;
       background: $separator-color;
@@ -80,6 +82,7 @@
   &__previous-btn,
   &__next-btn {
     background: transparent;
+    opacity: 0.3;
     border: none;
     font-size: 1.5rem;
     cursor: pointer;

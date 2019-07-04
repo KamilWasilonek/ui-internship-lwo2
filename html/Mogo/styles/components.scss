@@ -1,6 +1,18 @@
 @import "./variables.scss";
 @import "./mixins.scss";
 
+.section {
+  padding: 50px 10%;
+
+  @include respond(md) {
+    padding: 70px 10%;
+  }
+
+  @include respond(lg) {
+    padding: 100px 10%;
+  }
+}
+
 .section-title {
   font-family: $font-primary;
   text-transform: uppercase;
@@ -18,11 +30,11 @@
     display: block;
     width: 60px;
     height: 2px;
-    margin: 20px auto;
+    // margin: 20px auto;
     background: $separator-color;
 
     @include respond(lg) {
-      margin: 40px auto;
+      // margin: 40px auto;
     }
   }
 
@@ -56,6 +68,12 @@
   @include respond(lg) {
     font-size: 0.95rem;
   }
+}
+
+.small-title {
+  color: $title-color;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 // Navbar
@@ -213,7 +231,7 @@
   }
 }
 
-// Services 
+// Services
 .accordion {
   display: flex;
   align-items: center;
@@ -243,5 +261,250 @@
     height: 15px;
     margin-left: auto;
     text-align: center;
+  }
+}
+
+// Opinion
+.single-person {
+  display: flex;
+  text-align: left;
+
+  &__image {
+    flex-basis: 30%;
+    margin-right: 30px;
+
+    img {
+      border-radius: 60px;
+    }
+  }
+
+  &__position {
+    margin: 10px 0;
+    color: $description-color;
+    font-style: italic;
+
+    &::after {
+      content: "";
+      display: block;
+      margin: 20px 0;
+      width: 60px;
+      height: 2px;
+      background: $separator-color;
+    }
+  }
+}
+
+// Latest
+.article {
+  &__image {
+    position: relative;
+  }
+
+  &__img {
+    width: 100%;
+  }
+
+  &__date {
+    position: absolute;
+    bottom: 10%;
+    left: -10px;
+    padding: 10px 15px;
+    color: $white-color;
+    background: $icon-color;
+    span {
+      display: block;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+  }
+
+  &__title {
+    margin-top: 10px;
+  }
+
+  &__description {
+    padding: 15px;
+    border-bottom: 1px solid #e5e5e5;
+
+    @include respond(md) {
+      padding: 15px 0;
+    }
+  }
+
+  &__views {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+
+    img {
+      width: 16px;
+      margin-right: 5px;
+    }
+
+    p:nth-child(2) {
+      margin-right: 20px;
+    }
+
+    @include respond (md) {
+      justify-content: left;
+    }
+  }
+}
+
+// Footer
+.details {
+  &__title {
+    color: #cccccc;
+    font-size: 2rem;
+  }
+
+  &__description {
+    margin: 30px 0;
+  }
+
+  &__followers-number {
+    span {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 1px;
+      margin: 10px 0;
+      background: #e5e5e5;
+    }
+  }
+
+  &__follow {
+    display: flex;
+    span {
+      margin-right: 20px;
+      color: $description-color;
+      font-family: $roboto-font;
+      font-style: italic;
+    }
+  }
+
+  &__socials {
+    display: flex;
+    list-style: none;
+
+    li:nth-child(odd) {
+      margin: 0 10px;
+    }
+  }
+
+  &__social-link {
+    img {
+      width: 16px;
+      cursor: pointer;
+    }
+  }
+
+  &__form {
+    display: flex;
+    margin-top: 30px;
+  }
+
+  &__email {
+    // min-width: 200px;
+    padding: 7px 5px;
+
+    &::placeholder {
+      color: $description-color;
+      font-style: italic;
+    }
+  }
+
+  &__submit-btn {
+    padding: 7px 30px;
+    color: $white-color;
+    background: $icon-color;
+    border: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+}
+
+.blog {
+  &__container {
+    margin: 20px 0 0 0;
+
+    div:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__single-post {
+    margin-bottom: 20px;
+    display: flex;
+
+    @include respond(md) {
+      display: block;
+    }
+
+    @media screen and (min-width: 1400px) {
+      display: flex;
+    }
+  }
+
+  &__post-img {
+    margin-right: 20px;
+  }
+
+  &__post-title {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    @include respond(md) {
+      margin: 10px 0;
+    }
+  }
+
+  &__post-date {
+    margin-top: 5px;
+    color: $description-color;
+    font-size: 0.9rem;
+    font-family: $roboto-font;
+    font-style: italic;
+  }
+}
+
+.instagram {
+  &__container {
+    // max-width: 250px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 0.5fr 1fr;
+    margin: 30px 0;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__link {
+    color: $description-color;
+    text-decoration: none;
+    font-style: italic;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
