@@ -10,7 +10,7 @@
     ),
     url(../assests/images/banner/layer-15.jpg) center bottom/cover no-repeat;
 
-  // Navbar 
+  // Navbar
   &__nav {
     padding: 20px 0;
   }
@@ -38,15 +38,11 @@
   }
 
   &__title {
-    margin: 20px 0;
+    margin-top: 20px;
     font-size: 3rem;
-
     &::after {
       background: $white-color;
-
-      @include respond(lg) {
-        margin: 40px auto;
-      }
+      margin: 40px auto 0 auto;
     }
 
     @include respond(lg) {
@@ -59,11 +55,16 @@
   }
 
   &__button {
+    margin-top: 40px;
     padding: 10px 30px;
     background: transparent;
     border: 2px solid $white-color;
     color: $white-color;
     cursor: pointer;
+
+    @include respond(lg) {
+      font-size: 0.9rem;
+    }
   }
 
   // Progress bars

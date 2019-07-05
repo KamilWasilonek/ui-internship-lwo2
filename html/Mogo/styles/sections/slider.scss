@@ -23,6 +23,8 @@
 
   &__img-box {
     display: none;
+    flex-basis: 20%;
+    text-align: center;
     
     @include respond(lg) {
       display: block;
@@ -39,16 +41,21 @@
     }
 
     &--bordered {
-      width: 45px;
-      height: 45px;
+      max-width: 100px;
+      height: 100%;
       padding: 20px;
       border: 2px solid $icon-color;
     }
   }
 
   &__details {
-    margin-left: 20px;
+    flex-basis: 100%;
     align-self: center;
+
+    @include respond(lg) {
+      padding-left: 10px;
+      flex-basis: 80%;
+    }
   }
 
   &__quotation {

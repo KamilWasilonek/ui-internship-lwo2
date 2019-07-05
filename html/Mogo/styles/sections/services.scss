@@ -3,7 +3,6 @@
 
 
 .services {
-  padding: 50px 10%;
   text-align: center;
 
   @include respond (lg) {
@@ -11,7 +10,11 @@
   }
 
   &__title {
-    margin-top: 10px;
+    margin-top: 20px;
+
+    &::after {
+      margin: 30px auto 0 auto;
+    } 
   }
 
   &__image-box {
@@ -22,6 +25,10 @@
     width: 100%;
     max-width: 600px;
     justify-self: flex-end;
+  }
+
+  &__description {
+    margin: 20px 0; 
   }
 
   &__content {

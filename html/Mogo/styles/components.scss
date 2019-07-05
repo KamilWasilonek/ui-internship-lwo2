@@ -145,16 +145,6 @@
     }
   }
 
-  &__menu-icon {
-    img {
-      width: 16px;
-      cursor: pointer;
-
-      @include respond(lg) {
-        width: 18px;
-      }
-    }
-  }
   &__menu-shopping,
   &__menu-search {
     position: relative;
@@ -169,6 +159,11 @@
       height: 2px;
       width: 100%;
       background: $menu-on-hover-color;
+    }
+
+    @include respond(lg) {
+      width: 18px;
+      height: 18px;
     }
   }
 
@@ -237,13 +232,10 @@
   align-items: center;
   width: 100%;
   padding: 10px;
-  color: $title-color;
   background-color: $white-color;
   border: 1px solid #e5e5e5;
   cursor: pointer;
   text-align: left;
-  text-transform: uppercase;
-  font-weight: bold;
 
   &__img {
     width: 20px;
@@ -346,7 +338,7 @@
       margin-right: 20px;
     }
 
-    @include respond (md) {
+    @include respond(md) {
       justify-content: left;
     }
   }

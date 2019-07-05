@@ -2,129 +2,60 @@
 @import "../mixins.scss";
 
 .about {
-  padding: 50px 10%;
   text-align: center;
 
   &__title {
-    margin-top: 10px;
+    margin-top: 20px;
+
+    &::after {
+      margin: 30px auto 0 auto;
+    }
   }
 
-  &__services {
-    position: relative;
-    margin-top: 50px;
+  &__description {
+    margin: 30px 0;
+
+    @include respond (lg) {
+      margin: 50px 0;
+    }
+  }
+
+  &__images-container {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
     grid-row-gap: 50px;
-
-    @include respond(md) {
-      grid-template-columns: 1fr 1fr 1fr;
-      grid-column-gap: 20px;
-      grid-template-rows: none;
-    }
-
-    @include respond(lg) {
-      margin-top: 80px;
-    }
   }
 
-  &__img-container {
-    position: relative;
-    width: 100%;
+  &__image-box {
+    // position: relative;
     height: 100%;
-
-    // &::after {
-    //   content: "";
-    //   position: absolute;
-    //   top: -10px;
-    //   left: -10px;
-    //   display: block;
-    //   height: 100%;
-    //   width: 100%;
-    //   z-index: 2;
-    // }
-
-    // &--equipment-bg {
-    //   &::after {
-    //     background: linear-gradient(
-    //         to bottom,
-    //         rgba(243, 129, 129, 0.85),
-    //         rgba(252, 227, 138, 0.85)
-    //       ),
-    //       url(../assests/images/about/layer-44@2x.jpg) center top/cover
-    //         no-repeat;
-    //   }
-    // }
-
-    // &--person-bg {
-    //   &::after {
-    //     background: linear-gradient(
-    //         to bottom,
-    //         rgba(243, 129, 129, 0.85),
-    //         rgba(252, 227, 138, 0.85)
-    //       ),
-    //       url(../assests/images/team/layer-16@2x.jpg) center top/cover no-repeat;
-    //   }
-    // }
-  }
-
-  &__move {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-        to bottom,
-        rgba(243, 129, 129, 0.85),
-        rgba(252, 227, 138, 0.85)
-      ),
-      url(../assests/images/about/layer-44@2x.jpg) center top/cover no-repeat;
-    z-index: 3;
-    transition: transform .3s linear;
-
-    &:hover {
-      transform: translate(-10px, -10px);
-    }
-  }
-
-  &__image-details {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 3;
-  }
-
-  &__icon {
-    width: 32px;
-  }
-
-  &__text {
-    margin-top: 5px;
-    color: $white-color;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-
-    @include respond(lg) {
-      font-size: 1.2rem;
-    }
+    background: $icon-color;
   }
 
   &__image {
     width: 100%;
+    // height: 100%;
+    object-fit: cover;
+    transition: transform .5s linear;
 
-    &:hover::after {
-      content: "Kamil";
-      position: absolute;
-      top: 0;
-      left: 0;
-      display: block;
-      width: 100px;
-      height: 100px;
-      // background: linear-gradient(
-      //   to bottom,
-      //   rgba(243, 129, 129, 0.85),
-      //   rgba(252, 227, 138, 0.85)
-      // );
+    &:hover {
+      transform: translate(-10px , -10px);
     }
+
+    // &:hover::after {
+    //   content: "";
+    //   position: absolute;
+    //   top: 0;
+    //   left: 0;
+    //   display: block;
+    //   width: 100px;
+    //   height: 100px;
+    //   background-color: $icon-color;
+    //   z-index: 5;
+    // }
+  }
+
+  &__image-details {
+    background: $white-color;
   }
 }

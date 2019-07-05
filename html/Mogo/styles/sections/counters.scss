@@ -16,8 +16,10 @@
   }
 
   @include respond(md) {
-    div {
-      border: 1px solid $white-color;
+    div,
+    div:nth-child(even) {
+      border: none;
+      border-bottom: 1px solid $white-color;
     }
 
     justify-content: space-around;
@@ -44,7 +46,7 @@
     padding: 20px 0;
 
     @include respond(md) {
-      flex-basis: 48%;
+      flex-basis: 40%;
       padding: 30px 10px;
     }
 
