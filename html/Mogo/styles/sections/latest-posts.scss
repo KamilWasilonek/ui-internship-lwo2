@@ -21,13 +21,8 @@
 
     @include respond(md) { 
       text-align: left;     
-      grid-template-columns: 1fr 1fr;
-      grid-column-gap: 50px;
-    }
-
-    @include respond(lg) {
       grid-template-columns: 1fr 1fr 1fr;
-
+      grid-column-gap: 50px;
     }
   }
 }

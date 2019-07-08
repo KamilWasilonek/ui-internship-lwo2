@@ -16,7 +16,6 @@
   @media screen and (min-width: 1400px) {
     grid-template-columns: 1.3fr 1fr 0.8fr;
     grid-column-gap: 80px;
-    // padding: 50px 20% 0 20%;
   }
 
   &__details {
@@ -29,6 +28,7 @@
      grid-area: auto;
     }
   }
+
   &__copyrights {
     padding: 20px 0;
     border-top: 1px solid #e5e5e5;

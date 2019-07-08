@@ -18,18 +18,6 @@ h6 {
   margin: 0;
 }
 
-// @include respond(md) {
-//   html {
-//     font-size: 1.1rem;
-//   }
-// }
-
-// @include respond(lg) {
-//   html {
-//     font-size: 1.2rem;
-//   }
-// }
-
 // -------------- Banner --------------
 @import "./sections/banner.scss";
 

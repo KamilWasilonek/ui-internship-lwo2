@@ -6,7 +6,9 @@
     "test": "jest",
     "lint": "./node_modules/.bin/eslint tasks/**/*.js",
     "tdd": "jest --watch",
-    "sass": "node-sass -w html/Mogo/styles/ --source-map-root -o html/Mogo/styles"
+    "watch:sass": "node-sass html/Mogo/styles/style.scss  html/Mogo/styles/style.css  -w -r",
+    "compile:sass": "node-sass --source-map true html/Mogo/styles/style.scss  html/Mogo/styles/style.comp.css",
+    "prefix": "postcss --use autoprefixer -b 'last 10 versions' html/Mogo/styles/style.comp.css -o html/Mogo/styles/style.prefix.css"
   },
   "husky": {
     "hooks": {
@@ -26,7 +28,10 @@
     "regenerator-runtime": "^0.11.0"
   },
   "dependencies": {
+    "autoprefixer": "^9.6.1",
     "live-server": "^1.2.1",
-    "node-sass": "^4.12.0"
+    "node-sass": "^4.12.0",
+    "postcss": "^7.0.17",
+    "postcss-cli": "^6.1.3"
   }
 }
