@@ -197,6 +197,106 @@
   }
 }
 
+// About
+.moving-image {
+  &__bg {
+    background-color: $icon-color;
+  }
+
+  &__box {
+    // height: 100%;
+    position: relative;
+    background-color: $icon-color;
+    transition: transform 0.3s linear;
+
+    &::after {
+      content: "";
+      background-image: linear-gradient(
+        to bottom,
+        #f38181dc 0%,
+        #f38181dc 30%,
+        #fce38ae3 90%
+      );
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 0.3s linear;
+      z-index: 1;
+    }
+
+    &:hover {
+      transform: translate(-10px, -10px);
+
+      &::after {
+        opacity: 1;
+      }
+
+      .moving-image__overlay-content {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__picture {
+    display: block;
+    width: 100%;
+    transition: transform 0.3s linear;
+
+    img {
+      display: block;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__overlay-content {
+    position: absolute;
+    top: calc(50%);
+    left: calc(50%);
+    opacity: 0;
+    transition: opacity 0.3s linear;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+
+    p {
+      color: $white-color;
+    }
+    
+    &--socials {
+      display: flex;
+    }
+  }
+
+  &__icon {
+    display: block;
+    padding: 10px;
+    background: #fce38a;
+    border-left: 1px solid $separator-color;
+    text-decoration: none;
+
+    &--facebook {
+      background: $separator-color;
+    }
+  }
+
+  &__img-generals {
+    background: $white-color;
+  }
+
+  &__name {
+    padding: 20px 0 10px 0;
+  }
+
+  &__position {
+    font-size: 0.8rem;
+    color: $description-color;
+    font-style: italic;
+  }
+}
+
 // Company offer
 .single-offer {
   border-bottom: 1px dotted #d8d8d8;
