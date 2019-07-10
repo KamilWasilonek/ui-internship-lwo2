@@ -1,0 +1,22 @@
+@import '../variables.scss';
+
+.footer {
+  padding: 20px 0 10px 0;
+  background: $footer-bg-color;
+  text-align: center;
+
+  a {
+    text-decoration: none;
+  }
+
+  &__icon {
+    margin: 0 10px;
+    width: 20px;
+  }
+
+  &__copyrights {
+    margin-top: 5px;
+    color: #ffffff;
+    font-size: 0.8rem;
+  }
+}

@@ -1,0 +1,86 @@
+@import '../variables.scss';
+
+.tabs {
+  padding: 70px 10%;
+  background: $section-bg-color;
+  text-align: center;
+
+  @media screen and (min-width: 768px) {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-column-gap: 20px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    grid-template-columns: 0.5fr 3fr 1.5fr;
+    grid-column-gap: 50px;
+  }
+
+  &__buttons-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 1px;
+    align-items: flex-start;
+    max-width: 500px;
+    margin: 0 auto 40px auto;
+    list-style: none;
+
+    @media screen and (min-width: 768px) {
+      display: block;
+      margin: 0;
+    }
+  }
+
+  &__tab {
+    display: block;
+    width: 100%;
+    padding: 20px;
+    color: #ffffff;
+    background: $footer-bg-color;
+    border: none;
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    cursor: pointer;
+
+    &:hover {
+      background: $color-secondary;
+    }
+
+    @media screen and (min-width: 768px) {
+      padding: 40px 30px;
+      max-width: 100px;
+      border: 1px solid $section-bg-color;
+      white-space: nowrap;
+    }
+  }
+
+  &__description {
+    margin: 20px 0;
+  }
+
+  &__button {
+    margin-top: 20px;
+  }
+
+  &__city {
+    display: none;
+    align-items: center;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &__details-container {
+    @media screen and (min-width: 768px) {
+      text-align: left;
+    }
+  }
+
+  &__city {
+    @media screen and (min-width: 1200px) {
+      display: flex;
+    }
+  }
+}

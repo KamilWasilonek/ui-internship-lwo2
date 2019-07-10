@@ -1,0 +1,271 @@
+@import './variables.scss';
+
+// ------------------- Reusable elements -------------------
+.logo {
+  color: #ffffff;
+
+  span {
+    color: $color-secondary;
+    font-weight: lighter;
+  }
+}
+
+.transparent-btn {
+  padding: 10px 20px;
+  color: $white-color;
+  background: transparent;
+  border: 2px solid $white-color;
+  font-size: 0.7rem;
+  cursor: pointer;
+
+  &:hover {
+    background: $color-secondary;
+  }
+}
+
+.form {
+  &__input {
+    display: block;
+    border: none;
+    border-bottom: 1px solid $description-text-color;
+    font-size: 0.7rem;
+    cursor: pointer;
+
+    &:focus,
+    &:active {
+      outline-color: $color-secondary;
+    }
+  }
+}
+
+.button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 3px;
+  font-size: 0.7rem;
+  cursor: pointer;
+
+  &--orange {
+    color: #ffffff;
+    background: $color-secondary;
+  }
+}
+
+.title {
+  margin-bottom: 20px;
+  color: $footer-bg-color;
+
+  &--bold {
+    font-weight: bold;
+  }
+
+  &--big {
+    font-family: Raleway;
+    text-transform: uppercase;
+  }
+}
+
+.description {
+  color: $description-text-color;
+  font-size: 0.8rem;
+}
+
+.separator {
+  display: block;
+  width: 10%;
+  height: 2px;
+  background: $color-secondary;
+}
+
+.sub-list-service {
+  margin: 40px 0;
+
+  &__title {
+    margin: 10px 0;
+  }
+
+  &__icon {
+    width: 50px;
+    padding: 10px;
+    border: 2px solid $color-secondary;
+    border-radius: 60px;
+
+    @media screen and (min-width: 1024px) {
+      width: 60px;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    display: flex;
+    text-align: left;
+    align-items: center;
+    width: 100%;
+
+    &__details {
+      margin-left: 30px;
+    }
+
+    &__description {
+      margin: 10px 0;
+    }
+  }
+}
+
+.awesome-things-service {
+  margin: 50px 0;
+
+  @media screen and (min-width: 768px) {
+    margin: 40px 20px 0 20px;
+  }
+
+  &__icon {
+    width: 50px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 2px solid $color-secondary;
+    border-radius: 60px;
+  }
+}
+
+.price {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  margin: 50px auto 0 auto;
+  background: $footer-bg-color;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+
+  @media screen and (min-width: 1024px) {
+    width: 100%;
+  }
+
+  &__title {
+    padding: 15px 0;
+    border-bottom: 1px solid #ffffff;
+    font-size: 1.2rem;
+  }
+
+  &__number {
+    font-size: 1.3rem;
+    font-family: Raleway;
+
+    span {
+      font-family: Raleway;
+      font-size: 4rem;
+      font-weight: bold;
+    }
+  }
+
+  &__period {
+    margin: 15px 0;
+    font-style: italic;
+  }
+
+  &__popularity {
+    min-height: 5px;
+    background: $color-secondary;
+
+    &--with-text {
+      font-size: 0.8rem;
+      padding: 10px 0;
+    }
+  }
+
+  &__options {
+    color: $description-text-color;
+    font-size: 0.8rem;
+    list-style: none;
+  }
+
+  &__option {
+    padding: 10px 0;
+    background: #ffffff;
+    border-bottom: 1px solid $section-bg-color;
+    text-transform: uppercase;
+    font-weight: lighter;
+  }
+}
+
+.customer {
+  max-width: 500px;
+  margin: 50px auto;
+
+  @media screen and (min-width: 500px) {
+    display: flex;
+    text-align: left;
+  }
+
+  @media screen and (min-width: 768px) {
+    display: block;
+    max-width: 300px;
+  }
+
+  &__opinion {
+    position: relative;
+    margin-right: 20px;
+    padding: 10px 5px;
+    background: $section-bg-color;
+    font-style: italic;
+
+    span {
+      display: none;
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      bottom: -15px;
+      left: 20px;
+      background: $section-bg-color;
+      clip-path: polygon(50% 100%, 0 0, 100% 0);
+    }
+  }
+
+  &__details {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    text-align: left;
+
+    img {
+      width: 70px;
+    }
+  }
+
+  &__generals {
+    margin-left: 15px;
+  }
+
+  &__name {
+    white-space: nowrap;
+    font-weight: bold;
+  }
+
+  &__position {
+    color: $description-text-color;
+  }
+
+  &__opinion {
+    @media screen and (min-width: 768px) {
+      margin: 0 0 30px 0;
+
+      span {
+        display: block;
+      }
+    }
+  }
+
+  &--reversed {
+    @media screen and (min-width: 500px) {
+      &__opinion {
+        order: 2;
+        margin: 0 0 0 40px;
+      }
+
+      &__details {
+        order: 1;
+      }
+    }
+  }
+}
