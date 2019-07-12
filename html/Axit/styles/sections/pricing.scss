@@ -1,0 +1,33 @@
+@import '../variables.scss';
+
+.pricing {
+  padding: 70px 10%;
+  background: $section-bg-color;
+  text-align: center;
+
+  &__title {
+    &::after {
+      content: "";
+      display: block;
+      width: 10%;
+      height: 2px;
+      margin: 20px auto 0 auto;
+      background: $color-secondary;
+    }
+  }
+
+  &__description {
+    margin: 20px 0;
+  }
+
+  &__prices {
+    @media screen and (min-width: 1024px) {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-column-gap: 30px;
+      align-items: flex-end;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+  }
+}

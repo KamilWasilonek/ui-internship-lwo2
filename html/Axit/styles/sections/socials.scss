@@ -1,0 +1,38 @@
+@import '../variables.scss';
+
+.socials {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 10%;
+  text-align: left;
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+  }
+
+  &__details {
+    flex-basis: 40%;
+    margin-right: 60px;
+  }
+
+  &__title {
+    margin: 0;
+  }
+
+  &__description {
+    margin: 10px 0;
+    font-size: 0.7rem;
+  }
+
+  &__icons {
+    flex: 50%;
+    max-width: 500px;
+    display: flex;
+    justify-content: space-between;
+    opacity: 0.4;
+    img {
+      width: 30px;
+    }
+  }
+}

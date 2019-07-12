@@ -1,0 +1,45 @@
+.banner {
+  padding: 200px 10%;
+  background: url(../assets/banner-img/photo-1433354359170-23-a-4-ae-7338-c-6@3x.jpg)
+    right bottom/cover no-repeat;
+  text-align: center;
+
+  @media screen and (min-width: 1024px) {
+    padding: 250px 10%;
+  }
+
+  &__container {
+    margin: 0 auto;
+  }
+
+  &__title {
+    font-size: 2rem;
+  }
+
+  &__play {
+    margin: 20px 0;
+    background: transparent;
+    border: none;
+
+    img {
+      width: 40px;
+      opacity: 0.8;
+      cursor: pointer;
+
+      @media screen and (min-width: 1024px) {
+        width: 60px;
+      }
+    }
+  }
+
+  &__action {
+    display: block;
+    margin: 0 auto;
+    padding: 10px 35px;
+  }
+
+  &__description {
+    margin-top: 10px;
+    font-size: 0.7rem;
+  }
+}

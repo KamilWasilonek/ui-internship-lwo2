@@ -1,0 +1,53 @@
+@import "../variables.scss";
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 10%;
+  background: #000000;
+
+  &__logo {
+    font-size: 1.5rem;
+    text-decoration: none;
+  }
+
+  &__menu {
+    list-style: none;
+    display: none;
+
+    li {
+      margin-left: 40px;
+    }
+
+    li > a {
+      color: $description-text-color;
+      text-decoration: none;
+    }
+
+    li > a:hover {
+      color: $color-secondary;
+      text-decoration: underline;
+    }
+
+    @media screen and (min-width: 768px) {
+      display: flex;
+    }
+
+    @media screen and (min-width: 1024px) {
+      font-size: 0.8rem;
+    }
+  }
+
+  &__mobile-btn {
+    color: #ffffff;
+    background: transparent;
+    border: none;
+    font-size: 25px;
+    cursor: pointer;
+
+    @media screen and (min-width: 768px) {
+      display: none;
+    }
+  }
+}

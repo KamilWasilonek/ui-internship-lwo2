@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css?family=Exo:300,400,700&display=swap");
+@import './variables.scss';
+@import './mixins.scss';
+@import './components.scss';
+
+
+// -------------- Page confinguration --------------
+* {
+  margin: 0;
+  padding: 0;
+  font-family: $font-primary;
+  box-sizing: border-box;
+}
+
+@media screen and (min-width: 1024px) {
+  html {
+    font-size: 1.2rem;
+  }
+}
+
+body {
+  color: $color-primary;
+}
+
+h2 {
+  font-weight: lighter;
+}
+
+// -------------- Banner --------------
+@import './sections/banner.scss';
+
+// -------------- Unique platform --------------
+@import './sections/unique-platform.scss';
+
+// -------------- Features --------------
+@import './sections/features.scss';
+
+// -------------- Responsive design --------------
+@import './sections/responsive-design.scss';
+
+// -------------- Founders --------------
+@import './sections/founders.scss';
+
+// -------------- Awsome-feature --------------
+@import './sections/awesome-feature.scss';
+
+// -------------- Contact --------------
+@import './sections/contact.scss';
+
+// -------------- Footer --------------
+@import './sections/footer.scss';

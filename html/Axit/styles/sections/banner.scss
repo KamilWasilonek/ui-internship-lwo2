@@ -1,0 +1,104 @@
+@import "../variables.scss";
+
+.banner {
+  background: linear-gradient(rgba(0, 0, 0, 0.65)),
+    url(../assets/banner/image.png) no-repeat center/cover;
+  text-align: center;
+
+  @media screen and (min-width: 768px) {
+    background: linear-gradient(rgba(0, 0, 0, 0.65)),
+      url(../assets/banner/image@2x.png) no-repeat center/cover;
+  }
+
+  &__container {
+    padding: 70px 10%;
+
+    @media screen and (min-width: 768px) {
+      padding: 130px 10%;
+      display: grid;
+      grid-template-columns: 1fr 0.8fr;
+      grid-column-gap: 5%;
+      align-items: flex-end;
+    }
+  }
+
+  // Left side
+  &__left-side {
+    color: #ffffff;
+
+    @media screen and (min-width: 768px) {
+      text-align: left;
+    }
+  }
+
+  &__logo {
+    font-size: 3rem;
+  }
+
+  &__subtitle {
+    margin: 10px 0 0 0;
+    font-family: "Raleway", sans-serif;
+    font-weight: lighter;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 10%;
+      height: 2px;
+      margin: 20px auto 0 auto;
+      background: #ffffff;
+
+      @media screen and (min-width: 768px) {
+        margin: 20px 0 0 0;
+      }
+    }
+  }
+
+  &__description {
+    margin: 20px 0;
+  }
+
+  &__btn {
+    margin-top: 20px;
+  }
+
+  // Right side
+  &__right-side {
+    margin: 50px auto 0 auto;
+    width: 100%;
+    max-width: 350px;
+    background: #ffffff;
+
+    @media screen and (min-width: 768px) {
+      margin: 0 0 0 auto;
+    }
+  }
+
+  &__title {
+    padding: 15px 0;
+    background: $section-bg-color;
+    font-weight: bold;
+
+    span {
+      color: $color-secondary;
+      font-weight: bold;
+    }
+  }
+
+  &__form {
+    input {
+      width: 80%;
+      margin: 40px auto;
+      opacity: 0.6;
+    }
+  }
+
+  &__form-submit {
+    width: 100%;
+    padding: 15px 0;
+    color: #ffffff;
+    background: $color-secondary;
+    border: none;
+    cursor: pointer;
+  }
+}

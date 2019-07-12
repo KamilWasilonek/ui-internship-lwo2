@@ -1,0 +1,62 @@
+@import '../variables.scss';
+
+.contact {
+  padding: 70px 10%;
+  text-align: center;
+
+  &__title {
+    &::after {
+      content: "";
+      display: block;
+      width: 10%;
+      height: 2px;
+      margin: 20px auto 0 auto;
+      background: $color-secondary;
+    }
+  }
+
+  &__description {
+    margin: 20px 0;
+  }
+
+  &__form {
+    margin: 0 auto;
+  }
+
+  &__inputs {
+    @media screen and (min-width: 1024px) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-column-gap: 50px;
+    }
+  }
+
+  &__input,
+  &__message {
+    width: 100%;
+    margin: 30px auto;
+    max-width: 400px;
+    opacity: 0.6;
+
+    @media screen and (min-width: 1024px) {
+      width: 100%;
+      margin: 30px auto;
+      max-width: 1000px;
+    }
+  }
+
+  &__input {
+    padding: 0 0 5px 5px;
+  }
+
+  &__message {
+    resize: none;
+    margin-top: 30px;
+    padding: 0 0 70px 5px;
+  }
+
+  &__btn {
+    display: block;
+    margin: 40px auto 0 auto;
+  }
+}

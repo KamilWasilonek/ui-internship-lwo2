@@ -1,0 +1,52 @@
+@import '../variables.scss';
+
+.standard-picture {
+  padding: 70px 10%;
+  background: $section-bg-color;
+  text-align: center;
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    align-items: center;
+    text-align: left;
+  }
+
+  &__title {
+    &::after {
+      content: "";
+      display: block;
+      width: 10%;
+      height: 2px;
+      margin: 20px auto 0 auto;
+      background: $color-secondary;
+
+      @media screen and (min-width: 768px) {
+        margin: 20px 0 0 0;
+      }
+    }
+  }
+
+  &__city {
+    display: none;
+
+    img {
+      width: 100%;
+    }
+
+    @media screen and (min-width: 768px) {
+      display: block;
+      flex-basis: 50%;
+    }
+  }
+
+  &__description {
+    margin: 20px 0;
+  }
+
+  &__text {
+    @media screen and (min-width: 768px) {
+      flex-basis: 50%;
+      margin-right: 20px;
+    }
+  }
+}
