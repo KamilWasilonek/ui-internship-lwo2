@@ -78,19 +78,31 @@
         <p class="banner__title">
           Try Your <span>FREE</span> Trial Today
         </p>
-  
-        <form class="form banner__form">
 
-          <input class="form__input" type="text" placeholder="Name">
-          <input class="form__input" type="email" placeholder="Email">
-          <input class="form__input" type="password" placeholder="Password">
+        <form class="form banner__form" name="trialForm" method="POST"> 
+
+          <div class="banner__input-box">
+            <input class="form__input" name="username" type="text" placeholder="Name">
+            <div id="banner__name-error" class="banner__val-error"></div>
+          </div>
+
+          <div class="banner__input-box">
+            <input class="form__input" name="email" type="email" placeholder="Email">
+            <div id="banner__email-error" class="banner__val-error"></div>
+          </div>
+          
+          <div class="banner__input-box">
+            <input class="form__input" name="password" type="password" placeholder="Password">
+            <div id="banner__password-error" class="banner__val-error"></div>
+          </div>
          
           <!-- Submit -->
-          <button class="banner__form-submit" type="submit">
+          <button class="banner__form-submit">
             Get Started
           </button>
 
         </form>
+
       </div>
     </div>
   </section>
@@ -125,39 +137,84 @@
 
     <ul class="tabs__buttons-list">
       <li>
-        <button class="tabs__tab" type="button">Tab 1</button>
+        <button class="tabs__btn tabs__btn--active" id="tabs__btn-1" type="button">Tab 1</button>
       </li>
       <li>
-        <button class="tabs__tab" type="button">Tab 2</button>
+        <button class="tabs__btn" id="tabs__btn-2" type="button">Tab 2</button>
       </li>
       <li>
-        <button class="tabs__tab" type="button">Tab 3</button>
+        <button class="tabs__btn" id="tabs__btn-3" type="button">Tab 3</button>
       </li>
     </ul>
 
     <!-- Content -->
-    <div class="tabs__details-container">
-      <h2 class="title title--bold tabs__title">
-        Tabs with soft transitioning effect.
-      </h2>
-  
-      <p class="description tabs__description">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod 
-        bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra 
-        justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque 
-        penatibus et magnis dis parturient montes.
-      </p>
+    <ul class="tabs__content-list" id="tabs__content-list">
+      <li>
+        <div class="tabs__details-container tabs__active">
+          <h2 class="title title--bold tabs__title">
+            Tabs with soft transitioning effect.
+          </h2>
+          <p class="description tabs__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod
+            bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra
+            justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque 
+            penatibus et magnis dis parturient montes.
+          </p>
+          
+          <p class="description tabs__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod
+            bibendum laoreet.
+          </p>
+          <button type="button" class="button button--orange tabs__button">
+            Download
+          </button>
+        </div>
+      </li>
+      <li>
+        <div class="tabs__details-container">
+          <h2 class="title title--bold tabs__title">
+            Tabs, transitioning effect.
+          </h2>
+          <p class="description tabs__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod
+            bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra
+            justo commodo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod
+            bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra
+            justo commodo.
+          </p>
+          
+          <p class="description tabs__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod
+            bibendum laoreet. 
+          </p>
+          <button type="button" class="button button--orange tabs__button">
+            Download
+          </button>
+        </div>
+      </li>
+      <li>
+        <div class="tabs__details-container">
+          <h2 class="title title--bold tabs__title">
+            Tabs soft.
+          </h2>
+          <p class="description tabs__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod
+            bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra
+            justo commodo. 
+          </p>
+          
+          <p class="description tabs__description">
+            Proin gravida dolor 
+          </p>
+          <button type="button" class="button button--orange tabs__button">
+            Download
+          </button>
+        </div>
+      </li>
+    </ul>
 
-      <p class="description tabs__description">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod 
-        bibendum laoreet.
-      </p>
-  
-      <button type="button" class="button button--orange tabs__button">
-        Download
-      </button>
-    </div>
 
+    
     <!-- Picture -->
     <div class="tabs__city">
       <picture>
@@ -523,18 +580,34 @@
     </p>
 
     <!-- Form -->
-    <form class="form contact__form ">
+    <form class="form contact__form" name="contactForm" method="POST">
 
       <div class="contact__inputs">
+
         <div class="contact__inputs-left">
-          <input class="form__input contact__input" type="text" placeholder="Name">
+
+          <div class="contact__input-box">
+            <input class="form__input contact__input" name="username" type="text" placeholder="Name">
+            <div id="contact__name-error" class="contact__val-error"></div>
+          </div>
+          
+          <div class="contact__input-box">
+            <input class="form__input contact__input" name="email" type="email" placeholder="Email">
+            <div id="contact__email-error" class="contact__val-error"></div>
+          </div>
+          
+          <div class="contact__input-box">
+            <input class="form__input contact__input" name="subject" type="text" placeholder="Subject">
+            <div id="contact__subject-error" class="contact__val-error"></div>
+          </div>
   
-          <input class="form__input contact__input" type="email" placeholder="Email">
-  
-          <input class="form__input contact__input" type="text" placeholder="Subject">
         </div>
 
-        <textarea class="form__input contact__message" type="text" placeholder="Message"></textarea>
+        <div class="contact__input-box">
+          <textarea class="form__input contact__message" name="message" type="text" placeholder="Message"></textarea>
+          <div id="contact__message-error" class="contact__val-error"></div>
+        </div>
+
       </div>
       
       <button class="button button--orange contact__btn" type="submit">
@@ -569,5 +642,7 @@
     </a>
     <p class="footer__copyrights">© 2015 Axure Themes</p>
   </footer>
+
+  <script type="module" src="./js/main.js"></script>
 </body>
 </html>

@@ -1,0 +1,41 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 40%;
+  min-width: 450px;
+  margin: 0 auto;
+  padding: 20px;
+  background: lightgray;
+  font-family: "Lato", sans-serif;
+  font-weight: bold;
+  opacity: 0.7;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.row-1 span {
+  font-size: 8em;
+}
+.row-2 span {
+  font-size: 6em;
+}
+.row-3 span {
+  font-size: 5em;
+}
+.row-4 span {
+  font-size: 4em;
+}
+.row-5 span {
+  font-size: 3em;
+}
+.row-6 span {
+  font-size: 2em;
+}

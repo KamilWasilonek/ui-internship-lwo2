@@ -4,6 +4,7 @@
   padding: 70px 10%;
   background: $section-bg-color;
   text-align: center;
+  transition: height 0.3s linear;
 
   @media screen and (min-width: 768px) {
     display: grid;
@@ -31,7 +32,7 @@
     }
   }
 
-  &__tab {
+  &__btn {
     display: block;
     width: 100%;
     padding: 20px;
@@ -53,6 +54,10 @@
       border: 1px solid $section-bg-color;
       white-space: nowrap;
     }
+
+    &--active {
+      background: $color-secondary;
+    }
   }
 
   &__description {
@@ -72,10 +77,24 @@
     }
   }
 
+  &__content-list{
+    position: relative;
+    list-style: none;
+  }
+
   &__details-container {
+    position: absolute;
+    top:0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.7s linear;
     @media screen and (min-width: 768px) {
       text-align: left;
     }
+  }
+
+  &__active {
+    display: block;
   }
 
   &__city {

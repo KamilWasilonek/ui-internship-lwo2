@@ -1,0 +1,17 @@
+.founders {
+  background: url(../assets/triangle-bg/group-4@3x.png) no-repeat;
+  background-size: cover;
+  text-align: center;
+
+  &__single-person {
+    margin-bottom: 70px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    &__people {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-column-gap: 100px;
+    }
+  }
+}

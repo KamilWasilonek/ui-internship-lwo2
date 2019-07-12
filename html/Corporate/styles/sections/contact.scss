@@ -1,0 +1,39 @@
+@import '../variables.scss';
+@import '../mixins.scss';
+
+.contact {
+  background: #323969;
+  text-align: center;
+  color: #ffffff;
+
+  &__type {
+    @include section-type();
+  }
+
+  &__title {
+    @include section-title();
+    margin: 10px 0 40px 0;
+    color: #ffffff;
+
+    @media screen and (min-width: 1024px) {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__sing-agree {
+    margin-top: 20px;
+    color: rgba(246, 245, 243, 0.6);
+    font-size: 0.6rem;
+  }
+
+  &__terms {
+    color: rgba(246, 245, 243, 0.6);
+  }
+
+  @media screen and (min-width: 1024px) {
+    &__form {
+      position: relative;
+      display: flex;
+    }
+  }
+}
