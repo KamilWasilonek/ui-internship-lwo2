@@ -1,0 +1,53 @@
+@import '../mixins.scss';
+
+.unique-platform {
+  @media screen and (min-width: 1024px) {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+  }
+
+  &__left-side {
+    text-align: center;
+
+    @media screen and (min-width: 1024px) {
+      text-align: left;
+    }
+
+    @media screen and (min-width: 1600px) {
+      padding: 200px 15% 200px 20%;
+    }
+  }
+
+  &__type {
+    @include section-type();
+  }
+
+  &__title {
+    @include section-title();
+    margin: 10px 0 20px 0;
+  }
+
+  &__description {
+    @include section-description();
+
+    &--extra-space {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__right-side {
+    display: none;
+
+    @media screen and (min-width: 1024px) {
+      display: block;
+      height: 100%;
+      background: $section-bg-color;
+    }
+  }
+
+  &__bg-shape {
+    height: 100%;
+    background: $color-secondary;
+    clip-path: polygon(100% 20%, 0% 100%, 100% 100%);
+  }
+}

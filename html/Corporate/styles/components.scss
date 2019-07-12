@@ -1,0 +1,168 @@
+@import './variables.scss';
+@import './mixins.scss';
+
+.button {
+  color: #ffffff;
+  border: none;
+  border-radius: 3px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  &--pink {
+    background: $color-secondary;
+  }
+}
+
+.section-space {
+  padding: 100px 10%;
+}
+
+.section-title {
+  &__dots {
+    color: $color-secondary;
+  }
+}
+
+.feature {
+  &__icon {
+    width: 50px;
+  }
+
+  &__subtitle {
+    @include section-subtitle();
+    margin-bottom: 20px;
+  }
+
+  &__description {
+    @include section-description();
+  }
+}
+
+.single-person {
+  &__img {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    background: url(../assets/ceo/entrepreneurship-3498259_640.jpg) no-repeat;
+    background-size: cover;
+    border-radius: 60px;
+  }
+
+  &__name {
+    @include section-subtitle();
+    margin: 10px 0 5px 0;
+    color: #ffffff;
+  }
+
+  &__position {
+    color: $color-secondary;
+    font-size: 0.7rem;
+  }
+
+  &__description {
+    @include section-description();
+    margin-top: 20px;
+    color: #ffffff;
+    font-style: italic;
+  }
+}
+
+.founders-company {
+  &__starbucks {
+    margin: 20px;
+    width: 130px;
+
+    @media screen and (min-width: 1024px) {
+      margin: 40px;
+    }
+  }
+}
+
+.contact-form {
+  &__input,
+  &__submit {
+    width: 60%;
+    padding: 10px 10px;
+  }
+
+  &__input {
+    margin-bottom: 20px;
+    background: #323969;
+    border: 1px solid #ffffff;
+    border-radius: 3px;
+
+    @media screen and (min-width: 1024px) {
+      margin-bottom: 0;
+      margin-right: 20px;
+    }
+  }
+
+  &__input::placeholder {
+    color: #ffffff;
+  }
+
+  &__trial {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    margin-bottom: 10px;
+    font-size: 0.7rem;
+
+    img {
+      margin-top: 5px;
+      width: 20px;
+    }
+
+    @media screen and (min-width: 1024px) {
+      top: -50px;
+      right: 6%;
+      position: absolute;
+    }
+  }
+
+  &__submit {
+    color: #ffffff;
+    background: $color-secondary;
+    border: none;
+    border-radius: 3px;
+    text-transform: uppercase;
+  }
+}
+
+.footer-socials {
+  &__icon {
+    width: 15px;
+    height: 15px;
+    margin-top: 10px;
+    opacity: 0.4;
+    cursor: pointer;
+  }
+}
+
+.footer-form {
+  &__email {
+    margin: 0;
+    padding: 7px 10px;
+    border: 1px solid lightgray;
+    border-radius: 3px;
+  }
+
+  &__email:focus {
+    outline: none;
+  }
+
+  &__submit {
+    padding: 5px;
+    margin: -5px;
+    background: $color-secondary;
+    border: 1px solid $color-secondary;
+    border-radius: 3px;
+  }
+
+  &__submit > img {
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+  }
+}
