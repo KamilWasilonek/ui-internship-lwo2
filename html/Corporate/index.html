@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Corporate</title>
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./styles/style.css">
 </head>
 
 <body>
@@ -14,14 +14,21 @@
   <!-- Banner -->
   <section class="banner">
     <div class="banner__container">
+      <!-- Video -->
+      <video class="banner__video" id="banner__video" loop autoplay muted>
+        <source src="./assets/video/coverr-yin-and-yang-1561488320950.mp4"
+                type="video/mp4">
+
+        Sorry, your browser doesn't support embedded videos.
+      </video>
       <!-- Title -->
       <header class="banner__title">
         There is no other platforms for you as like 
       </header>
 
       <!-- Play -->
-      <button type="button" class="banner__play">
-        <img  src="./assets/play-icon/play-video-icon.svg" alt="">
+      <button type="button" class="banner__video-btn banner__video-btn--paused" id="banner__video-btn">
+        <!-- <img  src="./assets/play-icon/play-video-icon.svg" alt=""> -->
       </button> 
 
       <!-- Button -->
@@ -365,5 +372,6 @@
       </div>
     </div>
   </section>
+  <script src="./js/video.js"></script>
 </body>
 </html>
