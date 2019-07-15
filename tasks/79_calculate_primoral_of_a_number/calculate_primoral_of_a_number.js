@@ -4,6 +4,7 @@ export function numPrimorial(num) {
   while (num) {
     if (isPrime(i)) {
       result *= i;
+      // eslint-disable-next-line no-param-reassign
       num--;
     }
     i++;

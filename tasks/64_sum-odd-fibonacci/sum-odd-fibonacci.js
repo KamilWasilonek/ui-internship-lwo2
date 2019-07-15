@@ -7,7 +7,7 @@ export function sumFibs(num) {
     }
   }
   return numbers.reduce((sum, item) => {
-    return item % 2 != 0 ? sum + item : sum;
+    return item % 2 !== 0 ? sum + item : sum;
   }, 0);
 }
 

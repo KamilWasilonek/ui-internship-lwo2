@@ -19,6 +19,7 @@ export function convertToRoman(numToConvert) {
   for (let i in romanNumbers) {
     while (numToConvert - romanNumbers[i] >= 0) {
       romanNumber += i;
+      // eslint-disable-next-line no-param-reassign
       numToConvert -= romanNumbers[i];
     }
   }
