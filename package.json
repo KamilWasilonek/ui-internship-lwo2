@@ -5,7 +5,10 @@
   "scripts": {
     "test": "jest",
     "lint": "./node_modules/.bin/eslint tasks/**/*.js",
-    "tdd": "jest --watch"
+    "tdd": "jest --watch",
+    "watch:sass": "node-sass html/Corporate/styles/style.scss  html/Corporate/styles/style.css  -w -r",
+    "compile:sass": "node-sass --source-map true html/Corporate/styles/style.scss  html/Corporate/styles/style.comp.css",
+    "prefix": "postcss --use autoprefixer -b 'last 10 versions' html/Corporate/styles/style.comp.css -o html/Corporate/styles/style.prefix.css"
   },
   "husky": {
     "hooks": {
@@ -23,5 +26,8 @@
     "husky": "^1.1.2",
     "jest": "^21.1.0",
     "regenerator-runtime": "^0.11.0"
+  },
+  "dependencies": {
+    "node-sass": "^4.12.0"
   }
 }
