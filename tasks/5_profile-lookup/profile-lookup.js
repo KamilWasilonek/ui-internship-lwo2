@@ -5,17 +5,11 @@ export const profiles = [
   },
   {
     firstName: 'Sherlock',
-    likes: [
-      'Intriguing Cases',
-      'Violin',
-    ],
+    likes: ['Intriguing Cases', 'Violin'],
   },
   {
     firstName: 'Harry',
-    likes: [
-      'Pizza',
-      'Pasta',
-    ],
+    likes: ['Pizza', 'Pasta'],
   },
   {
     firstName: 'Akira',
