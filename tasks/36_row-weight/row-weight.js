@@ -4,7 +4,7 @@ export function rowWeights(arr) {
     return index % 2 === 0 ? total + val : total;
   }, 0);
   sum[1] = arr.reduce((total, val, index) => {
-    return index % 2 != 0 ? total + val : total;
+    return index % 2 !== 0 ? total + val : total;
   }, 0);
   return sum;
 

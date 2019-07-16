@@ -1,4 +1,5 @@
 export function maxTripletSum(arr) {
+  // eslint-disable-next-line no-param-reassign
   arr = [...new Set(arr)];
   return arr
       .sort((a, b) => a - b)

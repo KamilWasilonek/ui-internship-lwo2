@@ -4,5 +4,6 @@ export function reverseStringInRange(str, index) {
       .split('')
       .reverse()
       .join('');
+  // eslint-disable-next-line no-param-reassign
   return (str = str.replace(partOfText, revertedPart));
 }
