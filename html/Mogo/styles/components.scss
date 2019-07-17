@@ -30,12 +30,7 @@
     display: block;
     width: 60px;
     height: 2px;
-    // margin: 20px auto;
     background: $separator-color;
-
-    @include respond(lg) {
-      // margin: 40px auto;
-    }
   }
 
   @include respond(lg) {
@@ -76,127 +71,6 @@
   text-transform: uppercase;
 }
 
-// Navbar
-.nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: $white-color;
-
-  &__logo {
-    color: $white-color;
-    text-decoration: none;
-    font-weight: bold;
-    cursor: pointer;
-
-    @include respond(md) {
-      font-size: 1.5rem;
-    }
-
-    @include respond(lg) {
-      font-size: 2rem;
-    }
-  }
-
-  &__menu {
-    display: none;
-    justify-content: flex-end;
-    flex-basis: 70%;
-    list-style-type: none;
-
-    li:nth-child(even) {
-      margin: 0 5%;
-
-      @include respond(lg) {
-        margin: 0 40px;
-      }
-    }
-
-    @include respond(md) {
-      display: flex;
-    }
-  }
-
-  &__menu-item {
-    a {
-      position: relative;
-      color: $white-color;
-      font-size: 0.8rem;
-      text-decoration: none;
-      text-transform: uppercase;
-
-      &:hover {
-        color: $menu-on-hover-color;
-      }
-
-      &:hover::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: -10px;
-        height: 2px;
-        width: 100%;
-        background: $menu-on-hover-color;
-      }
-
-      @include respond(lg) {
-        font-size: 1rem;
-      }
-    }
-  }
-
-  &__menu-shopping,
-  &__menu-search {
-    position: relative;
-    width: 16px;
-    height: 16px;
-
-    &:hover::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -10px;
-      height: 2px;
-      width: 100%;
-      background: $menu-on-hover-color;
-    }
-
-    @include respond(lg) {
-      width: 18px;
-      height: 18px;
-    }
-  }
-
-  &__menu-shopping {
-    background: url(../assests/images/banner/cart.svg) center bottom/cover
-      no-repeat;
-
-    &:hover {
-      background: url(../assests/images/banner/cart-color.svg) center
-        bottom/cover no-repeat;
-    }
-  }
-
-  &__menu-search {
-    background: url(../assests/images/banner/search.svg) center bottom/cover
-      no-repeat;
-
-    &:hover {
-      background: url(../assests/images/banner/magnifying-glass.svg) center
-        bottom/cover no-repeat;
-    }
-  }
-
-  &__mobile-btn {
-    font-size: 1.2rem;
-    cursor: pointer;
-
-    @include respond(md) {
-      display: none;
-    }
-  }
-}
-
 // About
 .moving-image {
   &__bg {
@@ -204,7 +78,6 @@
   }
 
   &__box {
-    // height: 100%;
     position: relative;
     background-color: $icon-color;
     transition: transform 0.3s linear;
@@ -576,7 +449,6 @@
 
 .instagram {
   &__container {
-    // max-width: 250px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr 0.5fr 1fr;
