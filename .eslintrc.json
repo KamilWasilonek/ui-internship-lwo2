@@ -13,6 +13,8 @@
         "document": true,
         "window": true,
         "console": true,
+        "event": true,
+        "Promise": true,
         "Set": true
     }
 }
