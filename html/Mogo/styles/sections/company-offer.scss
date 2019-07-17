@@ -1,0 +1,40 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+
+.company-offer {
+  text-align: center;
+
+  &__title {
+    margin-top: 20px;
+
+    &::after {
+      margin: 30px auto 0 auto;
+    } 
+  }
+
+  &__container {
+    margin-top: 20px;
+
+    @include respond(md) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-column-gap: 40px;
+      margin-top: 40px;
+    }
+
+    @include respond(lg) {
+      grid-template-columns: repeat(3, 1fr);
+      grid-column-gap: 0;
+      text-align: left;
+    }
+  }
+
+  &__single-offer {
+    flex-basis: 50%;
+    padding: 30px 0;
+
+    @include respond(lg) {
+      padding: 40px 30px;
+    }
+  }
+}

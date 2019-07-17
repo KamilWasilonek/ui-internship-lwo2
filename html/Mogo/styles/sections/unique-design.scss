@@ -1,0 +1,56 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+
+.unique-design {
+  padding: 50px 10% 0 10%;
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.85),
+      rgba(255, 255, 255, 0.85)
+    ),
+    url(../assests/images/unique-design/layer-45@2x.jpg) center bottom/cover
+      no-repeat;
+  text-align: center;
+
+  @include respond(md) {
+    padding: 70px 10% 0 10%;
+  }
+
+  @include respond(lg) {
+    padding: 100px 10% 0 10%;
+  }
+
+
+  &__title {
+    margin-top: 20px;
+
+    &::after {
+      margin: 30px auto 0 auto;
+    }
+  }
+
+  &__container {
+    position: relative;
+    max-width: 500px;
+    margin: 40px auto -5px auto;
+  }
+
+  &__tablet {
+    width: 100%;
+    margin: 0 auto -5px auto;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+  }
+
+  &__mobile {
+    display: none;
+    position: absolute;
+    bottom: -70px;
+    right: -100px;
+    transform: translate(20%, 0);
+    max-width: 250px;
+
+    @include respond(lg) {
+      display: block;
+    }
+  }
+}

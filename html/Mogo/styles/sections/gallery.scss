@@ -1,0 +1,91 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  &__container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    color: $white-color;
+    text-align: center;
+
+    &--wide {
+      grid-column: 3;
+      grid-row: 1 / span 2;
+    }
+
+    @include respond(md) {
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          to bottom,
+          rgba(243, 129, 129, 0.85),
+          rgba(252, 227, 138, 0.85)
+        );
+        opacity: 0;
+        transition: opacity 0.5s linear;
+      }
+
+      &:hover {
+        &::after {
+          opacity: 1;
+        }
+
+        .gallery__image-details {
+          opacity: 1;
+        }
+      }
+    }
+  }
+  &__image {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__image-details {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    transition: opacity 0.5s linear;
+  }
+
+  &__icon {
+    width: 20px;
+    height: 20px;
+
+    @include respond(lg) {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  &__details-title {
+    margin: 5px 0;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+
+    @include respond(lg) {
+      font-size: 1rem;
+    }
+  }
+
+  &__details-subtitle {
+    font-size: 0.6rem;
+    font-style: italic;
+
+    @include respond(lg) {
+      font-size: 0.9rem;
+    }
+  }
+}

@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css?family=Kaushan+Script|Montserrat:300,400,600,700|Roboto:300,400,700&display=swap');@import "./variables.scss";
+@import "./components.scss";
+@import "./mixins.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $font-primary;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+// -------------- Navbar --------------
+@import "./sections/navbar.scss";
+
+// -------------- Banner --------------
+@import "./sections/banner.scss";
+
+// -------------- About us --------------
+@import "./sections/about.scss";
+
+// -------------- Counters --------------
+@import "./sections/counters.scss";
+
+// -------------- Company offer --------------
+@import "./sections/company-offer.scss";
+
+// -------------- Unique design --------------
+@import "./sections/unique-design.scss";
+
+// -------------- Services --------------
+@import "./sections/services.scss";
+
+// -------------- Slider --------------
+@import "./sections/slider.scss";
+
+// -------------- Team --------------
+@import "./sections/team.scss";
+
+// -------------- Company logos --------------
+@import "./sections/company-logos.scss";
+
+// -------------- Projects --------------
+@import "./sections/projects.scss";
+
+// -------------- Gallery --------------
+@import "./sections/gallery.scss";
+
+// -------------- Opinion --------------
+@import "./sections/opinion.scss";
+
+// -------------- Latest posts --------------
+@import "./sections/latest-posts.scss";
+
+// -------------- Map --------------
+@import "./sections/map.scss";
+
+// -------------- Footer --------------
+@import "./sections/footer.scss";
+

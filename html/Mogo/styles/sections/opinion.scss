@@ -1,0 +1,38 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+
+.opinion {
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.85),
+      rgba(255, 255, 255, 0.85)
+    ),
+    url(../assests/images/opinion/layer-53@2x.jpg) center bottom/cover no-repeat;
+  text-align: center;
+
+  &__title {
+    margin-top: 20px;
+
+    &::after {
+      margin: 30px auto 0 auto;
+    } 
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-column-gap: 40px;
+
+    @include respond(md) {
+      grid-template-columns: 1fr 1fr;
+      grid-column-gap: 50px;
+    }
+
+    @include respond(lg) {
+      grid-column-gap: 100px;
+    }
+  }
+
+  &__single-person {
+    margin-top: 50px;
+  }
+}

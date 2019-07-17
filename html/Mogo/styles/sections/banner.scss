@@ -1,0 +1,87 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+
+.banner {
+  padding: 0 10%;
+  background: linear-gradient(
+      to bottom,
+      rgba(243, 129, 129, 0.85),
+      rgba(252, 227, 138, 0.85)
+    ),
+    url(../assests/images/banner/layer-15.jpg) center bottom/cover no-repeat;
+
+  // Content
+  &__container {
+    padding: 150px 0;
+    text-align: center;
+
+    @include respond(md) {
+      padding: 200px 0;
+    }
+  }
+
+  &__type {
+    font-size: 2rem;
+
+    @include respond(lg) {
+      font-size: 3rem;
+    }
+
+    @include respond(extra-lg) {
+      font-size: 4rem;
+    }
+  }
+
+  &__title {
+    margin-top: 20px;
+    font-size: 3rem;
+    &::after {
+      background: $white-color;
+      margin: 40px auto 0 auto;
+    }
+
+    @include respond(lg) {
+      font-size: 4rem;
+    }
+
+    @include respond(extra-lg) {
+      font-size: 5rem;
+    }
+  }
+
+  &__button {
+    margin-top: 40px;
+    padding: 10px 30px;
+    background: transparent;
+    border: 2px solid $white-color;
+    color: $white-color;
+    cursor: pointer;
+
+    @include respond(lg) {
+      font-size: 0.9rem;
+    }
+  }
+
+  // Progress bars
+  &__progress {
+    display: none;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 20px;
+    padding-bottom: 20px;
+    color: rgba(255, 255, 255, 0.7);
+
+    @include respond(md) {
+      display: grid;
+    }
+  }
+
+  &__single-bar {
+    padding-top: 20px;
+    border-top: 2px solid rgba(255, 255, 255, 0.7);
+    text-transform: uppercase;
+    span {
+      font-size: 1.4rem;
+      font-weight: bold;
+    }
+  }
+}

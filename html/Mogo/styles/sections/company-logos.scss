@@ -1,0 +1,21 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+
+.company-logos {
+  padding: 50px 10%;
+  background: #f8f8f8;
+  text-align: center;
+
+  @include respond(lg) {
+    display: block;
+  }
+
+  &__image {
+    width: 100%;
+    margin: 0 auto;
+
+    @include respond(lg) {
+      width: 80%;
+    }
+  }
+}
