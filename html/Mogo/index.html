@@ -21,7 +21,7 @@
           <div class="navbar__mobile-btn">&#9776;</div>
 
           <!-- Menu list -->
-          <ul class="navbar__menu">
+          <ul class="navbar__menu" id="navbar__menu">
             <li class="navbar__menu-item">
               <a href="about">About</a>
             </li>
@@ -364,41 +364,57 @@
         <!-- Image -->
         <img
           class="services__img"
-          src="./assests/images/unique-design/layer-43@3x.jpg"
+          src="./assests/images/services/img-1.jpg"
           alt="Photography"
         />
 
         <!-- Accordians container -->
         <div class="services__container">
           <!-- Accordion 1 -->
-          <button class="small-title accordion services__accordion">
+          <button class="small-title accordion services__accordion" id="accordion-1">
             <img
               class="accordion__img"
               src="./assests/images/services/picture.svg"
               alt=""
             />
             Photography
+            <span class="accordion__arrow">&gt</span>
           </button>
+          <div class="services__panel">
+            <p class="section-description ">Aspernatur quibusdam, neque, quos nisi autem ea harum eum quisquam corrupti adipisci praesentium ipsam tenetur blanditiis, sint sed hic dolorum nobis voluptatem.Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+            </p>
+          </div>
 
           <!-- Accordion 2 -->
-          <button class="small-title  accordion services__accordion">
+          <button class="small-title  accordion services__accordion services__accordion--middle" id="accordion-2">
             <img
               class="accordion__img"
               src="./assests/images/services/equalizer.svg"
               alt=""
             />
             Creativity
+            <span class="accordion__arrow">&gt</span>
           </button>
+          <div class="services__panel ">
+            <p class="section-description "> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur quibusdam, neque, quos nisi autem ea harum eum quisquam corrupti adipisci praesentium ipsam tenetur blanditiis, sint sed hic dolorum nobis voluptatem.Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta doloremque, hic eveniet voluptate repudiandae 
+            </p>
+          </div>
+  
 
           <!-- Accordion 3 -->
-          <button class="small-title  accordion services__accordion">
+          <button class="small-title  accordion services__accordion" id="accordion-3">
             <img
               class="accordion__img"
               src="./assests/images/services/bullseye.svg"
               alt=""
             />
             Web design
+            <span class="accordion__arrow">&gt</span>
           </button>
+          <div class="services__panel services__panel--last">
+            <p class="section-description "> Opsam tenetur blanditiis, sint sed hic dolorum nobis voluptatem.Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta doloremque, hic eveniet voluptate repudiandae perspiciatis consequuntur officia rem laboriosam aut sunt omnis, animi magni, nihil a delectus nulla atque similique.
+            </p>
+          </div>
         </div>
       </div>
     </section>
@@ -1322,6 +1338,7 @@
       </div>
     </section>
 
-    <script type="module" src="js/sections-animation/animate-scroll.js"></script>
+    <!-- <script type="module" src="js/sections-animation/animate-scroll.js"></script> -->
+    <script type="module" src="./js/main.js"></script>
   </body>
 </html>
