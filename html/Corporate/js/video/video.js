@@ -1,6 +1,7 @@
 const videoBtn = document.querySelector('.banner__video-btn');
 const video = document.querySelector('.banner__video');
 
+
 export function runBannerVideo() {
   videoBtn.addEventListener('click', function() {
     if (video.paused === true) {
