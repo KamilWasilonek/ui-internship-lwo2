@@ -79,21 +79,21 @@
           Try Your <span>FREE</span> Trial Today
         </p>
 
-        <form class="form banner__form" name="trialForm" onsubmit="event.preventDefault(); return validateTrialForm()" method="POST"> 
+        <form class="form banner__form" name="trialForm" method="POST"> 
 
           <div class="banner__input-box">
             <input class="form__input" name="username" type="text" placeholder="Name">
-            <div id="banner__name-error" class="val__error"></div>
+            <div id="banner__name-error" class="banner__val-error"></div>
           </div>
 
           <div class="banner__input-box">
             <input class="form__input" name="email" type="email" placeholder="Email">
-            <div id="banner__email-error" class="val__error"></div>
+            <div id="banner__email-error" class="banner__val-error"></div>
           </div>
           
           <div class="banner__input-box">
             <input class="form__input" name="password" type="password" placeholder="Password">
-            <div id="banner__password-error" class="val__error"></div>
+            <div id="banner__password-error" class="banner__val-error"></div>
           </div>
          
           <!-- Submit -->
@@ -133,9 +133,9 @@
   </section>
 
   <!-- Tabs -->
-  <section class="tabs" id="tabs">
+  <section class="tabs">
 
-    <ul class="tabs__buttons-list" id="tabs__buttons-list">
+    <ul class="tabs__buttons-list">
       <li>
         <button class="tabs__btn tabs__btn--active" id="tabs__btn-1" type="button">Tab 1</button>
       </li>
@@ -580,7 +580,7 @@
     </p>
 
     <!-- Form -->
-    <form class="form contact__form" name="contactForm" onsubmit="event.preventDefault(); return validateContactForm()" method="POST">
+    <form class="form contact__form" name="contactForm" method="POST">
 
       <div class="contact__inputs">
 
@@ -588,24 +588,24 @@
 
           <div class="contact__input-box">
             <input class="form__input contact__input" name="username" type="text" placeholder="Name">
-            <div id="contact__name-error" class="val__error"></div>
+            <div id="contact__name-error" class="contact__val-error"></div>
           </div>
           
           <div class="contact__input-box">
             <input class="form__input contact__input" name="email" type="email" placeholder="Email">
-            <div id="contact__email-error" class="val__error"></div>
+            <div id="contact__email-error" class="contact__val-error"></div>
           </div>
           
           <div class="contact__input-box">
             <input class="form__input contact__input" name="subject" type="text" placeholder="Subject">
-            <div id="contact__subject-error" class="val__error"></div>
+            <div id="contact__subject-error" class="contact__val-error"></div>
           </div>
   
         </div>
 
         <div class="contact__input-box">
           <textarea class="form__input contact__message" name="message" type="text" placeholder="Message"></textarea>
-          <div id="contact__message-error" class="val__error"></div>
+          <div id="contact__message-error" class="contact__val-error"></div>
         </div>
 
       </div>
@@ -643,8 +643,6 @@
     <p class="footer__copyrights">© 2015 Axure Themes</p>
   </footer>
 
-  <!-- <script src="./js/banner-form-validation.js"></script>
-  <script src="./js/contact-form-validation.js"></script> -->
-  <script type="module" src="./js/tabs/tab-switching.js"></script>
+  <script type="module" src="./js/main.js"></script>
 </body>
 </html>

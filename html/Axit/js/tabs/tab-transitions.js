@@ -1,12 +1,11 @@
-/* eslint-disable no-invalid-this */
-/* eslint-disable max-len */
-/* eslint-disable no-undef */
-/* eslint-disable no-console */
+const tabsButtonsList = document.querySelector('.tabs__buttons-list');
+export const contentList = document.querySelector('#tabs__content-list');
+
 export function changeTabsHeight() {
   if (window.innerWidth <= 767) {
     let newHeight =
-      document.getElementsByClassName('tabs__active')[0].offsetHeight + 240;
-    document.getElementById('tabs').style.height = newHeight + 'px';
+      document.querySelector('.tabs__active')[0].offsetHeight + 240;
+    document.querySelector('.tabs').style.height = newHeight + 'px';
   }
 }
 
@@ -19,35 +18,34 @@ function removeButtonActiveClass(listToCheck) {
 }
 
 function hideContent(contentList) {
+  const localContentList = contentList;
   for (let i = 0; i < contentList.children.length; i++) {
-    contentList.children[i].children[0].classList.remove('tabs__active');
-    contentList.children[i].children[0].style.opacity = '0';
+    localContentList.children[i].children[0].classList.remove('tabs__active');
+    localContentList.children[i].children[0].style.opacity = '0';
   }
 }
 
 function showContent(id) {
-  document
-      .getElementById('tabs__content-list')
-      .children[id].children[0].classList.add('tabs__active');
-  document.getElementById('tabs__content-list').children[
-      id
-  ].children[0].style.opacity = '1';
+  contentList.children[id].children[0].classList.add('tabs__active');
+  contentList.children[id].children[0].style.opacity = '1';
 }
 
 function tabSwitch(buttonId) {
   let idNumber = buttonId.substr(-1) - 1;
-  removeButtonActiveClass(document.getElementById('tabs__buttons-list'));
-  hideContent(document.getElementById('tabs__content-list'));
+  removeButtonActiveClass(tabsButtonsList);
+  hideContent(contentList);
   showContent(idNumber);
   document.getElementById(buttonId).classList.add('tabs__btn--active');
   changeTabsHeight();
 }
 
 export function setListeners() {
-  let buttonsList = document.getElementById('tabs__buttons-list').getElementsByTagName('li');
+  const buttonsList = tabsButtonsList.getElementsByTagName('li');
   for (let i = 0; i < buttonsList.length; i++) {
-    document.getElementById(buttonsList.item(i).children[0].id).addEventListener('click', function() {
-      tabSwitch(this.id);
-    });
+    document
+        .getElementById(buttonsList.item(i).children[0].id)
+        .addEventListener('click', function(event) {
+          tabSwitch(event.target.id);
+        });
   }
 }
