@@ -1,0 +1,97 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+
+.slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f8f8f8;
+  text-align: center;
+
+  @include respond(lg) {
+    text-align: left;
+  }
+
+  &__container {
+    padding: 0 30px;
+    display: flex;
+
+    @include respond(md) {
+      padding: 0 50px;
+    }
+  }
+
+  &__img-box {
+    display: none;
+    flex-basis: 20%;
+    text-align: center;
+    
+    @include respond(lg) {
+      display: block;
+    }
+  }
+
+  &__img {
+    width: 100%;
+
+    &--rounded {
+      width: 130px;
+      height: 130px;
+      border-radius: 90px;
+    }
+
+    &--bordered {
+      max-width: 100px;
+      height: 100%;
+      padding: 20px;
+      border: 2px solid $icon-color;
+    }
+  }
+
+  &__details {
+    flex-basis: 100%;
+    align-self: center;
+
+    @include respond(lg) {
+      padding-left: 10px;
+      flex-basis: 80%;
+    }
+  }
+
+  &__quotation {
+    color: $description-color;
+    font-family: $roboto-font;
+    font-weight: 300;
+    font-style: italic;
+  }
+
+  &__author {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    font-family: $font-special;
+
+    @include respond(lg) {
+      justify-content: left;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 2px;
+      margin-right: 5px;
+      background: $separator-color;
+    }
+  }
+
+  &__previous-btn,
+  &__next-btn {
+    background: transparent;
+    opacity: 0.3;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+}
