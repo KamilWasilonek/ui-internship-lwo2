@@ -21,10 +21,17 @@
     }
   }
 
+
+  &__slide {
+    display: none;
+    transition: opacity 0.5s linear;
+  }
+
   &__img-box {
     display: none;
     flex-basis: 20%;
     text-align: center;
+    max-height: 100px;
     
     @include respond(lg) {
       display: block;

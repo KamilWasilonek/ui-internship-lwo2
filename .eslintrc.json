@@ -13,6 +13,7 @@
         "document": true,
         "window": true,
         "console": true,
+        "event": true,
         "Set": true
     }
 }
