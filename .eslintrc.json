@@ -13,6 +13,9 @@
         "document": true,
         "window": true,
         "console": true,
+        "Promise": true,
+        "fetch": true,
+        "Data": true,
         "Set": true
     }
 }
