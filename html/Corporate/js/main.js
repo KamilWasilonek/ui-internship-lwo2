@@ -1,3 +1,3 @@
-import {runBannerVideo} from './video/video.js';
+import {startBannerVideo} from './video/video.js';
 
-runBannerVideo();
+startBannerVideo();
