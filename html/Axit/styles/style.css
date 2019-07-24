@@ -186,13 +186,6 @@
     .customer--reversed__details {
       order: 1; } }
 
-.val__error {
-  padding: 0 10px;
-  font-size: 0.7rem;
-  opacity: 0.5;
-  color: red;
-  font-style: italic; }
-
 .wrong-input-value {
   box-shadow: 1px 1px 10px 3px red; }
 
@@ -315,6 +308,12 @@
     cursor: pointer; }
     .banner__form-submit:focus, .banner__form-submit:active {
       outline-color: #ff8b38; }
+  .banner__val-error {
+    padding: 0 10px;
+    font-size: 0.7rem;
+    opacity: 0.5;
+    color: red;
+    font-style: italic; }
 
 .socials {
   display: none;
@@ -618,6 +617,12 @@
     margin: 40px auto 0 auto; }
     .contact__btn:focus, .contact__btn:active {
       outline-color: #ff8b38; }
+  .contact__val-error {
+    padding: 0 10px;
+    font-size: 0.7rem;
+    opacity: 0.5;
+    color: red;
+    font-style: italic; }
 
 .footer {
   padding: 20px 0 10px 0;
