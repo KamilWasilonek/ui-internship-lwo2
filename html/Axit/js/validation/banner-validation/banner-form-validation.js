@@ -1,11 +1,4 @@
-/* eslint-disable max-len */
-import {
-  isInputNotEmpty,
-  isEmailFormatCorrect,
-  isPasswordCorrect,
-  isNameCorrect,
-} from '../helper-functions.js';
-
+import {checkName, checkEmail, checkPassword} from '../helper-functions.js';
 import {components} from './banner-components.js';
 
 export function addBannerFormValidation() {
@@ -23,49 +16,20 @@ export function addBannerFormValidation() {
       validateBannerForm();
     });
 
-    function validateBannerForm(inputToCheck) {
-      let result = true;
+    function validateBannerForm() {
+      let result = [];
 
       // Name validation
-      if (
-        !isInputNotEmpty(nameInput, errorMessages[0], 'Name is required') ||
-        !isNameCorrect(nameInput, errorMessages[0], 'Only latin letters')
-      ) {
-        result = false;
-      } else {
-        errorMessages[0].innerHTML = '';
-      }
+      result.push(checkName(nameInput, errorMessages[0]));
 
       // Email validation
-      if (
-        !isInputNotEmpty(emailInput, errorMessages[1], 'Email is required') ||
-        !isEmailFormatCorrect(emailInput, errorMessages[1], 'Email is invalid')
-      ) {
-        result = false;
-      } else {
-        errorMessages[1].innerHTML = '';
-      }
+      result.push(checkEmail(emailInput, errorMessages[1]));
 
       // Password validation
-      if (
-        !isInputNotEmpty(
-            passwordInput,
-            errorMessages[2],
-            'Password is required'
-        ) ||
-        !isPasswordCorrect(
-            passwordInput,
-            errorMessages[2],
-            'Min 6 characters, required: 1 capital letter, 1 lower-case letter, 1 digit, 1 special character'
-        )
-      ) {
-        result = false;
-      } else {
-        errorMessages[2].innerHTML = '';
-      }
+      result.push(checkPassword(passwordInput, errorMessages[2]));
 
       // Send message
-      if (result) {
+      if (!result.includes(false)) {
         window.alert('Message sent');
         bannerForm.reset();
       }
@@ -73,4 +37,3 @@ export function addBannerFormValidation() {
     }
   });
 }
-
