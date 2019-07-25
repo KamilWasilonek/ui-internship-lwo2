@@ -1,3 +1,3 @@
-import {startBannerVideo} from './video/video.js';
+import {validateContactForm} from './validation/contact-validation.js';
 
-startBannerVideo();
+validateContactForm();
