@@ -15,7 +15,7 @@
   }
 
   &--with-bg {
-    background: rgba(121, 121, 121, 0.7)
+    background: rgba(121, 121, 121, 0.7);
   }
 
   &__menu-container {
@@ -69,10 +69,6 @@
       color: $white-color;
       background: rgba(121, 121, 121, 0.8);
       cursor: pointer;
-    }
-
-    &:focus {
-      color: red;
     }
 
     a {

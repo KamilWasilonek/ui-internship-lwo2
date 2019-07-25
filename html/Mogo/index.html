@@ -21,7 +21,7 @@
           <div class="navbar__mobile-btn">&#9776;</div>
 
           <!-- Menu list -->
-          <ul class="navbar__menu">
+          <ul class="navbar__menu" id="navbar__menu">
             <li class="navbar__menu-item">
               <a href="about">About</a>
             </li>
@@ -364,54 +364,70 @@
         <!-- Image -->
         <img
           class="services__img"
-          src="./assests/images/unique-design/layer-43@3x.jpg"
+          src="./assests/images/services/img-1.jpg"
           alt="Photography"
         />
 
         <!-- Accordians container -->
         <div class="services__container">
           <!-- Accordion 1 -->
-          <button class="small-title accordion services__accordion">
+          <button class="small-title accordion services__accordion" id="accordion-1">
             <img
               class="accordion__img"
               src="./assests/images/services/picture.svg"
               alt=""
             />
             Photography
+            <span class="accordion__arrow">&gt</span>
           </button>
+          <div class="services__panel">
+            <p class="section-description ">Aspernatur quibusdam, neque, quos nisi autem ea harum eum quisquam corrupti adipisci praesentium ipsam tenetur blanditiis, sint sed hic dolorum nobis voluptatem.Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+            </p>
+          </div>
 
           <!-- Accordion 2 -->
-          <button class="small-title  accordion services__accordion">
+          <button class="small-title  accordion services__accordion services__accordion--middle" id="accordion-2">
             <img
               class="accordion__img"
               src="./assests/images/services/equalizer.svg"
               alt=""
             />
             Creativity
+            <span class="accordion__arrow">&gt</span>
           </button>
+          <div class="services__panel ">
+            <p class="section-description "> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur quibusdam, neque, quos nisi autem ea harum eum quisquam corrupti adipisci praesentium ipsam tenetur blanditiis, sint sed hic dolorum nobis voluptatem.Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta doloremque, hic eveniet voluptate repudiandae 
+            </p>
+          </div>
+  
 
           <!-- Accordion 3 -->
-          <button class="small-title  accordion services__accordion">
+          <button class="small-title  accordion services__accordion" id="accordion-3">
             <img
               class="accordion__img"
               src="./assests/images/services/bullseye.svg"
               alt=""
             />
             Web design
+            <span class="accordion__arrow">&gt</span>
           </button>
+          <div class="services__panel services__panel--last">
+            <p class="section-description "> Opsam tenetur blanditiis, sint sed hic dolorum nobis voluptatem.Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta doloremque, hic eveniet voluptate repudiandae perspiciatis consequuntur officia rem laboriosam aut sunt omnis, animi magni, nihil a delectus nulla atque similique.
+            </p>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Slider with message-->
-    <section class="section slider">
+    <section class="section slider message-slider">
       <!-- Previous button -->
       <button class="slider__previous-btn">
         &lt;
       </button>
 
-      <!-- Content -->
-      <div class="slider__container">
+      <!-- SLIDE 1 -->
+      <div class="slider__container slider__slide">
         <!-- Image -->
         <div class="slider__img-box">
           <img
@@ -434,7 +450,51 @@
         </div>
       </div>
 
-      <!-- Next bitton -->
+      <!-- SLIDE 2 -->
+      <div class="slider__container slider__slide">
+        <!-- Image -->
+        <div class="slider__img-box">
+          <img
+            class="slider__img slider__img--bordered"
+            src="./assests/images/slider/speech-4.svg"
+            alt=""
+          />
+        </div>
+
+        <!-- Details -->
+        <div class="slider__details">
+          <!-- Quotation -->
+          <p class="section-description slider__quotation">
+           " Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, dignissimos? Earum asperiores quod, deleniti labore molestiae, neque culpa facilis nisi, assumenda vitae recusandae consequuntur alias sapiente at sint tempore fuga! "
+          </p>
+          <!-- Author -->
+          <p class="slider__author">Mark Zurk</p>
+        </div>
+      </div>
+
+      <!-- SLIDE 3 -->
+      <div class="slider__container slider__slide">
+        <!-- Image -->
+        <div class="slider__img-box">
+          <img
+            class="slider__img slider__img--bordered"
+            src="./assests/images/slider/speech-4.svg"
+            alt=""
+          />
+        </div>
+
+        <!-- Details -->
+        <div class="slider__details">
+          <!-- Quotation -->
+          <p class="section-description slider__quotation">
+            " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis facere quia commodi deleniti qui molestiae officia culpa atque, molestias ea quam adipisci autem. Animi nulla, laudantium quidem alias consequatur commodi ad, ipsam modi, sint earum dicta? Maiores molestiae veritatis architecto asperiores dignissimos, consequatur mollitia expedita eos qui necessitatibus quidem libero. Ipsum pariatur architecto obcaecati ipsam commodi! Nulla laborum ipsum perspiciatis consequuntur illo atque ut sed? Excepturi dolore hic eius officiis. Voluptatum, nisi iure voluptate quo sequi sit odio minus libero quibusdam adipisci atque, eveniet est ipsum, placeat sapiente labore dicta. "
+          </p>
+          <!-- Author -->
+          <p class="slider__author">Emily White</p>
+        </div>
+      </div>
+
+      <!-- Next button -->
       <button class="slider__next-btn">
         &gt;
       </button>
@@ -782,44 +842,86 @@
       </div>
     </section>
 
-    <!-- Slider with people-->
-    <section class="section slider">
-      <!-- Previous button -->
-      <button class="slider__previous-btn">
-        &lt;
-      </button>
+   <!-- Slider with people-->
+   <section class="section slider people-slider">
+    <!-- Previous button -->
+    <button class="slider__previous-btn">
+      &lt;
+    </button>
 
-      <!-- Content -->
-      <div class="slider__container">
-        <!-- Image -->
-        <div class="slider__img-box">
-          <img
-            class="slider__img slider__img--rounded"
-            src="./assests/images/opinion/layer-51@2x.jpg"
-            alt=""
-          />
-        </div>
-
-        <!-- Details -->
-        <div class="slider__details">
-          <!-- Quotation -->
-          <p class="section-description slider__quotation">
-            “Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation.”
-          </p>
-          <!-- Author -->
-          <p class="slider__author">
-            Joshua Earle
-          </p>
-        </div>
+    <!-- SLIDE 1 -->
+    <div class="slider__container slider__slide">
+      <!-- Image -->
+      <div class="slider__img-box">
+        <img
+          class="slider__img slider__img--rounded"
+          src="./assests/images/opinion/layer-47@2x.jpg"
+          alt=""
+        />
       </div>
 
-      <!-- Next button -->
-      <button class="slider__next-btn">
-        &gt;
-      </button>
-    </section>
+      <!-- Details -->
+      <div class="slider__details">
+        <!-- Quotation -->
+        <p class="section-description slider__quotation">
+          “Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+          ad minim veniam, quis nostrud exercitation. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit quisquam accusantium iusto perspiciatis. Aspernatur, ut? Obcaecati fuga, adipisci eos ullam, ut nulla repellendus rerum consectetur quos iusto quod atque sint? ”
+        </p>
+        <!-- Author -->
+        <p class="slider__author">Daniel Omar</p>
+      </div>
+    </div>
+
+    <!-- SLIDE 2 -->
+    <div class="slider__container slider__slide">
+      <!-- Image -->
+      <div class="slider__img-box">
+        <img
+          class="slider__img slider__img--rounded"
+          src="./assests/images/opinion/layer-49@2x.jpg"
+          alt=""
+        />
+      </div>
+
+      <!-- Details -->
+      <div class="slider__details">
+        <!-- Quotation -->
+        <p class="section-description slider__quotation">
+         " Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, dignissimos? Earum asperiores quod, deleniti labore molestiae, neque culpa facilis nisi, assumenda vitae recusandae consequuntur alias sapiente at sint tempore fuga! Maiores molestiae veritatis architecto asperiores dignissimos, consequatur mollitia expedita eos qui necessitatibus quidem libero. Ipsum pariatur architecto obcaecati ipsam commodi! Nulla laborum ipsum perspiciatis consequuntur illo atque ut sed? Excepturi dolore hic eius officiis. Voluptatum, nisi iure voluptate quo sequi sit odio minus libero quibusdam adipisci atque, eveniet est ipsum, placeat sapiente labore dicta. "
+        </p>
+        <!-- Author -->
+        <p class="slider__author">Alan Jam</p>
+      </div>
+    </div>
+
+    <!-- SLIDE 3 -->
+    <div class="slider__container slider__slide">
+      <!-- Image -->
+      <div class="slider__img-box">
+        <img
+          class="slider__img slider__img--rounded"
+          src="./assests/images/opinion/layer-51@2x.jpg"
+          alt=""
+        />
+      </div>
+
+      <!-- Details -->
+      <div class="slider__details">
+        <!-- Quotation -->
+        <p class="section-description slider__quotation">
+          " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis facere quia commodi deleniti qui molestiae officia culpa atque, molestias ea quam adipisci autem. Animi nulla, laudantium quidem alias consequatur commodi ad, ipsam modi, sint earum dicta? "
+        </p>
+        <!-- Author -->
+        <p class="slider__author">Rose Trick</p>
+      </div>
+    </div>
+
+    <!-- Next bitton -->
+    <button class="slider__next-btn">
+      &gt;
+    </button>
+  </section>
 
     <!-- Opinion -->
     <section class="section opinion">
@@ -1322,6 +1424,7 @@
       </div>
     </section>
 
-    <script type="module" src="js/sections-animation/animate-scroll.js"></script>
+    <!-- <script type="module" src="js/sections-animation/animate-scroll.js"></script> -->
+    <script type="module" src="./js/main.js"></script>
   </body>
 </html>
