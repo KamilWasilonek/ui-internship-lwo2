@@ -64,11 +64,16 @@
 
   &__menu-item {
     padding: 20px 10px;
+    transition: background .3s linear;
 
     &:hover {
       color: $white-color;
       background: rgba(121, 121, 121, 0.8);
       cursor: pointer;
+    }
+
+    &--active {
+      background: rgba(121, 121, 121, 0.8);
     }
 
     a {
