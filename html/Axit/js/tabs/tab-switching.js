@@ -1,4 +1,4 @@
-import {components} from '../components.js';
+import {components} from './tabs-components.js';
 
 export function addTabSwitchingEffect() {
   components.then((response) => {
