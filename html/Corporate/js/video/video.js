@@ -1,4 +1,4 @@
-import {components} from '../components.js';
+import {components} from './components.js';
 
 export function startBannerVideo() {
   components.then((components) => {
