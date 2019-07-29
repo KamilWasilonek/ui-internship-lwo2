@@ -15,7 +15,7 @@
   }
 
   &--with-bg {
-    background: rgba(121, 121, 121, 0.7)
+    background: rgba(121, 121, 121, 0.7);
   }
 
   &__menu-container {
@@ -64,6 +64,7 @@
 
   &__menu-item {
     padding: 20px 10px;
+    transition: background .3s linear;
 
     &:hover {
       color: $white-color;
@@ -71,8 +72,8 @@
       cursor: pointer;
     }
 
-    &:focus {
-      color: red;
+    &--active {
+      background: rgba(121, 121, 121, 0.8);
     }
 
     a {
