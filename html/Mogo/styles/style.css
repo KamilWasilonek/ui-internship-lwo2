@@ -148,14 +148,16 @@
     width: 20px;
     height: 20px;
     margin-right: 10px; }
-  .accordion:hover {
+  .accordion:focus {
+    outline: none; }
+  .accordion--active {
     background: #999999; }
-  .accordion::after {
-    content: "\276F";
-    width: 15px;
-    height: 15px;
+  .accordion__arrow {
+    font-size: 0.9rem;
     margin-left: auto;
-    text-align: center; }
+    transition: transform .3s linear; }
+    .accordion__arrow--active {
+      transform: rotate(90deg); }
 
 .single-person {
   display: flex;
@@ -395,13 +397,14 @@ h6 {
         grid-column: auto;
         display: flex; } }
   .navbar__menu-item {
-    padding: 20px 10px; }
+    padding: 20px 10px;
+    transition: background .3s linear; }
     .navbar__menu-item:hover {
       color: #ffffff;
       background: rgba(121, 121, 121, 0.8);
       cursor: pointer; }
-    .navbar__menu-item:focus {
-      color: red; }
+    .navbar__menu-item--active {
+      background: rgba(121, 121, 121, 0.8); }
     .navbar__menu-item a {
       color: #ffffff;
       font-size: 0.8rem;
@@ -641,8 +644,12 @@ h6 {
   @media (min-width: 1600px) {
     .services__content {
       grid-template-columns: minmax(0, 600px) 1fr; } }
+  .services__container {
+    height: 100%;
+    max-height: 100%; }
   .services__accordion {
-    margin-bottom: 10px; }
+    height: 40px;
+    transition: background 0.3s linear; }
     @media (min-width: 1024px) {
       .services__accordion {
         font-size: 0.9rem; } }
@@ -652,6 +659,11 @@ h6 {
     @media (min-width: 678px) {
       .services__img {
         margin: 0; } }
+  .services__panel {
+    max-height: 0;
+    overflow: scroll;
+    text-align: left;
+    transition: max-height 0.4s linear, padding 0.4s linear; }
 
 .slider {
   display: flex;
@@ -668,10 +680,14 @@ h6 {
     @media (min-width: 678px) {
       .slider__container {
         padding: 0 50px; } }
+  .slider__slide {
+    display: none;
+    transition: opacity 0.5s linear; }
   .slider__img-box {
     display: none;
     flex-basis: 20%;
-    text-align: center; }
+    text-align: center;
+    max-height: 100px; }
     @media (min-width: 1024px) {
       .slider__img-box {
         display: block; } }
@@ -781,31 +797,22 @@ h6 {
     .gallery__container--wide {
       grid-column: 3;
       grid-row: 1 / span 2; }
-    @media (min-width: 678px) {
-      .gallery__container::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(to bottom, rgba(243, 129, 129, 0.85), rgba(252, 227, 138, 0.85));
-        opacity: 0;
-        transition: opacity 0.5s linear; }
-      .gallery__container:hover::after {
-        opacity: 1; }
-      .gallery__container:hover .gallery__image-details {
-        opacity: 1; } }
+  .gallery__details-box {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(243, 129, 129, 0.85), rgba(252, 227, 138, 0.85));
+    z-index: 2; }
   .gallery__image {
     width: 100%;
     height: 100%; }
   .gallery__image-details {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    opacity: 0;
-    transform: translate(-50%, -50%);
-    z-index: 2;
+    pointer-events: none;
     transition: opacity 0.5s linear; }
   .gallery__icon {
     width: 20px;
@@ -827,6 +834,27 @@ h6 {
     @media (min-width: 1024px) {
       .gallery__details-subtitle {
         font-size: 0.9rem; } }
+  .gallery__show {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 4;
+    display: none; }
+  .gallery__overlay {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.66); }
+  .gallery__img-show {
+    max-height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden; }
+    .gallery__img-show img {
+      width: 100%;
+      object-fit: fill; }
 
 .opinion {
   background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url(../assests/images/opinion/layer-53@2x.jpg) center bottom/cover no-repeat;

@@ -1,25 +1,31 @@
-import {components} from './menu-elements.js';
-
-const {navbar, navbarMenu} = components;
-
-function setNavbarBackground() {
+let boxToHightlight;
+export function setNavbarBackground(navbar) {
   navbar.classList.add('navbar--with-bg');
 }
 
-function removeNavbarBackground() {
+function removeNavbarBackground(navbar) {
   navbar.classList.remove('navbar--with-bg');
 }
 
-function changeNavbarBackground() {
-  if (window.scrollY >= 200) {
-    setNavbarBackground();
-  } else if (!navbarMenu.classList.contains('navbar__menu--active')) {
-    removeNavbarBackground();
+export function removeMenuItemBackground() {
+  if (boxToHightlight) {
+    boxToHightlight.classList.remove('navbar__menu-item--active');
   }
 }
 
-function addScrollEffect(event) {
-  const elementName = event.getAttribute('href');
+export function changeNavbarBackground(navbar, navbarMenu) {
+  if (window.scrollY >= 200) {
+    setNavbarBackground(navbar);
+  } else if (!navbarMenu.classList.contains('navbar__menu--active')) {
+    removeNavbarBackground(navbar);
+  }
+}
+
+export function scrollToSection(eventTarget) {
+  if (eventTarget.getAttribute('href') === '#') {
+    return;
+  }
+  const elementName = eventTarget.getAttribute('href');
   const element = document.querySelector('#' + elementName);
   window.scrollTo({
     behavior: 'smooth',
@@ -28,18 +34,20 @@ function addScrollEffect(event) {
   });
 }
 
-function addEventToMenuItems() {
-  Array.from(navbarMenu.getElementsByTagName('li')).forEach((item) => {
-    item.children[0].addEventListener('click', function(event) {
-      event.preventDefault();
-      addScrollEffect(event.target);
-    });
+export function addEventToMenuItems(navbarMenu) {
+  navbarMenu.addEventListener('click', (event) => {
+    event.preventDefault();
+    if (boxToHightlight) {
+      boxToHightlight.classList.remove('navbar__menu-item--active');
+    }
+    let target = event.target;
+    if (target.tagName === 'A') {
+      scrollToSection(event.target);
+      boxToHightlight = target.parentElement;
+    } else if (target.tagName === 'LI') {
+      scrollToSection(event.target.firstElementChild);
+      boxToHightlight = target;
+    }
+    boxToHightlight.classList.add('navbar__menu-item--active');
   });
 }
-
-export const helperFunctions = {
-  setNavbarBackground,
-  changeNavbarBackground,
-  addScrollEffect,
-  addEventToMenuItems,
-};
