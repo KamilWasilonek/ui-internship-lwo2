@@ -1,33 +1,19 @@
-import {components} from './components.js';
+export function hideEveryPanel(panelElements, accordion) {
+  for (let i = 0; i < panelElements.length; i++) {
+    hidePanel(panelElements[i]);
+    accordion[i].classList.remove('accordion--active');
+    accordion[i].children[1].classList.remove('accordion__arrow--active');
+  }
+}
 
-export function helperFunctions() {
-  components.then((response) => {
-    const {accordion, panelElements} = response;
+export function hidePanel(panelElement) {
+  const localPanel = panelElement;
+  localPanel.style.padding = '0';
+  localPanel.style.maxHeight = null;
+}
 
-    function hideEveryPanel() {
-      for (let i = 0; i < panelElements.length; i++) {
-        hidePanel(panelElements[i]);
-        accordion[i].classList.remove('accordion--active');
-        accordion[i].children[1].classList.remove('accordion__arrow--active');
-      }
-    }
-
-    function hidePanel(panelElement) {
-      const localPanel = panelElement;
-      localPanel.style.padding = '0';
-      localPanel.style.maxHeight = null;
-    }
-
-    function showPanel(panelElement) {
-      const localPanel = panelElement;
-      localPanel.style.padding = '10px';
-      localPanel.style.maxHeight = panelElement.scrollHeight + 20 + 'px';
-    }
-
-    return {
-      hideEveryPanel,
-      hidePanel,
-      showPanel,
-    };
-  });
+export function showPanel(panelElement) {
+  const localPanel = panelElement;
+  localPanel.style.padding = '10px';
+  localPanel.style.maxHeight = panelElement.scrollHeight + 20 + 'px';
 }

@@ -1,36 +1,37 @@
-import {components} from './helper-functions.js';
-import {helperFunctions} from './helper-functions.js';
+import {components} from './navbar-components.js';
+import {
+  setNavbarBackground,
+  changeNavbarBackground,
+  scrollToSection,
+  addEventToMenuItems,
+  removeMenuItemBackground,
+} from './helper-functions.js';
 
 export function runMenuAnimation() {
   components.then((response) => {
-    const {navbarMenu, navbarMobileButton, navbarLogo} = response;
+    const {navbar, navbarMenu, navbarMobileButton, navbarLogo} = response;
 
-    const {
-      setNavbarBackground,
-      changeNavbarBackground,
-      addScrollEffect,
-      addEventToMenuItems,
-    } = helperFunctions;
-    document.addEventListener('DOMContentLoaded', () => {
-      changeNavbarBackground();
-      addEventToMenuItems();
-    });
+    changeNavbarBackground(navbar, navbarMenu);
+    addEventToMenuItems(navbarMenu);
 
     navbarMobileButton.addEventListener('click', () => {
       if (window.scrollY < 200) {
-        setNavbarBackground();
+        setNavbarBackground(navbar);
       }
 
       navbarMenu.classList.toggle('navbar__menu--active');
     });
 
     window.addEventListener('scroll', () => {
-      changeNavbarBackground();
+      changeNavbarBackground(navbar, navbarMenu);
+      if (window.scrollY < 200) {
+        removeMenuItemBackground();
+      }
     });
 
     navbarLogo.addEventListener('click', function(event) {
       event.preventDefault();
-      addScrollEffect(event.target);
+      scrollToSection(event.target);
     });
   });
 }

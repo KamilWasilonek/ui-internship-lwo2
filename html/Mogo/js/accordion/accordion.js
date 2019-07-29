@@ -1,10 +1,9 @@
 import {components} from './components.js';
-import {helperFunctions} from './helper-functions.js';
+import {hideEveryPanel, hidePanel, showPanel} from './helper-functions.js';
 
 export function addAccordionEffect() {
   components.then((response) => {
-    const {accordion, imgElement} = response;
-    console.log(helperFunctions());
+    const {accordion, panelElements, imgElement} = response;
 
     let visibleAccordionId = null;
     let currentClickedAccorionId = null;
@@ -12,7 +11,7 @@ export function addAccordionEffect() {
     for (let i = 0; i < accordion.length; i++) {
       accordion[i].addEventListener('click', (event) => {
         currentClickedAccorionId = event.target.id;
-        hideEveryPanel();
+        hideEveryPanel(panelElements, accordion);
 
         if (currentClickedAccorionId !== visibleAccordionId) {
           event.target.classList.toggle('accordion--active');
