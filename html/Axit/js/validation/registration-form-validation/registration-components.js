@@ -1,7 +1,7 @@
 export const components = new Promise((resolve) => {
   document.addEventListener('DOMContentLoaded', () => {
     const bannerForm = document.forms['trialForm'];
-    const errorMessages = bannerForm.getElementsByClassName(
+    const errorMessagesElements = bannerForm.getElementsByClassName(
         'banner__val-error'
     );
     const nameInput = bannerForm.elements['username'];
@@ -10,7 +10,7 @@ export const components = new Promise((resolve) => {
 
     resolve({
       bannerForm,
-      errorMessages,
+      errorMessagesElements,
       nameInput,
       emailInput,
       passwordInput,
