@@ -1,113 +1,207 @@
-/* eslint-disable no-useless-escape */
-/* eslint-disable max-len */
-export function checkName(nameInput, error) {
-  const localError = error;
-  if (
-    !isInputNotEmpty(nameInput, error, 'Name is required') ||
-    !isNameCorrect(nameInput, error, 'Only latin letters')
-  ) {
-    return false;
+function checkName(nameInput) {
+  let emptyResult = isInputNotEmpty(nameInput);
+  let formatResult = isNameCorrect(nameInput);
+  if (emptyResult.length !== 0) {
+    return emptyResult;
+  } else if (formatResult.length !== 0) {
+    return formatResult;
   }
-  localError.innerHTML = '';
-  return true;
+  return '';
 }
 
-export function checkEmail(emailInput, error) {
-  const localError = error;
-  if (
-    !isInputNotEmpty(emailInput, error, 'Email is required') ||
-    !isEmailFormatCorrect(emailInput, error, 'Email is invalid')
-  ) {
-    return false;
+function checkEmail(emailInput) {
+  let emptyResult = isInputNotEmpty(emailInput);
+  let formatResult = isEmailFormatCorrect(emailInput);
+  if (emptyResult.length !== 0) {
+    return emptyResult;
+  } else if (formatResult.length !== 0) {
+    return formatResult;
   }
-  localError.innerHTML = '';
-  return true;
+  return '';
 }
 
-export function checkPassword(passwordInput, error) {
-  const localError = error;
-  if (
-    !isInputNotEmpty(passwordInput, error, 'Password is required') ||
-    !isPasswordCorrect(
-        passwordInput,
-        error,
-        'Min 6 characters, required: 1 capital letter, 1 lower-case letter, 1 digit, 1 special character'
-    )
-  ) {
-    return false;
+function checkPassword(passwordInput) {
+  let emptyResult = isInputNotEmpty(passwordInput);
+  let formatResult = isPasswordCorrect(passwordInput);
+  if (emptyResult.length !== 0) {
+    return emptyResult;
+  } else if (formatResult.length !== 0) {
+    return formatResult;
   }
-  localError.innerHTML = '';
-  return true;
+  return '';
 }
 
-export function checkSubject(subjectInput, error) {
-  const localError = error;
-  if (!isInputNotEmpty(subjectInput, error, 'Subject is required')) {
-    return false;
+function checkSubject(subjectInput) {
+  let emptyResult = isInputNotEmpty(subjectInput);
+  if (emptyResult.length !== 0) {
+    return emptyResult;
   }
-  localError.innerHTML = '';
-  return true;
+  return '';
 }
 
-export function checkMessage(messageTextArea, error) {
-  const localError = error;
-  if (
-    !isMessageCorrect(
-        messageTextArea,
-        error,
-        'Message should have min 1m max 250 characters'
-    )
-  ) {
-    return false;
+function checkMessage(messageTextArea) {
+  let emptyResult = isInputNotEmpty(messageTextArea);
+  let formatResult = isMessageCorrect(messageTextArea);
+  if (emptyResult.length !== 0) {
+    return emptyResult;
+  } else if (formatResult.length !== 0) {
+    return formatResult;
   }
-  localError.innerHTML = '';
-  return true;
+  return '';
 }
 
-function isInputNotEmpty(input, errorInput, errorMessage) {
-  const localErrorInput = errorInput;
+function isInputNotEmpty(input) {
   if (input.value.trim().length === 0) {
-    localErrorInput.textContent = errorMessage;
-    return false;
+    return 'This field is required';
   }
-  return true;
+  return '';
 }
 
-function isNameCorrect(input, errorInput, errorMessage) {
+function isNameCorrect(input) {
   const nameRegex = /^[a-zA-Z]+$/g;
-  const localErrorInput = errorInput;
   if (!input.value.trim().match(nameRegex)) {
-    localErrorInput.textContent = errorMessage;
-    return false;
+    return 'Only latin letters';
   }
-  return true;
+  return '';
 }
 
-function isMessageCorrect(input, errorInput, errorMessage) {
-  const localErrorInput = errorInput;
+function isMessageCorrect(input) {
   if (input.value.trim().length < 1 || input.value.trim().length > 255) {
-    localErrorInput.textContent = errorMessage;
-    return false;
+    return 'Message should have min 1m max 250 characters';
   }
-  return true;
+  return '';
 }
 
-function isEmailFormatCorrect(input, errorInput, errorMessage) {
-  const localErrorInput = errorInput;
+function isEmailFormatCorrect(input) {
+  // eslint-disable-next-line max-len
   const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   if (!input.value.trim().match(emailRegex) || input.value.trim().length < 6) {
-    localErrorInput.textContent = errorMessage;
-    return false;
+    return 'Email is invalid';
   }
-  return true;
+  return '';
 }
 
-function isPasswordCorrect(input, errorInput, errorMessage) {
-  const localErrorInput = errorInput;
+function isPasswordCorrect(input) {
+  // eslint-disable-next-line max-len
   const passwordRegex = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{6,}$/;
   if (!input.value.trim().match(passwordRegex)) {
-    localErrorInput.textContent = errorMessage;
-    return false;
+    // eslint-disable-next-line max-len
+    return 'Min 6 characters, required: 1 capital letter, 1 lower-case letter, 1 digit, 1 special character';
   }
-  return true;
+  return '';
+}
+
+export function findErrorElement(errorMessagesElements, errorName) {
+  return Array.from(errorMessagesElements).find(function(element) {
+    return element.dataset.errorName === errorName;
+  });
+}
+
+function setError(error, message) {
+  // eslint-disable-next-line no-param-reassign
+  error.innerHTML = message;
+}
+
+function showInputStatus(validationResult, errorMessagesElements, fieldName) {
+  const error = findErrorElement(errorMessagesElements, fieldName);
+  setError(error, validationResult);
+  if (validationResult.length !== 0) {
+    return false;
+  } else {
+    return true;
+  }
+}
+
+export function validateRegistrationForm({
+  bannerForm,
+  errorMessagesElements,
+  nameInput,
+  emailInput,
+  passwordInput,
+}) {
+  let result = {
+    isNameValid: true,
+    isEmailValid: true,
+    isPasswordValid: true,
+  };
+
+  // Name validation
+  const nameValidationResult = checkName(nameInput);
+  // eslint-disable-next-line max-len
+  result.isNameValid = showInputStatus(
+      nameValidationResult,
+      errorMessagesElements,
+      'username'
+  );
+
+  // Email validation
+  const emailValidationResult = checkEmail(emailInput);
+  // eslint-disable-next-line max-len
+  result.isEmailValid = showInputStatus(
+      emailValidationResult,
+      errorMessagesElements,
+      'email'
+  );
+
+  // Password validation
+  const passwordValidationResult = checkPassword(passwordInput);
+  result.isPasswordValid = showInputStatus(
+      passwordValidationResult,
+      errorMessagesElements,
+      'password'
+  );
+
+  // Send message
+  if (!Object.values(result).includes(false)) {
+    window.alert('Message sent');
+    bannerForm.reset();
+  }
+}
+
+export function validateContactForm({
+  contactForm,
+  errorMessagesElements,
+  nameInput,
+  emailInput,
+  subjectInput,
+  messageTextArea,
+}) {
+  let result = {
+    isNameValid: true,
+    isEmailValid: true,
+    isSubjectValid: true,
+    isMessageValid: true,
+  };
+
+  // Name validation
+  const nameValidationResult = checkName(nameInput);
+  // eslint-disable-next-line max-len
+  result.isNameValid =
+      showInputStatus(nameValidationResult, errorMessagesElements, 'username')
+  ;
+
+  // Email validation
+  const emailValidationResult = checkEmail(emailInput);
+  // eslint-disable-next-line max-len
+  result.isEmailValid =
+      showInputStatus(emailValidationResult, errorMessagesElements, 'email')
+  ;
+
+  // Subject validation
+  const subjectValidationResult = checkSubject(subjectInput);
+  result.isSubjectValid =
+      showInputStatus(subjectValidationResult, errorMessagesElements, 'subject')
+  ;
+
+  // Message validation
+  const messageValidationResult = checkMessage(messageTextArea);
+  result.isMessageValid =
+      showInputStatus(messageValidationResult, errorMessagesElements, 'message')
+  ;
+
+  // Send message
+  if (!Object.values(result).includes(false)) {
+    window.alert('Message sent');
+    contactForm.reset();
+  }
 }
