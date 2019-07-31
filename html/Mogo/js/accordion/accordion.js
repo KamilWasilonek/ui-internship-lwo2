@@ -1,36 +1,49 @@
 import {components} from './components.js';
-import {hideEveryPanel, hidePanel, showPanel} from './helper-functions.js';
+import {
+  hideEveryPanel,
+  showPanel,
+  activeAccordion,
+  deactivateAccordions,
+  togglePannel,
+} from './helper-functions.js';
 
 export function addAccordionEffect() {
-  components.then((response) => {
-    const {accordion, panelElements, imgElement} = response;
+  components.then(
+      ({
+        accordionsList,
+        panelsList,
+        imgElement,
+        accordionsContainer,
+        images,
+      }) => {
+        activeAccordion(accordionsList[0]);
+        showPanel(panelsList[0]);
 
-    let visibleAccordionId = null;
-    let currentClickedAccorionId = null;
+        accordionsContainer.addEventListener('click', (event) => {
+          let target = event.target;
+          if (
+            target.classList.contains('services__accordion') ||
+          target.classList.contains('accordion__img') ||
+          target.classList.contains('accordion__arrow')
+          ) {
+            if (!target.classList.contains('services__accordion')) {
+              target = target.parentElement;
+            }
 
-    for (let i = 0; i < accordion.length; i++) {
-      accordion[i].addEventListener('click', (event) => {
-        currentClickedAccorionId = event.target.id;
-        hideEveryPanel(panelElements, accordion);
+            hideEveryPanel(panelsList);
+            deactivateAccordions(accordionsList);
 
-        if (currentClickedAccorionId !== visibleAccordionId) {
-          event.target.classList.toggle('accordion--active');
-          event.target.children[1].classList.toggle('accordion__arrow--active');
-          imgElement.src = './assests/images/services/img-' + i + '.jpg';
+            target.classList.toggle('accordion--active');
+            target
+                .querySelector('.accordion__arrow')
+                .classList.toggle('accordion__arrow--active');
+            // eslint-disable-next-line no-param-reassign
+            imgElement.src = images[target.dataset.id];
 
-          const panelElement = event.target.nextElementSibling;
-
-          if (panelElement.style.maxHeight) {
-            hidePanel(panelElement);
-          } else {
-            showPanel(panelElement);
+            const panelElement = target.nextElementSibling;
+            togglePannel(panelElement);
           }
-          visibleAccordionId = event.target.id;
-        } else {
-          visibleAccordionId = null;
-          currentClickedAccorionId = null;
-        }
-      });
-    }
-  });
+        });
+      }
+  );
 }

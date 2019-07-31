@@ -1,19 +1,48 @@
-export function hideEveryPanel(panelElements, accordion) {
-  for (let i = 0; i < panelElements.length; i++) {
-    hidePanel(panelElements[i]);
-    accordion[i].classList.remove('accordion--active');
-    accordion[i].children[1].classList.remove('accordion__arrow--active');
+function hideEveryPanel(panelsList) {
+  for (let i = 0; i < panelsList.length; i++) {
+    hidePanel(panelsList[i]);
   }
 }
 
-export function hidePanel(panelElement) {
-  const localPanel = panelElement;
-  localPanel.style.padding = '0';
-  localPanel.style.maxHeight = null;
+function deactivateAccordions(accordionsList) {
+  for (let i = 0; i < accordionsList.length; i++) {
+    accordionsList[i].classList.remove('accordion--active');
+    accordionsList[i]
+        .querySelector('.accordion__arrow')
+        .classList.remove('accordion__arrow--active');
+  }
 }
 
-export function showPanel(panelElement) {
-  const localPanel = panelElement;
-  localPanel.style.padding = '10px';
-  localPanel.style.maxHeight = panelElement.scrollHeight + 20 + 'px';
+function activeAccordion(accordion) {
+  accordion.classList.add('accordion--active');
+  accordion
+      .querySelector('.accordion__arrow')
+      .classList.add('accordion__arrow--active');
 }
+
+function hidePanel(panelElement) {
+  panelElement.classList.remove('services__panel--active');
+  panelElement.classList.add('services__panel--hidden');
+}
+
+function showPanel(panelElement) {
+  panelElement.classList.remove('services__panel--hidden');
+  panelElement.classList.add('services__panel--active');
+}
+
+function togglePannel(panelElement) {
+  if (panelElement.style.maxHeight) {
+    hidePanel(panelElement);
+  } else {
+    showPanel(panelElement);
+  }
+}
+
+export {
+  hideEveryPanel,
+  hidePanel,
+  deactivateAccordions,
+  showPanel,
+  activeAccordion,
+  togglePannel,
+};
