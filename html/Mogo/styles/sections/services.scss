@@ -1,11 +1,10 @@
 @import "../variables.scss";
 @import "../mixins.scss";
 
-
 .services {
   text-align: center;
 
-  @include respond (lg) {
+  @include respond(lg) {
     border: none;
   }
 
@@ -14,7 +13,7 @@
 
     &::after {
       margin: 30px auto 0 auto;
-    } 
+    }
   }
 
   &__image-box {
@@ -25,10 +24,16 @@
     width: 100%;
     max-width: 600px;
     justify-self: flex-end;
+
+    @include respond(md) {
+      width: auto;
+      height: 100%;
+      margin: 0 auto;
+    }
   }
 
   &__description {
-    margin: 20px 0; 
+    margin: 20px 0;
   }
 
   &__content {
@@ -39,7 +44,7 @@
       margin-top: 50px;
     }
 
-    @include respond (extra-lg) {
+    @include respond(extra-lg) {
       grid-template-columns: minmax(0, 600px) 1fr;
     }
   }
@@ -53,26 +58,50 @@
     height: 40px;
     transition: background 0.3s linear;
 
-
     @include respond(lg) {
       font-size: 0.9rem;
     }
   }
 
-  &__img {
-    margin: 30px 0;
-    max-width: 100%;
+  // &__img {
+  //   margin: 30px 0;
+  //   max-width: 100%;
 
-    @include respond(md) {
-      margin: 0;
-    }
-  }
+  //   @include respond(md) {
+  //     margin: 0;
+  //   }
+  // }
 
   &__panel {
     max-height: 0;
     overflow: scroll;
     text-align: left;
-    transition: max-height 0.4s linear,
-    padding 0.4s linear;
+
+    &--hidden {
+      padding: 0;
+      max-height: 0;
+      min-width: 0;
+    }
+
+    &--active {
+      padding: 10px;
+      max-height: 100px;
+      min-height: 100px;
+
+      @include respond(md) {
+        max-height: 150px;
+        min-height: 150px;
+      }
+
+      @include respond(lg) {
+        max-height: 200px;
+        min-height: 200px;
+      }
+
+      @include respond(extra-lg) {
+        max-height: 250px;
+        min-height: 250px;
+      }
+    }
   }
 }
