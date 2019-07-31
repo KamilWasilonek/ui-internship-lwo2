@@ -1,7 +1,7 @@
 export const components = new Promise((resolve) => {
   document.addEventListener('DOMContentLoaded', () => {
     const contactForm = document.forms['contact__form'];
-    const errorMessages = contactForm.getElementsByClassName(
+    const errorMessagesElements = contactForm.getElementsByClassName(
         'contact-form__val-error'
     );
     const nameInput = contactForm.elements['username'];
@@ -11,7 +11,7 @@ export const components = new Promise((resolve) => {
 
     resolve({
       contactForm,
-      errorMessages,
+      errorMessagesElements,
       nameInput,
       emailInput,
       passwordInput,

@@ -133,8 +133,10 @@
     color: #ffffff;
     background: $color-secondary;
     border: none;
+    opacity: 1;
     border-radius: 3px;
     text-transform: uppercase;
+    cursor: pointer;
 
     &--disabled {
       cursor: not-allowed;

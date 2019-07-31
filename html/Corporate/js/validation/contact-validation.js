@@ -4,6 +4,7 @@ import {
   checkPassword,
   checkFormStatus,
   disableSubmitButton,
+  showInputStatus,
 } from './helper-functions.js';
 import {components} from './components.js';
 
@@ -11,7 +12,7 @@ export function validateContactForm() {
   components.then((response) => {
     const {
       contactForm,
-      errorMessages,
+      errorMessagesElements,
       nameInput,
       emailInput,
       passwordInput,
@@ -25,17 +26,38 @@ export function validateContactForm() {
       disableSubmitButton(submitBtn);
     });
 
-    let result = [];
+    let result = {
+      isNameValid: false,
+      isEmailValid: false,
+      isPasswordValid: false,
+    };
     contactForm.addEventListener('focusout', (event) => {
       let target = event.target;
       if (target.tagName === 'INPUT') {
         let fieldName = target.name;
         if (fieldName === 'username') {
-          result[0] = checkName(nameInput, errorMessages[0]);
+          const nameValidationResult = checkName(nameInput);
+          // eslint-disable-next-line max-len
+          result.isNameValid = showInputStatus(
+              nameValidationResult,
+              errorMessagesElements,
+              'username'
+          );
         } else if (fieldName === 'email') {
-          result[1] = checkEmail(emailInput, errorMessages[1]);
+          const emailValidationResult = checkEmail(emailInput);
+          // eslint-disable-next-line max-len
+          result.isEmailValid = showInputStatus(
+              emailValidationResult,
+              errorMessagesElements,
+              'email'
+          );
         } else if (fieldName === 'password') {
-          result[2] = checkPassword(passwordInput, errorMessages[2]);
+          const passwordValidationResult = checkPassword(passwordInput);
+          result.isPasswordValid = showInputStatus(
+              passwordValidationResult,
+              errorMessagesElements,
+              'password'
+          );
         }
         checkFormStatus(result, submitBtn);
       }
