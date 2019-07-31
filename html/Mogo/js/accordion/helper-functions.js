@@ -22,11 +22,9 @@ function activeAccordion(accordion) {
 
 function hidePanel(panelElement) {
   panelElement.classList.remove('services__panel--active');
-  panelElement.classList.add('services__panel--hidden');
 }
 
 function showPanel(panelElement) {
-  panelElement.classList.remove('services__panel--hidden');
   panelElement.classList.add('services__panel--active');
 }
 
