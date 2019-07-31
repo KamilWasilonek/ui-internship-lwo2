@@ -2,7 +2,11 @@
 
 .stylish-design {
   padding: 70px 10%;
-  background: linear-gradient(rgba(0, 0, 0, 0.65)),
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.65),
+    rgba(0, 0, 0, 0.65)
+  ),
     url(../assets/stylish-design/u-25-state-0@3x.png) no-repeat center/cover;
   text-align: center;
 

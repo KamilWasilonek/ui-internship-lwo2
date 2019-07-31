@@ -6,9 +6,9 @@
     "test": "jest",
     "lint": "./node_modules/.bin/eslint tasks/**/*.js",
     "tdd": "jest --watch",
-    "watch:sass": "node-sass html/Mogo/styles/style.scss  html/Mogo/styles/style.css  -w -r",
-    "compile:sass": "node-sass --source-map true html/Mogo/styles/style.scss  html/Mogo/styles/style.comp.css",
-    "prefix": "postcss --use autoprefixer -b 'last 10 versions' html/Mogo/styles/style.comp.css -o html/Mogo/styles/style.prefix.css"
+    "watch:sass": "node-sass html/Axit/styles/style.scss  html/Axit/styles/style.css  -w -r",
+    "compile:sass": "node-sass --source-map true html/Axit/styles/style.scss  html/Axit/styles/style.comp.css",
+    "prefix": "postcss --use autoprefixer -b 'last 10 versions' html/Axit/styles/style.comp.css -o html/Axit/styles/style.prefix.css"
   },
   "husky": {
     "hooks": {

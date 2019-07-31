@@ -11,8 +11,10 @@
     },
     "globals":{
         "document": true,
-        "window": true,
         "console": true,
+        "window": true,
+        "event": true,
+        "Promise": true,
         "Set": true
     }
 }
