@@ -33,7 +33,9 @@
   @media screen and (min-width: 1024px) {
     &__form {
       position: relative;
-      display: flex;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-column-gap: 20px;
     }
   }
 }

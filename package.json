@@ -6,9 +6,9 @@
     "test": "jest",
     "lint": "./node_modules/.bin/eslint tasks/**/*.js",
     "tdd": "jest --watch",
-    "watch:sass": "node-sass html/Axit/styles/style.scss  html/Axit/styles/style.css  -w -r",
-    "compile:sass": "node-sass --source-map true html/Axit/styles/style.scss  html/Axit/styles/style.comp.css",
-    "prefix": "postcss --use autoprefixer -b 'last 10 versions' html/Axit/styles/style.comp.css -o html/Axit/styles/style.prefix.css"
+    "watch:sass": "node-sass html/Corporate/styles/style.scss  html/Corporate/styles/style.css  -w -r",
+    "compile:sass": "node-sass --source-map true html/Corporate/styles/style.scss  html/Corporate/styles/style.comp.css",
+    "prefix": "postcss --use autoprefixer -b 'last 10 versions' html/Corporate/styles/style.comp.css -o html/Corporate/styles/style.prefix.css"
   },
   "husky": {
     "hooks": {
