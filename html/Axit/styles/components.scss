@@ -1,4 +1,4 @@
-@import './variables.scss';
+@import "./variables.scss";
 
 // ------------------- Reusable elements -------------------
 .logo {
@@ -26,6 +26,7 @@
 .form {
   &__input {
     display: block;
+    padding: 10px;
     border: none;
     border-bottom: 1px solid $description-text-color;
     font-size: 0.7rem;
@@ -33,9 +34,12 @@
 
     &:focus,
     &:active {
-      outline-color: $color-secondary;
+      outline: none;
+      border-bottom: 2px solid $color-secondary;
     }
   }
+
+  
 }
 
 .button {
@@ -268,4 +272,8 @@
       }
     }
   }
+}
+
+.wrong-input-value {
+  box-shadow: 1px 1px 10px 3px red;
 }
