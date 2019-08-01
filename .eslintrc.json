@@ -15,6 +15,7 @@
         "window": true,
         "event": true,
         "Promise": true,
-        "Set": true
+        "Set": true,
+        "fetch": true,
     }
 }
