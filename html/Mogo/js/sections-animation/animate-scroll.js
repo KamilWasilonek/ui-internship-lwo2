@@ -4,12 +4,20 @@ import {
   changeNavbarBackground,
   scrollToSection,
   addEventToMenuItems,
-  removeMenuItemBackground,
+  throttle,
+  activateMenuLink,
 } from './helper-functions.js';
 
 export function runMenuAnimation() {
   components.then((response) => {
-    const {navbar, navbarMenu, navbarMobileButton, navbarLogo} = response;
+    const {
+      navbar,
+      navbarMenu,
+      navbarMobileButton,
+      navbarLogo,
+      linksList,
+      menuSectionsList,
+    } = response;
 
     changeNavbarBackground(navbar, navbarMenu);
     addEventToMenuItems(navbarMenu);
@@ -22,11 +30,14 @@ export function runMenuAnimation() {
       navbarMenu.classList.toggle('navbar__menu--active');
     });
 
+    // eslint-disable-next-line no-undef
+    window.addEventListener(
+        'scroll',
+        throttle(activateMenuLink, {linksList, menuSectionsList}, 10)
+    );
+
     window.addEventListener('scroll', () => {
       changeNavbarBackground(navbar, navbarMenu);
-      if (window.scrollY < 200) {
-        removeMenuItemBackground();
-      }
     });
 
     navbarLogo.addEventListener('click', function(event) {
