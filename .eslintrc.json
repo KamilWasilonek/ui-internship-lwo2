@@ -11,11 +11,10 @@
     },
     "globals":{
         "document": true,
-        "window": true,
         "console": true,
+        "window": true,
+        "event": true,
         "Promise": true,
-        "fetch": true,
-        "Data": true,
         "Set": true
     }
 }

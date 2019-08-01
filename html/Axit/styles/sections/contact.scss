@@ -34,7 +34,7 @@
   &__input,
   &__message {
     width: 100%;
-    margin: 30px auto;
+    margin: 20px auto;
     max-width: 400px;
     opacity: 0.6;
 
@@ -45,18 +45,27 @@
     }
   }
 
-  &__input {
-    padding: 0 0 5px 5px;
-  }
-
   &__message {
     resize: none;
-    margin-top: 30px;
-    padding: 0 0 70px 5px;
+    margin-top: 40px;
+    padding: 0 0 130px 10px;
   }
 
   &__btn {
     display: block;
     margin: 40px auto 0 auto;
+
+    &:focus,
+    &:active {
+      outline-color: $color-secondary;
+    }
+  }
+
+  &__val-error {
+    padding: 0 10px;
+    font-size: 0.7rem;
+    opacity: 0.5;
+    color: red;
+    font-style: italic;
   }
 }

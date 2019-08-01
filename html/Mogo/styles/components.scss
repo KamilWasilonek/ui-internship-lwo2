@@ -216,16 +216,23 @@
     margin-right: 10px;
   }
 
-  &:hover {
+  &:focus {
+    outline: none;
+  }
+ 
+  &--active {
     background: $description-color;
   }
 
-  &::after {
-    content: "\276F";
-    width: 15px;
-    height: 15px;
+
+  &__arrow {
+    font-size: 0.9rem;
     margin-left: auto;
-    text-align: center;
+    transition: transform .3s linear;
+
+    &--active {
+      transform: rotate(90deg);
+    }
   }
 }
 

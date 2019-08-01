@@ -1,7 +1,9 @@
 .banner {
+  position: relative;
   padding: 200px 10%;
-  background: url(../assets/banner-img/photo-1433354359170-23-a-4-ae-7338-c-6@3x.jpg)
-    right bottom/cover no-repeat;
+  color: #ffffff;
+  // background: url(../assets/banner-img/photo-1433354359170-23-a-4-ae-7338-c-6@3x.jpg)
+  //   right bottom/cover no-repeat;
   text-align: center;
 
   @media screen and (min-width: 1024px) {
@@ -12,23 +14,48 @@
     margin: 0 auto;
   }
 
+  &__video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    object-fit: fill;
+  }
+
   &__title {
     font-size: 2rem;
   }
 
-  &__play {
+  @keyframes pulse {
+    from {
+      box-shadow: 0 0 0px 0px rgba(240, 76, 76, 0.4);
+    }
+    to {
+      box-shadow: 0 0 0px 25px rgba(240, 76, 76, 0);
+    }
+  }
+
+  &__video-btn {
+    width: 60px;
+    height: 60px;
     margin: 20px 0;
-    background: transparent;
     border: none;
+    border-radius: 60px;
+    transition: all 1s linear;
+    animation: pulse 1s infinite;
+    outline: none;
+    cursor: pointer;
+    
+    &--paused {
+      background: url(../assets/video-icons/round-pause-button.svg) no-repeat;
+      background-size: 100%;
+    }
 
-    img {
-      width: 40px;
-      opacity: 0.8;
-      cursor: pointer;
-
-      @media screen and (min-width: 1024px) {
-        width: 60px;
-      }
+    &--play {
+      background: url(../assets/video-icons/play-button.svg) no-repeat;
+      background-size: 100%;
     }
   }
 

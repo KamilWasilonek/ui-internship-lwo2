@@ -1,25 +1,24 @@
-import {components} from './menu-elements.js';
-
-const {navbar, navbarMenu} = components;
-
-function setNavbarBackground() {
+export function setNavbarBackground(navbar) {
   navbar.classList.add('navbar--with-bg');
 }
 
-function removeNavbarBackground() {
+function removeNavbarBackground(navbar) {
   navbar.classList.remove('navbar--with-bg');
 }
 
-function changeNavbarBackground() {
+export function changeNavbarBackground(navbar, navbarMenu) {
   if (window.scrollY >= 200) {
-    setNavbarBackground();
+    setNavbarBackground(navbar);
   } else if (!navbarMenu.classList.contains('navbar__menu--active')) {
-    removeNavbarBackground();
+    removeNavbarBackground(navbar);
   }
 }
 
-function addScrollEffect(event) {
-  const elementName = event.getAttribute('href');
+export function scrollToSection(eventTarget) {
+  if (eventTarget.getAttribute('href') === '#') {
+    return;
+  }
+  const elementName = eventTarget.getAttribute('href');
   const element = document.querySelector('#' + elementName);
   window.scrollTo({
     behavior: 'smooth',
@@ -28,18 +27,53 @@ function addScrollEffect(event) {
   });
 }
 
-function addEventToMenuItems() {
-  Array.from(navbarMenu.getElementsByTagName('li')).forEach((item) => {
-    item.children[0].addEventListener('click', function(event) {
-      event.preventDefault();
-      addScrollEffect(event.target);
-    });
+export function addEventToMenuItems(navbarMenu) {
+  navbarMenu.addEventListener('click', (event) => {
+    event.preventDefault();
+
+    let target = event.target;
+    if (target.tagName === 'A') {
+      scrollToSection(event.target);
+    }
   });
 }
 
-export const helperFunctions = {
-  setNavbarBackground,
-  changeNavbarBackground,
-  addScrollEffect,
-  addEventToMenuItems,
-};
+export function throttle(fn, args, wait) {
+  let time = Date.now();
+  return function() {
+    if (time + wait - Date.now() < 0) {
+      fn(args);
+      time = Date.now();
+    }
+  };
+}
+
+export function findSectionConectedToMenulink(menuSectionsList, sectionName) {
+  let sectionElementName = Object.keys(menuSectionsList).find((item) => {
+    return item === sectionName;
+  });
+  return menuSectionsList[sectionElementName];
+}
+
+export function activateMenuLink({linksList, menuSectionsList}) {
+  let scrollPos = document.documentElement.scrollTop;
+
+  for (let i = 0; i < linksList.length; i++) {
+    let currLink = linksList[i];
+    if (currLink.getAttribute('href') !== '#') {
+      let sectionName = currLink.getAttribute('href');
+      let sectionElement = findSectionConectedToMenulink(
+          menuSectionsList,
+          sectionName
+      );
+      if (
+        sectionElement.offsetTop <= scrollPos &&
+        sectionElement.offsetTop + sectionElement.scrollHeight > scrollPos
+      ) {
+        currLink.classList.add('navbar__menu-link--active');
+      } else {
+        currLink.classList.remove('navbar__menu-link--active');
+      }
+    }
+  }
+}
