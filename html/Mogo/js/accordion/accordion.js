@@ -2,7 +2,7 @@ import {components} from './components.js';
 import {
   hideEveryPanel,
   showPanel,
-  activeAccordion,
+  activateAccordion,
   deactivateAccordions,
   togglePannel,
 } from './helper-functions.js';
@@ -16,19 +16,13 @@ export function addAccordionEffect() {
         accordionsContainer,
         images,
       }) => {
-        activeAccordion(accordionsList[0]);
+        activateAccordion(accordionsList[0]);
         showPanel(panelsList[0]);
 
         accordionsContainer.addEventListener('click', (event) => {
           let target = event.target;
-          if (
-            target.classList.contains('services__accordion') ||
-          target.classList.contains('accordion__img') ||
-          target.classList.contains('accordion__arrow')
-          ) {
-            if (!target.classList.contains('services__accordion')) {
-              target = target.parentElement;
-            }
+          if (target.closest('.services__accordion')) {
+            target = target.closest('.services__accordion');
 
             hideEveryPanel(panelsList);
             deactivateAccordions(accordionsList);

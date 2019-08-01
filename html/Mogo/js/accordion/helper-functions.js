@@ -13,7 +13,7 @@ function deactivateAccordions(accordionsList) {
   }
 }
 
-function activeAccordion(accordion) {
+function activateAccordion(accordion) {
   accordion.classList.add('accordion--active');
   accordion
       .querySelector('.accordion__arrow')
@@ -41,6 +41,6 @@ export {
   hidePanel,
   deactivateAccordions,
   showPanel,
-  activeAccordion,
+  activateAccordion,
   togglePannel,
 };
