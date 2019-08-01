@@ -1,6 +1,15 @@
-@import url('https://fonts.googleapis.com/css?family=Kaushan+Script|Montserrat:300,400,600,700|Roboto:300,400,700&display=swap');@import "./variables.scss";
+@import url("https://fonts.googleapis.com/css?family=Kaushan+Script|Montserrat:300,400,600,700|Roboto:300,400,700&display=swap");
+@import "./variables.scss";
 @import "./components.scss";
 @import "./mixins.scss";
+
+body {
+  overflow: auto;
+}
+
+.popup-active {
+  overflow: hidden;
+}
 
 * {
   margin: 0;
@@ -65,4 +74,3 @@ h6 {
 
 // -------------- Footer --------------
 @import "./sections/footer.scss";
-

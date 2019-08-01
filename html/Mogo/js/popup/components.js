@@ -1,6 +1,6 @@
 export const components = new Promise((resolve) => {
   document.addEventListener('DOMContentLoaded', () => {
-    const body = document.getElementsByTagName('body')[0];
+    const body = document.querySelector('.body');
     const gallery = document.querySelector('.gallery');
     const popup = document.querySelector('.gallery__show');
     const popupOverlay = document.querySelector('.gallery__overlay');
