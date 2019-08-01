@@ -63,33 +63,45 @@
   }
 
   &__menu-item {
-    padding: 20px 10px;
-    transition: background .3s linear;
+    // display: flex;
+    // text-align: center;
+    &:hover {
+      color: $white-color;
+      background: rgba(121, 121, 121, 0.8);
+      cursor: pointer;
+    }
+  }
+
+  &__menu-link {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    transition: background 0.3s linear;
+    color: $white-color;
+    font-size: 0.8rem;
+    text-decoration: none;
+    text-transform: uppercase;
 
     &:hover {
       color: $white-color;
       background: rgba(121, 121, 121, 0.8);
       cursor: pointer;
     }
-
     &--active {
       background: rgba(121, 121, 121, 0.8);
     }
+    @include respond(md) {
+      padding: 20px 10px;
+    }
 
-    a {
-      color: $white-color;
-      font-size: 0.8rem;
-      text-decoration: none;
-      text-transform: uppercase;
-
-      @include respond(lg) {
-        font-size: 1rem;
-      }
+    @include respond(lg) {
+      font-size: 1rem;
     }
   }
 
   &__menu-shopping,
   &__menu-search {
+    // padding: 20px 10px;
     width: 16px;
     height: 16px;
     margin: 0 auto;
