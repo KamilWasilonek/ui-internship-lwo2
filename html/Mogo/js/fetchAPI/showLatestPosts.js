@@ -1,18 +1,19 @@
-/* eslint-disable max-len */
-import {data} from './fetchData.js';
+import { getPostFromServer } from "./fetchData.js";
 import {components} from './components.js';
 import {getMonthByValue} from './helper-functions.js';
 
 export function generateLatesPosts() {
-  Promise.all([data, components]).then(
-      (response) => {
-        const {latest, blogs} = response[0];
-        const {latestPostContainer} = response[1];
+  const postsFromServer = getPostFromServer(
+    "https://simple-server-12345yui.herokuapp.com/api/blogs"
+  );
+  Promise.all([postsFromServer, components]).then(
+      ([postsFromServer, components]) => {
+        const {latest, blogs} = postsFromServer;
+        const {latestPostContainer} = components;
         const maxTitleLength = 60;
         const maxDescLength = 150;
-        const howManyPosts = latest.length;
 
-        for (let i = 0; i < howManyPosts; i++) {
+        for (let i = 0; i < latest.length; i++) {
           const article = createContainer(
               'article',
               'article latest-posts__article'

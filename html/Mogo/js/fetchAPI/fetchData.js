@@ -1,11 +1,15 @@
-export const data = new Promise((resolve, reject) => {
-  const url = 'https://simple-server-12345yui.herokuapp.com/api/blogs';
-  fetch(url).then((response) => {
-    response.json().then((json) => {
-      if (json) {
-        resolve(json);
+export function getPostFromServer(url) {
+  return fetch(url)
+    .then(function(response) {
+      if (response.status !== 200) {
+        console.log(
+          "Looks like there was a problem. Status Code: " + response.status
+        );
+        return;
       }
-      reject('Fetch failed');
+      return response.json();
+    })
+    .catch(function(err) {
+      console.log("Fetch Error", err);
     });
-  });
-});
+}

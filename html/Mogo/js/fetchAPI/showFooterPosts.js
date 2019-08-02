@@ -1,37 +1,53 @@
-import {data} from './fetchData.js';
-import {components} from './components.js';
-import {setPostsAttributes, formatFooterDate} from './helper-functions.js';
+import { getPostFromServer } from "./fetchData.js";
+import { components } from "./components.js";
+import { setPostsAttributes, formatFooterDate } from "./helper-functions.js";
 
 export function generateFooterPosts() {
-  Promise.all([data, components]).then((response) => {
-    const [data, components] = response;
-    const maxTitleLength = 40;
-    let postIndex = data.blogs.length - 1;
+  const postsFromServer = getPostFromServer(
+    "https://simple-server-12345yui.herokuapp.com/api/blogs"
+  );
+  Promise.all([postsFromServer, components]).then(
+    ([postsFromServer, components]) => {
+      const {
+        blogs
+      } = postsFromServer;
 
-    for (let i = 0; i < 3; i++, postIndex--) {
-      let actualPost = components.footerBlogContainer.children[i];
+      const {
+        footerBlogContainer
+      } = components
+     
+      const maxTitleLength = 40;
+      let postIndex = blogs.length - 1;
 
-      // DOM elements
-      let imgElement = actualPost.querySelector('.blog__post-img');
-      let titleElement = actualPost.querySelector('.blog__post-title');
-      let dateElement = actualPost.querySelector('.blog__post-date');
+      for (let i = 0; i < 3; i++, postIndex--) {
+        let actualPost = footerBlogContainer.children[i];
 
-      // Date
-      let date = new Date(data.blogs[postIndex].published);
+        // DOM elements
+        const imgElement = actualPost.querySelector(".blog__post-img");
+        const titleElement = actualPost.querySelector(".blog__post-title");
+        const dateElement = actualPost.querySelector(".blog__post-date");
 
-      let postAttributes = {
-        img: imgElement,
-        newImg: data.blogs[postIndex].previewImg,
-        title: titleElement,
-        newTitle: data.blogs[postIndex].title.slice(0, maxTitleLength) + '...',
-        date: dateElement,
-        newDate: formatFooterDate(
+        // Date
+        const date = new Date(blogs[postIndex].published);
+
+        const postElements = {
+          img: imgElement,
+          title: titleElement,
+          date: dateElement,
+        }
+
+        const dataToSet = {
+          newImg: blogs[postIndex].previewImg,
+          newTitle:
+            blogs[postIndex].title.slice(0, maxTitleLength) + "...",
+          newDate: formatFooterDate(
             date.getDate(),
             date.getMonth(),
             date.getFullYear()
-        ),
-      };
-      setPostsAttributes(postAttributes);
+          )
+        }
+        setPostsAttributes(postElements,dataToSet);
+      }
     }
-  });
+  );
 }

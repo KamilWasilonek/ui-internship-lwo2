@@ -1,30 +1,29 @@
-function getMonthByValue(value) {
-  const months = {
-    Jan: 0,
-    Feb: 1,
-    Mar: 2,
-    Apr: 3,
-    May: 4,
-    Jun: 5,
-    Jul: 6,
-    Aug: 7,
-    Sep: 8,
-    Oct: 9,
-    Nov: 10,
-    Dec: 11,
-  };
-  return Object.keys(months).find((key) => months[key] === value);
+function getMonthByValue(monthNumber) {
+  const months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec"
+  ];
+  return months[monthNumber];
 }
 
-function setPostsAttributes(attributes) {
-  const localAttributes = attributes;
-  localAttributes.img.setAttribute('src', localAttributes.newImg);
-  localAttributes.title.innerHTML = localAttributes.newTitle;
-  localAttributes.date.innerHTML = localAttributes.newDate;
+function setPostsAttributes(postElements, dataToSet) {
+  postElements.img.setAttribute("src", dataToSet.newImg);
+  postElements.title.innerHTML = dataToSet.newTitle;
+  postElements.date.innerHTML = dataToSet.newDate;
 }
 
 function formatFooterDate(day, month, year) {
-  return getMonthByValue(month) + ' ' + day + ' , ' + year;
+  return `${getMonthByValue(month)} ${day} , ${year}`;
 }
 
-export {getMonthByValue, setPostsAttributes, formatFooterDate};
+export { getMonthByValue, setPostsAttributes, formatFooterDate };
