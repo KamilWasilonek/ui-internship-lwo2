@@ -2,37 +2,80 @@
 @import "../mixins.scss";
 
 .slider {
-  display: flex;
+  display: none;
+  grid-template-columns: 0.1fr 1fr 0.1fr;
+  column-gap: 20px;
   align-items: center;
   justify-content: center;
   background: #f8f8f8;
   text-align: center;
 
+  @media screen and (min-width: 500px) {
+    display: grid;
+  }
+
   @include respond(lg) {
     text-align: left;
   }
 
-  &__container {
-    padding: 0 30px;
-    display: flex;
+  &__previous-btn,
+  &__next-btn {
+    height: 200px;
+    background: transparent;
+    opacity: 0.3;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
 
-    @include respond(md) {
-      padding: 0 50px;
+    img {
+      width: 40px;
     }
   }
 
+  &__previous-btn {
+    img {
+      transform: rotate(180deg);
+    }
+  }
+
+  @keyframes move {
+    0% {
+      transform: translateY(-30%);
+      opacity: 0;
+    }
+    50% {
+      opacity: 0.7;
+    }
+    80% {
+      transform: translateY(20%);
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
 
   &__slide {
     display: none;
-    transition: opacity 0.5s linear;
+    grid-template-columns: 1fr;
+    align-items: center;
+    animation-name: move;
+    animation-duration: 1s;
+
+    @include respond(lg) {
+      grid-template-columns: 0.2fr 1fr;
+    }
+
+    &--active {
+      display: grid;
+    }
   }
 
   &__img-box {
     display: none;
-    flex-basis: 20%;
     text-align: center;
     max-height: 100px;
-    
+
     @include respond(lg) {
       display: block;
     }
@@ -56,12 +99,10 @@
   }
 
   &__details {
-    flex-basis: 100%;
     align-self: center;
 
     @include respond(lg) {
       padding-left: 10px;
-      flex-basis: 80%;
     }
   }
 
@@ -91,14 +132,5 @@
       margin-right: 5px;
       background: $separator-color;
     }
-  }
-
-  &__previous-btn,
-  &__next-btn {
-    background: transparent;
-    opacity: 0.3;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
   }
 }
