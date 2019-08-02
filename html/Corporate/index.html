@@ -14,14 +14,20 @@
   <!-- Banner -->
   <section class="banner">
     <div class="banner__container">
+      <!-- Video -->
+      <video class="banner__video" loop autoplay muted>
+        <source src="./assets/video/coverr-yin-and-yang-1561488320950.mp4"
+                type="video/mp4">
+
+        Sorry, your browser doesn't support embedded videos.
+      </video>
       <!-- Title -->
       <header class="banner__title">
         There is no other platforms for you as like 
       </header>
 
       <!-- Play -->
-      <button type="button" class="banner__play">
-        <img  src="./assets/play-icon/play-video-icon.svg" alt="">
+      <button type="button" class="banner__video-btn banner__video-btn--paused">
       </button> 
 
       <!-- Button -->
@@ -265,19 +271,40 @@
     </header>
 
     <!-- Form -->
-    <form class="contact__form contact-form">
-      <input class="contact-form__input" type="text" placeholder="FULL NAME">
+    <form class="contact__form contact-form" name="contact__form" method="POST">
 
-      <input class="contact-form__input" type="email" placeholder="YOUR EMAIL">
+      <!-- Name -->
+      <div class="contact-form__input-box">
+        <input class="contact-form__input" name="username" type="text" placeholder="FULL NAME">
+        <div class="contact-form__val-error contact-form__name-error" data-error-name="username"></div>
+      </div>
+      
+      <!-- Email -->
+      <div class="contact-form__input-box">
+        <input class="contact-form__input" name="email" type="email" placeholder="YOUR EMAIL">
+        <div class="contact-form__val-error contact-form__email-error" data-error-name="email"></div>
+      </div>
 
-      <input class="contact-form__input" type="password" placeholder="PASSWORD">
+      <!-- Password -->
+      <div class="contact-form__input-box">
+        <input class="contact-form__input" name="password" type="password" placeholder="PASSWORD">
+        <div class="contact-form__val-error contact-form__password-error" data-error-name="password">
+          
+        </div>
+      </div>
 
+      <!-- Form additional text -->
       <div class="contact-form__trial">
         <img src="./assets/down-arrow/arrow@2x.png" alt="Arrow">
         <span>30 days free trial for all.</span>
       </div>
 
-      <button class="contact-form__submit submit">Try now</button>
+      <!-- Submit -->
+      <div class="contact-form__input-box">
+        <button disabled name="submit" class="contact-form__submit contact-form__submit--disabled ">
+          Try now
+        </button>
+      </div>
     </form>
 
     <!-- Terms -->
@@ -365,5 +392,7 @@
       </div>
     </div>
   </section>
+
+  <script type="module" src="./js/main.js"></script>
 </body>
 </html>

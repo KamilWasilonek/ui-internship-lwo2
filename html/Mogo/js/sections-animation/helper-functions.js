@@ -1,16 +1,9 @@
-let boxToHightlight;
 export function setNavbarBackground(navbar) {
   navbar.classList.add('navbar--with-bg');
 }
 
 function removeNavbarBackground(navbar) {
   navbar.classList.remove('navbar--with-bg');
-}
-
-export function removeMenuItemBackground() {
-  if (boxToHightlight) {
-    boxToHightlight.classList.remove('navbar__menu-item--active');
-  }
 }
 
 export function changeNavbarBackground(navbar, navbarMenu) {
@@ -37,17 +30,50 @@ export function scrollToSection(eventTarget) {
 export function addEventToMenuItems(navbarMenu) {
   navbarMenu.addEventListener('click', (event) => {
     event.preventDefault();
-    if (boxToHightlight) {
-      boxToHightlight.classList.remove('navbar__menu-item--active');
-    }
+
     let target = event.target;
     if (target.tagName === 'A') {
       scrollToSection(event.target);
-      boxToHightlight = target.parentElement;
-    } else if (target.tagName === 'LI') {
-      scrollToSection(event.target.firstElementChild);
-      boxToHightlight = target;
     }
-    boxToHightlight.classList.add('navbar__menu-item--active');
   });
+}
+
+export function throttle(fn, args, wait) {
+  let time = Date.now();
+  return function() {
+    if (time + wait - Date.now() < 0) {
+      fn(args);
+      time = Date.now();
+    }
+  };
+}
+
+export function findSectionConectedToMenulink(menuSectionsList, sectionName) {
+  let sectionElementName = Object.keys(menuSectionsList).find((item) => {
+    return item === sectionName;
+  });
+  return menuSectionsList[sectionElementName];
+}
+
+export function activateMenuLink({linksList, menuSectionsList}) {
+  let scrollPos = document.documentElement.scrollTop;
+
+  for (let i = 0; i < linksList.length; i++) {
+    let currLink = linksList[i];
+    if (currLink.getAttribute('href') !== '#') {
+      let sectionName = currLink.getAttribute('href');
+      let sectionElement = findSectionConectedToMenulink(
+          menuSectionsList,
+          sectionName
+      );
+      if (
+        sectionElement.offsetTop <= scrollPos &&
+        sectionElement.offsetTop + sectionElement.scrollHeight > scrollPos
+      ) {
+        currLink.classList.add('navbar__menu-link--active');
+      } else {
+        currLink.classList.remove('navbar__menu-link--active');
+      }
+    }
+  }
 }
