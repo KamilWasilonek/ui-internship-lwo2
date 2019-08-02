@@ -1,34 +1,18 @@
 import {components} from './people-components.js';
-import {slide} from '../helper-functions.js';
+import {slide, moveRight, moveLeft} from '../helper-functions.js';
 
 export function runPeopleSlider() {
-  components.then((response) => {
-    const {
-      peopleSlides,
-      peopleNextBtn,
-      peoplePrevBtn,
-    } = response;
-
-    let peopleCurrentSlide = 0;
+  components.then(({peopleSlides, peopleNextBtn, peoplePrevBtn}) => {
+    let currentSlideId = 0;
 
     slide(peopleSlides, 0);
 
     peopleNextBtn.addEventListener('click', () => {
-      if (peopleCurrentSlide === peopleSlides.length - 1) {
-        peopleCurrentSlide = 0;
-      } else {
-        peopleCurrentSlide += 1;
-      }
-      slide(peopleSlides, peopleCurrentSlide);
+      currentSlideId = moveRight(peopleSlides, currentSlideId);
     });
 
     peoplePrevBtn.addEventListener('click', () => {
-      if (peopleCurrentSlide === 0) {
-        peopleCurrentSlide = peopleSlides.length - 1;
-      } else {
-        peopleCurrentSlide -= 1;
-      }
-      slide(peopleSlides, peopleCurrentSlide);
+      currentSlideId = moveLeft(peopleSlides, currentSlideId);
     });
   });
 }
